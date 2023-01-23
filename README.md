@@ -1,8 +1,8 @@
 <p align="center">
-    <img src="https://raw.githubusercontent.com/hillelcoren/invoice-ninja/master/public/images/round_logo.png" alt="Sublime's custom image"/>
+    <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.chercheinfo.com%2Fview-listing.php%3Fid%3D7376&psig=AOvVaw3x21ZarPJfMOUeA1tqlK93&ust=1674566355529000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCJC3q_rj3fwCFQAAAAAdAAAAABAD" alt="Sublime's custom image"/>
 </p>
 
-# Invoice Ninja
+# Invoice CFac Groupe
 
 [![Build Status](https://travis-ci.org/invoiceninja/invoiceninja.svg?branch=master)](https://travis-ci.org/invoiceninja/invoiceninja)
 [![Docs](https://readthedocs.org/projects/invoice-ninja/badge/?version=latest)](https://invoice-ninja.readthedocs.io/en/latest/?badge=latest)
@@ -93,3 +93,38 @@ For information on how contribute to Invoice Ninja, please see our [contributing
 ## License
 Invoice Ninja is released under the Elastic License 2.0
 See [LICENSE](LICENSE) for details.
+
+## to SetUp The Application For A Quick Hosting
+
+Need to install php 7.3 and mysql
+
+```sh
+git clone https://github.com/invoiceninja/invoiceninja/releases/download/v4.5.50/invoiceninja.zip
+cp .env.example .env
+composer update
+php artisan key:generate
+```
+
+Please Note: 
+Your APP_KEY in the .env file is used to encrypt data, if you lose this you will not be able to run the application.
+
+Run if you want to load sample data, remember to configure .env
+```sh
+php artisan migrate:fresh --seed && php artisan db:seed && php artisan ninja:create-test-data
+```
+
+To run the web server
+```sh
+php artisan serve 
+```
+
+Navigate to (replace localhost with the appropriate domain)
+```
+http://localhost:8000/setup - To setup your configuration if you did not load sample data.
+http://localhost:8000/ - For Administrator Logon
+user: small@example.com
+pass: password
+http://localhost:8000/client/login - For Client Portal
+user: user@example.com
+pass: password
+```
