@@ -76,7 +76,7 @@ class PaymentsChanges extends Migration
         });
 
         Schema::table('payments', function ($table) {
-            $table->decimal('refunded', 13, 2);
+            $table->decimal('refunded', 13, 3);
             $table->unsignedInteger('payment_status_id')->default(PAYMENT_STATUS_COMPLETED);
 
             $table->unsignedInteger('routing_number')->nullable();

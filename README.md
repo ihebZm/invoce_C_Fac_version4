@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.chercheinfo.com%2Fview-listing.php%3Fid%3D7376&psig=AOvVaw3x21ZarPJfMOUeA1tqlK93&ust=1674566355529000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCJC3q_rj3fwCFQAAAAAdAAAAABAD" alt="Sublime's custom image"/>
+    <img src="https://media.licdn.com/dms/image/C4D0BAQHP4YO6cY3KMg/company-logo_200_200/0/1519889116930?e=2147483647&v=beta&t=2FLNTD3odaRUxyviQGbFilfHEucyUWbXe8wE2V8IT-w"/>
 </p>
 
 # Invoice CFac Groupe

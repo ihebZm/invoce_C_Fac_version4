@@ -26,7 +26,7 @@ class AddSupportThreeDecimalTaxes extends Migration
     public function down()
     {
         Schema::table('tax_rates', function ($table) {
-            $table->decimal('rate', 13, 2)->change();
+            $table->decimal('rate', 13, 3)->change();
         });
     }
 }

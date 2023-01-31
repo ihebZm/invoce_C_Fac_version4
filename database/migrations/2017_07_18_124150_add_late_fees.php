@@ -13,11 +13,11 @@ class AddLateFees extends Migration
     public function up()
     {
         Schema::table('account_email_settings', function ($table) {
-            $table->decimal('late_fee1_amount', 13, 2)->nullable();
+            $table->decimal('late_fee1_amount', 13, 3)->nullable();
             $table->decimal('late_fee1_percent', 13, 3)->nullable();
-            $table->decimal('late_fee2_amount', 13, 2)->nullable();
+            $table->decimal('late_fee2_amount', 13, 3)->nullable();
             $table->decimal('late_fee2_percent', 13, 3)->nullable();
-            $table->decimal('late_fee3_amount', 13, 2)->nullable();
+            $table->decimal('late_fee3_amount', 13, 3)->nullable();
             $table->decimal('late_fee3_percent', 13, 3)->nullable();
         });
 

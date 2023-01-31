@@ -12,7 +12,7 @@ class AddAffiliatePrice extends Migration
     public function up()
     {
         Schema::table('affiliates', function ($table) {
-            $table->decimal('price', 7, 2)->nullable();
+            $table->decimal('price', 7, 3)->nullable();
         });
 
         Schema::table('licenses', function ($table) {

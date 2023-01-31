@@ -228,8 +228,8 @@ class ConfideSetupUsersTable extends Migration
             $t->unsignedInteger('country_id')->nullable();
             $t->string('work_phone')->nullable();
             $t->text('private_notes')->nullable();
-            $t->decimal('balance', 13, 2)->nullable();
-            $t->decimal('paid_to_date', 13, 2)->nullable();
+            $t->decimal('balance', 13, 3)->nullable();
+            $t->decimal('paid_to_date', 13, 3)->nullable();
             $t->timestamp('last_login')->nullable();
             $t->string('website')->nullable();
             $t->unsignedInteger('industry_id')->nullable();
@@ -309,8 +309,8 @@ class ConfideSetupUsersTable extends Migration
             $t->string('tax_name1');
             $t->decimal('tax_rate1', 13, 3);
 
-            $t->decimal('amount', 13, 2);
-            $t->decimal('balance', 13, 2);
+            $t->decimal('amount', 13, 3);
+            $t->decimal('balance', 13, 3);
 
             $t->foreign('client_id')->references('id')->on('clients')->onDelete('cascade');
             $t->foreign('account_id')->references('id')->on('accounts')->onDelete('cascade');
@@ -372,8 +372,8 @@ class ConfideSetupUsersTable extends Migration
 
             $t->string('product_key');
             $t->text('notes');
-            $t->decimal('cost', 13, 2);
-            $t->decimal('qty', 13, 2)->nullable();
+            $t->decimal('cost', 13, 3);
+            $t->decimal('qty', 13, 3)->nullable();
 
             $t->foreign('account_id')->references('id')->on('accounts')->onDelete('cascade');
             $t->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
@@ -394,8 +394,8 @@ class ConfideSetupUsersTable extends Migration
 
             $t->string('product_key');
             $t->text('notes');
-            $t->decimal('cost', 13, 2);
-            $t->decimal('qty', 13, 2)->nullable();
+            $t->decimal('cost', 13, 3);
+            $t->decimal('qty', 13, 3)->nullable();
 
             $t->string('tax_name1')->nullable();
             $t->decimal('tax_rate1', 13, 3)->nullable();
@@ -423,7 +423,7 @@ class ConfideSetupUsersTable extends Migration
             $t->softDeletes();
 
             $t->boolean('is_deleted')->default(false);
-            $t->decimal('amount', 13, 2);
+            $t->decimal('amount', 13, 3);
             $t->date('payment_date')->nullable();
             $t->string('transaction_reference')->nullable();
             $t->string('payer_id')->nullable();
@@ -450,8 +450,8 @@ class ConfideSetupUsersTable extends Migration
             $t->softDeletes();
 
             $t->boolean('is_deleted')->default(false);
-            $t->decimal('amount', 13, 2);
-            $t->decimal('balance', 13, 2);
+            $t->decimal('amount', 13, 3);
+            $t->decimal('balance', 13, 3);
             $t->date('credit_date')->nullable();
             $t->string('credit_number')->nullable();
             $t->text('private_notes');
@@ -481,8 +481,8 @@ class ConfideSetupUsersTable extends Migration
             $t->text('message')->nullable();
             $t->text('json_backup')->nullable();
             $t->integer('activity_type_id');
-            $t->decimal('adjustment', 13, 2)->nullable();
-            $t->decimal('balance', 13, 2)->nullable();
+            $t->decimal('adjustment', 13, 3)->nullable();
+            $t->decimal('balance', 13, 3)->nullable();
 
             $t->foreign('account_id')->references('id')->on('accounts')->onDelete('cascade');
         });

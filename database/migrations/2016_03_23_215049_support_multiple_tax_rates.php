@@ -54,7 +54,7 @@ class SupportMultipleTaxRates extends Migration
     public function down()
     {
         Schema::table('invoices', function ($table) {
-            $table->decimal('tax_rate1', 13, 2)->change();
+            $table->decimal('tax_rate1', 13, 3)->change();
             $table->renameColumn('tax_rate1', 'tax_rate');
             $table->renameColumn('tax_name1', 'tax_name');
             $table->dropColumn('tax_name2');
@@ -62,7 +62,7 @@ class SupportMultipleTaxRates extends Migration
         });
 
         Schema::table('invoice_items', function ($table) {
-            $table->decimal('tax_rate1', 13, 2)->change();
+            $table->decimal('tax_rate1', 13, 3)->change();
             $table->renameColumn('tax_rate1', 'tax_rate');
             $table->renameColumn('tax_name1', 'tax_name');
             $table->dropColumn('tax_name2');
