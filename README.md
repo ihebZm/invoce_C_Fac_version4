@@ -20,7 +20,6 @@ All Pro and Enterprise features from the hosted app are included in the open-cod
 The self-host zip includes all third party libraries whereas downloading the code from GitHub requires using Composer to install the dependencies.
 
 * [Features](https://www.invoiceninja.com/invoicing-features/)
-* [Videos](https://www.youtube.com/channel/UCXAHcBvhW05PDtWYIq7WDFA/videos)
 * [User Guide](https://docs.invoiceninja.com/)
 * [Support Forum](https://www.invoiceninja.com/forums/forum/support/)
 * [StackOverflow](https://stackoverflow.com/tags/invoice-ninja/)
@@ -49,7 +48,7 @@ The self-host zip includes all third party libraries whereas downloading the cod
 * [API Documentation](https://invoice-ninja.readthedocs.io/en/latest/api.html)
 * [PHP SDK](https://github.com/invoiceninja/sdk-php)
 * [Laminas Framework](https://github.com/alexz707/InvoiceNinjaModule)
-* [Custom Module](https://invoice-ninja.readthedocs.io/en/latest/custom_modules.html) | [Watch Video](https://www.youtube.com/watch?v=8jJ-PYuq85k)
+* [Custom Module](https://invoice-ninja.readthedocs.io/en/latest/custom_modules.html)
 
 ## Third Party Modules
 * [Event Scheduler](https://github.com/cytech/Scheduler-InvoiceNinja)

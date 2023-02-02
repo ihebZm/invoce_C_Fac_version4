@@ -1,7 +1,13 @@
 {{ trans('texts.powered_by') }}
 
 {{-- Per our license, please do not remove or modify this section. --}}
-{!! link_to('https://www.invoiceninja.com/?utm_source=powered_by', 'Invoice Ninja', ['target' => '_blank', 'title' => trans('texts.created_by', ['name' => 'Hillel Coren'])]) !!} -
+{!! link_to('https://www.cfac.com.tn/?utm_source=powered_by', 'CFAC', ['target' => '_blank', 'title' => trans('texts.created_by', ['name' => 'CFAC dev team'])]) !!}
+
+<!-- 
+// ^  this comment ben changed by Iheb Zm Start here to made it 
+// ^ same as the older application Ul invoice de cfac
+
+
 {!! link_to(RELEASES_URL, 'v' . NINJA_VERSION, ['target' => '_blank', 'title' => trans('texts.trello_roadmap')]) !!} |
 
 @if (Auth::user()->account->hasFeature(FEATURE_WHITE_LABEL))
@@ -46,7 +52,16 @@
 
         <div class="modal-footer" id="signUpFooter" style="margin-top: 0px">
           <button type="button" class="btn btn-default" data-dismiss="modal">{{ trans('texts.close') }} </button>
+
+// * this comment ben changed by Iheb Zm end here -->
+
+          <!-- // ! this is a ligne commented by default dans uncomment it -->
           <!-- <button type="button" class="btn btn-primary" onclick="showRecoverLicense()">{{ trans('texts.recover') }} </button> -->
+
+<!-- 
+// ^  this comment ben changed by Iheb Zm Start here to made it 
+// ^ same as the older application Ul invoice de cfac
+
           <button type="button" class="btn btn-primary" onclick="showApplyLicense()">{{ trans('texts.apply') }} </button>
           <button type="button" class="btn btn-success" onclick="buyWhiteLabel()">{{ trans('texts.purchase') }} </button>
         </div>
@@ -137,3 +152,5 @@
     }
 
 </script>
+
+// * this comment ben changed by Iheb Zm end here -->

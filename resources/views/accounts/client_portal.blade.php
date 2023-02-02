@@ -385,7 +385,8 @@ iframe.src = '{{ rtrim(SITE_URL ,'/') }}/' + parts[1] + '/' + parts[0].substring
             <div class="panel-body" id="domainModalHelp" style="display:none">
                 <p>
                     Create a DNS A Record entry for your custom domain and point to the following IP address <code>96.126.107.105</code>.
-                    You can watch this <a href="https://www.youtube.com/watch?v=tmEJI-Xfdb0" target="_blank">video on YouTube</a> to see how.
+                    <!-- // ^ changed the url so firewall in local don t block the use of invoice -->
+                    You can watch this <a href="https://#" target="_blank">video</a> to see how.
                 </p>
                 <p>Once this is setup please send an email to {{ env('CONTACT_EMAIL') }} and we'll complete the process.</p>
             </div>
