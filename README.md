@@ -96,6 +96,14 @@ See [LICENSE](LICENSE) for details.
 ## to SetUp The Application For A Quick Hosting
 
 Need to install php 7.3 and mysql
+## 1 donwload the php version from this URL:
+
+https://windows.php.net/downloads/releases/
+
+## 2 donwload the mysql version from this URL:
+
+https://www.apachefriends.org/fr/download.html
+
 
 ```sh
 git clone https://github.com/invoiceninja/invoiceninja/releases/download/v4.5.50/invoiceninja.zip
@@ -115,6 +123,15 @@ php artisan migrate:fresh --seed && php artisan db:seed && php artisan ninja:cre
 To run the web server
 ```sh
 php artisan serve 
+C:\wamp64\bin\php\php7.0.33\php.exe artisan serve --host=127.0.0.1 --port=8000
+```
+
+Please Note: 
+if you running both application on visual studio code you must compile them with different port and addresses
+and change the path for php version in xampp:solution here (https://stackoverflow.com/questions/64702504/running-php-artisan-serve-command-with-different-php-versions)
+
+```sh
+C:\xampp\php73\php.exe artisan serve --host=127.0.0.1 --port=8000 
 ```
 
 Navigate to (replace localhost with the appropriate domain)
