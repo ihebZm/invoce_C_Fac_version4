@@ -3,7 +3,8 @@
 @section('content')
 
 <center>
-    @if (!session(SESSION_USER_ACCOUNTS) || count(session(SESSION_USER_ACCOUNTS)) < 5)
+  <? //& this function is changed to show the add company more than 5 company the origin setup and less than 20 company  ?>
+    @if (!session(SESSION_USER_ACCOUNTS) || count(session(SESSION_USER_ACCOUNTS)) < 20)
         {!! Button::success(trans('texts.add_company'))->withAttributes(['onclick' => 'showSignUp()']) !!}
     @endif
 </center>

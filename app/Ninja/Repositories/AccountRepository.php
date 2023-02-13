@@ -622,27 +622,158 @@ class AccountRepository
         return false;
     }
 
-    public function findUserAccounts($userId1, $userId2 = false)
+    public function findUserAccounts($userId1, $userId2 = false, $userId3 = false, $userId4 = false, $userId8 = false, $userId9 = false)
     {
         if (! Schema::hasTable('user_accounts')) {
             return false;
         }
-
+        //& this function is to make user_id1 make changes in the table user_accounts
         $query = UserAccount::where('user_id1', '=', $userId1)
                                 ->orWhere('user_id2', '=', $userId1)
                                 ->orWhere('user_id3', '=', $userId1)
                                 ->orWhere('user_id4', '=', $userId1)
-                                ->orWhere('user_id5', '=', $userId1);
+                                ->orWhere('user_id5', '=', $userId1)
+                                ->orWhere('user_id6', '=', $userId1)
+                                ->orWhere('user_id7', '=', $userId1)
+                                ->orWhere('user_id8', '=', $userId1)
+                                ->orWhere('user_id9', '=', $userId1)
+                                ->orWhere('user_id10', '=', $userId1)
+                                ->orWhere('user_id11', '=', $userId1)
+                                ->orWhere('user_id12', '=', $userId1)
+                                ->orWhere('user_id13', '=', $userId1)
+                                ->orWhere('user_id14', '=', $userId1)
+                                ->orWhere('user_id15', '=', $userId1)
+                                ->orWhere('user_id16', '=', $userId1)
+                                ->orWhere('user_id17', '=', $userId1)
+                                ->orWhere('user_id18', '=', $userId1)
+                                ->orWhere('user_id19', '=', $userId1)
+                                ->orWhere('user_id20', '=', $userId1);
 
+        //& this function is to make user_id2 make changes in the table user_accounts                                
         if ($userId2) {
             $query->orWhere('user_id1', '=', $userId2)
                     ->orWhere('user_id2', '=', $userId2)
                     ->orWhere('user_id3', '=', $userId2)
                     ->orWhere('user_id4', '=', $userId2)
-                    ->orWhere('user_id5', '=', $userId2);
+                    ->orWhere('user_id5', '=', $userId2)
+                    ->orWhere('user_id6', '=', $userId2)
+                    ->orWhere('user_id7', '=', $userId2)
+                    ->orWhere('user_id8', '=', $userId2)
+                    ->orWhere('user_id9', '=', $userId2)
+                    ->orWhere('user_id10', '=', $userId2)
+                    ->orWhere('user_id11', '=', $userId2)
+                    ->orWhere('user_id12', '=', $userId2)
+                    ->orWhere('user_id13', '=', $userId2)
+                    ->orWhere('user_id14', '=', $userId2)
+                    ->orWhere('user_id15', '=', $userId2)
+                    ->orWhere('user_id16', '=', $userId2)
+                    ->orWhere('user_id17', '=', $userId2)
+                    ->orWhere('user_id18', '=', $userId2)
+                    ->orWhere('user_id19', '=', $userId2)
+                    ->orWhere('user_id20', '=', $userId2);
         }
 
-        return $query->first(['id', 'user_id1', 'user_id2', 'user_id3', 'user_id4', 'user_id5']);
+        //& this function is to make user_id3 make changes in the table user_accounts                                
+        if ($userId3) {
+            $query->orWhere('user_id1', '=', $userId3)
+                    ->orWhere('user_id2', '=', $userId3)
+                    ->orWhere('user_id3', '=', $userId3)
+                    ->orWhere('user_id4', '=', $userId3)
+                    ->orWhere('user_id5', '=', $userId3)
+                    ->orWhere('user_id6', '=', $userId3)
+                    ->orWhere('user_id7', '=', $userId3)
+                    ->orWhere('user_id8', '=', $userId3)
+                    ->orWhere('user_id9', '=', $userId3)
+                    ->orWhere('user_id10', '=', $userId3)
+                    ->orWhere('user_id11', '=', $userId3)
+                    ->orWhere('user_id12', '=', $userId3)
+                    ->orWhere('user_id13', '=', $userId3)
+                    ->orWhere('user_id14', '=', $userId3)
+                    ->orWhere('user_id15', '=', $userId3)
+                    ->orWhere('user_id16', '=', $userId3)
+                    ->orWhere('user_id17', '=', $userId3)
+                    ->orWhere('user_id18', '=', $userId3)
+                    ->orWhere('user_id19', '=', $userId3)
+                    ->orWhere('user_id20', '=', $userId3);
+        }        
+
+        //& this function is to make user_id4 make changes in the table user_accounts                                
+        if ($userId4) {
+            $query->orWhere('user_id1', '=', $userId4)
+                    ->orWhere('user_id2', '=', $userId4)
+                    ->orWhere('user_id3', '=', $userId4)
+                    ->orWhere('user_id4', '=', $userId4)
+                    ->orWhere('user_id5', '=', $userId4)
+                    ->orWhere('user_id6', '=', $userId4)
+                    ->orWhere('user_id7', '=', $userId4)
+                    ->orWhere('user_id8', '=', $userId4)
+                    ->orWhere('user_id9', '=', $userId4)
+                    ->orWhere('user_id10', '=', $userId4)
+                    ->orWhere('user_id11', '=', $userId4)
+                    ->orWhere('user_id12', '=', $userId4)
+                    ->orWhere('user_id13', '=', $userId4)
+                    ->orWhere('user_id14', '=', $userId4)
+                    ->orWhere('user_id15', '=', $userId4)
+                    ->orWhere('user_id16', '=', $userId4)
+                    ->orWhere('user_id17', '=', $userId4)
+                    ->orWhere('user_id18', '=', $userId4)
+                    ->orWhere('user_id19', '=', $userId4)
+                    ->orWhere('user_id20', '=', $userId4);
+        }
+
+        //& this function is to make user_id8 make changes in the table user_accounts                                
+        if ($userId8) {
+            $query->orWhere('user_id1', '=', $userId8)
+                    ->orWhere('user_id2', '=', $userId8)
+                    ->orWhere('user_id3', '=', $userId8)
+                    ->orWhere('user_id4', '=', $userId8)
+                    ->orWhere('user_id5', '=', $userId8)
+                    ->orWhere('user_id6', '=', $userId8)
+                    ->orWhere('user_id7', '=', $userId8)
+                    ->orWhere('user_id8', '=', $userId8)
+                    ->orWhere('user_id9', '=', $userId8)
+                    ->orWhere('user_id10', '=', $userId8)
+                    ->orWhere('user_id11', '=', $userId8)
+                    ->orWhere('user_id12', '=', $userId8)
+                    ->orWhere('user_id13', '=', $userId8)
+                    ->orWhere('user_id14', '=', $userId8)
+                    ->orWhere('user_id15', '=', $userId8)
+                    ->orWhere('user_id16', '=', $userId8)
+                    ->orWhere('user_id17', '=', $userId8)
+                    ->orWhere('user_id18', '=', $userId8)
+                    ->orWhere('user_id19', '=', $userId8)
+                    ->orWhere('user_id20', '=', $userId8);
+        }
+
+        //& this function is to make user_id9 make changes in the table user_accounts                                
+        if ($userId9) {
+            $query->orWhere('user_id1', '=', $userId9)
+                    ->orWhere('user_id2', '=', $userId9)
+                    ->orWhere('user_id3', '=', $userId9)
+                    ->orWhere('user_id4', '=', $userId9)
+                    ->orWhere('user_id5', '=', $userId9)
+                    ->orWhere('user_id6', '=', $userId9)
+                    ->orWhere('user_id7', '=', $userId9)
+                    ->orWhere('user_id8', '=', $userId9)
+                    ->orWhere('user_id9', '=', $userId9)
+                    ->orWhere('user_id10', '=', $userId9)
+                    ->orWhere('user_id11', '=', $userId9)
+                    ->orWhere('user_id12', '=', $userId9)
+                    ->orWhere('user_id13', '=', $userId9)
+                    ->orWhere('user_id14', '=', $userId9)
+                    ->orWhere('user_id15', '=', $userId9)
+                    ->orWhere('user_id16', '=', $userId9)
+                    ->orWhere('user_id17', '=', $userId9)
+                    ->orWhere('user_id18', '=', $userId9)
+                    ->orWhere('user_id19', '=', $userId9)
+                    ->orWhere('user_id20', '=', $userId9);
+        }
+
+        //& this function is to make choise in the user_accounts by user_id
+        return $query->first(['id', 'user_id1', 'user_id2', 'user_id3', 'user_id4', 'user_id5'
+        , 'user_id6', 'user_id7', 'user_id8', 'user_id9', 'user_id10', 'user_id11', 'user_id12'
+        , 'user_id13', 'user_id14', 'user_id15', 'user_id16', 'user_id17', 'user_id18', 'user_id19'
+        , 'user_id20']);
     }
 
     public function getUserAccounts($record, $with = null)
@@ -651,8 +782,9 @@ class AccountRepository
             return false;
         }
 
+        //& this function is to go over the field of the user_id
         $userIds = [];
-        for ($i = 1; $i <= 5; $i++) {
+        for ($i = 1; $i <= 20; $i++) {
             $field = "user_id$i";
             if ($record->$field) {
                 $userIds[] = $record->$field;
@@ -699,13 +831,14 @@ class AccountRepository
 
         return self::prepareUsersData($record);
     }
-
-    public function associateAccounts($userId1, $userId2)
+    //& this function is to go over associated accounts and give userIds the access 
+    public function associateAccounts($userId1, $userId2, $userId3, $userId4, $userId8, $userId9)
     {
-        $record = self::findUserAccounts($userId1, $userId2);
+        $record = self::findUserAccounts($userId1, $userId2, $userId3, $userId4, $userId8, $userId9);
 
+        //& this function is to go over the records and give userIds the access for display
         if ($record) {
-            foreach ([$userId1, $userId2] as $userId) {
+            foreach ([$userId1, $userId2, $userId3, $userId4, $userId8, $userId9] as $userId) {
                 if (! $record->hasUserId($userId)) {
                     $record->setUserId($userId);
                 }
@@ -714,6 +847,10 @@ class AccountRepository
             $record = new UserAccount();
             $record->user_id1 = $userId1;
             $record->user_id2 = $userId2;
+            $record->user_id3 = $userId3;
+            $record->user_id4 = $userId4;
+            $record->user_id8 = $userId8;
+            $record->user_id9 = $userId9;
         }
 
         $record->save();

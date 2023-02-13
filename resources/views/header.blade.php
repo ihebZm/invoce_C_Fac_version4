@@ -342,7 +342,8 @@
             @endif
             <li class="divider"></li>
             @if (Utils::isAdmin() && Auth::user()->confirmed && Utils::getResllerType() != RESELLER_ACCOUNT_COUNT)
-              @if (!session(SESSION_USER_ACCOUNTS) || count(session(SESSION_USER_ACCOUNTS)) < 5)
+            <? //& this function is changed to show the add company more than 5 company the origin setup and less than 20 company ?>
+              @if (!session(SESSION_USER_ACCOUNTS) || count(session(SESSION_USER_ACCOUNTS)) < 20)
                   <li>{!! link_to('#', trans('texts.add_company'), ['onclick' => 'showSignUp()']) !!}</li>
               @endif
             @endif
