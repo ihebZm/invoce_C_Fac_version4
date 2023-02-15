@@ -144,3 +144,14 @@ http://localhost:8000/client/login - For Client Portal
 user: user@example.com
 pass: password
 ```
+
+
+## set up no captcha from this URL on the git hub or the yotub channel:
+
+we added the no captcha to the application to make it anti spam vs bots to access.
+
+setup URL:
+https://www.youtube.com/watch?v=v8R0FRkFOmg
+
+documentation URL:
+https://github.com/anhskohbo/no-captcha

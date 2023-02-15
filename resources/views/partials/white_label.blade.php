@@ -1,7 +1,7 @@
 {{ trans('texts.powered_by') }}
 
 {{-- Per our license, please do not remove or modify this section. --}}
-{!! link_to('https://www.cfac.com.tn/?utm_source=powered_by', 'CFAC', ['target' => '_blank', 'title' => trans('texts.created_by', ['name' => 'CFAC dev team'])]) !!}
+{!! link_to('https://www.cfac.com.tn/?utm_source=powered_by', 'CFAC Comptabilité Fiscalité Assistance & Conseil', ['target' => '_blank', 'title' => trans('texts.created_by', ['name' => 'CFAC dev team'])]) !!}
 
 <!-- 
 // ^  this comment ben changed by Iheb Zm Start here to made it 

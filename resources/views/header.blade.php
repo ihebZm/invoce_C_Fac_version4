@@ -451,6 +451,7 @@
                     <a href="javascript:showKeyboardShortcuts()" title="{{ trans('texts.help') }}">
                         <i class="fa fa-question-circle"></i>
                     </a>
+                  {{-- //^ START HERE! this section been comment to change after to the address of CFAC 
                     <a href="{{ url(SOCIAL_LINK_FACEBOOK) }}" target="_blank" title="Facebook">
                         <i class="fa fa-facebook-square"></i>
                     </a>
@@ -460,6 +461,7 @@
                     <a href="{{ url(SOCIAL_LINK_GITHUB) }}" target="_blank" title="GitHub">
                         <i class="fa fa-github-square"></i>
                     </a>
+                  //^ END HERE! this section been comment to change after to the address of CFAC --}}
                 </div>
             </li>
         </ul>

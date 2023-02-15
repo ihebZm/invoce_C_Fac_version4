@@ -165,16 +165,23 @@
             <div id="footer-menu" class="menu-wrap">
                 <ul id="menu-footer-menu" class="menu">
                     <li id="menu-item-31" class="menu-item-31">
-                        {!! link_to('#', 'Facebook', ['target' => '_blank', 'onclick' => 'openUrl("https://www.facebook.com/invoiceninja", "/footer/social/facebook")']) !!}
+                        {!! link_to('#', 'Facebook', ['target' => '_blank', 'onclick' => 'openUrl("https://www.facebook.com/people/CFAC-GROUP/100057635281923/", "/footer/social/facebook")']) !!}
                     </li>
+                <!-- 
+                    // ^ sTART HERE! this buttons been commented in the client portal to hide the links to redirect them after to the link of CFAC
+                    
                     <li id="menu-item-32" class="menu-item-32">
                         {!! link_to('#', 'Twitter', ['target' => '_blank', 'onclick' => 'openUrl("https://twitter.com/invoiceninja", "/footer/social/twitter")']) !!}
                     </li>
                     <li id="menu-item-33" class="menu-item-33">
                         {!! link_to('#', 'GitHub', ['target' => '_blank', 'onclick' => 'openUrl("https://github.com/hillelcoren/invoice-ninja", "/footer/social/github")']) !!}
                     </li>
+
+                    // ^ END HERE! this buttons been commented in the client portal to hide the links to redirect them after to the link of CFAC
+                -->
                     <li id="menu-item-30" class="menu-item-30">
-                        {!! link_to(NINJA_WEB_URL . '/contact', trans('texts.contact')) !!}
+                        <!-- //^ START HERE! we add the /fr/ to the URL to get the exact link to Cfac Contact-->
+                        {!! link_to(NINJA_WEB_URL . '/fr/contact', trans('texts.contact')) !!}
                     </li>
                 </ul>
             </div>
@@ -184,9 +191,11 @@
 
     <div class="bottom">
         <div class="wrap">
+            <!--// ^ START HERE! this been changed to CFac copy right -->
             @if (empty($account) || !$account->hasFeature(FEATURE_WHITE_LABEL))
-                <div class="copy">Copyright &copy;{{ date('Y') }} <a href="{{ NINJA_WEB_URL }}" target="_blank">Invoice Ninja</a>. All rights reserved.</div>
+                <div class="copy">Copyright &copy;{{ date('Y') }} <a href="{{ NINJA_WEB_URL }}" target="_blank">CFAC Comptabilité Fiscalité Assistance & Conseil</a>. All rights reserved.</div>
             @endif
+            <!--// ^ END HERE! this been changed to CFac copy right -->
         </div><!-- .wrap -->
     </div><!-- .bottom -->
 </footer><!-- #footer -->

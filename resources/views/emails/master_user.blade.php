@@ -26,9 +26,15 @@
 
 @section('footer')
     <p style="color: #A7A6A6; font-size: 13px; line-height: 18px; margin: 0 0 7px; padding: 0;">
+    <!--
+        //^ START HERE! this section for the social media in the master to hide and to change to CFAC 
+
         <a href="{{ SOCIAL_LINK_FACEBOOK }}" style="color: #A7A6A6; text-decoration: none; font-weight: bold; font-size: 10px;"><img src="{{ isset($message) ? $message->embed(public_path('images/emails/icon-facebook.png')) : 'cid:icon-facebook.png' }}" alt="Facebook" /></a>
         <a href="{{ SOCIAL_LINK_TWITTER }}" style="color: #A7A6A6; text-decoration: none; font-weight: bold; font-size: 10px;"><img src="{{ isset($message) ? $message->embed(public_path('images/emails/icon-twitter.png')) : 'cid:icon-twitter.png' }}" alt="Twitter" /></a>
         <a href="{{ SOCIAL_LINK_GITHUB }}" style="color: #A7A6A6; text-decoration: none; font-weight: bold; font-size: 10px;"><img src="{{ isset($message) ? $message->embed(public_path('images/emails/icon-github.png')) : 'cid:icon-github.png' }}" alt="GitHub" /></a>
+        
+        //^ END HERE! this section for the social media in the master to hide and to change to CFAC
+    -->
     </p>
 
     <p style="color: #A7A6A6; font-size: 13px; line-height: 18px; margin: 0 0 7px; padding: 0;">

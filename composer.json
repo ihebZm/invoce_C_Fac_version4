@@ -1,5 +1,5 @@
 {
-    "name": "invoiceninja/invoiceninja",
+    "name": "invoicecfac/invoicecfac",
     "description": "Invoices, expenses & time-tracking built with Laravel",
     "keywords": [
         "invoice",
@@ -8,8 +8,8 @@
     "license": "Attribution Assurance License",
     "authors": [
         {
-            "name": "Hillel Coren",
-            "email": "hillelcoren@gmail.com"
+            "name": "Zmerli Iheb",
+            "email": "iheb@cfac.com.tn"
         }
     ],
     "require": {
@@ -22,6 +22,7 @@
         "agmscode/omnipay-agms": "~1.0",
         "anahkiasen/former": "4.*",
         "andreas22/omnipay-fasapay": "1.*",
+        "anhskohbo/no-captcha": "*",
         "asgrim/ofxparser": "^1.1",
         "bacon/bacon-qr-code": "^1.0",
         "barracudanetworks/archivestream-php": "^1.0",

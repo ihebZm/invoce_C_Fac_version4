@@ -439,9 +439,9 @@ class AccountRepository
             $company->save();
 
             $account = new Account();
-            $account->name = 'Invoice Ninja';
-            $account->work_email = 'contact@invoiceninja.com';
-            $account->work_phone = '(800) 763-1948';
+            $account->name = 'Invoice cfac iheb dev team';
+            $account->work_email = 'iheb@cfac.com.tn';
+            $account->work_phone = '(216) 538-53155';
             $account->account_key = NINJA_ACCOUNT_KEY;
             $account->company_id = $company->id;
             $account->save();
@@ -622,7 +622,7 @@ class AccountRepository
         return false;
     }
 
-    public function findUserAccounts($userId1, $userId2 = false, $userId3 = false, $userId4 = false, $userId8 = false, $userId9 = false)
+    public function findUserAccounts($userId1, $userId2 = false, $userId3 = false, $userId4 = false, $userId8 = false, $userId9 = false, $userId10= false)
     {
         if (! Schema::hasTable('user_accounts')) {
             return false;
@@ -768,8 +768,32 @@ class AccountRepository
                     ->orWhere('user_id19', '=', $userId9)
                     ->orWhere('user_id20', '=', $userId9);
         }
-
-        //& this function is to make choise in the user_accounts by user_id
+/*
+        //& this function is to make user_id10 make changes in the table user_accounts                                
+        if ($userId10) {
+            $query->orWhere('user_id1', '=', $userId10)
+                    ->orWhere('user_id2', '=', $userId10)
+                    ->orWhere('user_id3', '=', $userId10)
+                    ->orWhere('user_id4', '=', $userId10)
+                    ->orWhere('user_id5', '=', $userId10)
+                    ->orWhere('user_id6', '=', $userId10)
+                    ->orWhere('user_id7', '=', $userId10)
+                    ->orWhere('user_id8', '=', $userId10)
+                    ->orWhere('user_id9', '=', $userId10)
+                    ->orWhere('user_id10', '=', $userId10)
+                    ->orWhere('user_id11', '=', $userId10)
+                    ->orWhere('user_id12', '=', $userId10)
+                    ->orWhere('user_id13', '=', $userId10)
+                    ->orWhere('user_id14', '=', $userId10)
+                    ->orWhere('user_id15', '=', $userId10)
+                    ->orWhere('user_id16', '=', $userId10)
+                    ->orWhere('user_id17', '=', $userId10)
+                    ->orWhere('user_id18', '=', $userId10)
+                    ->orWhere('user_id19', '=', $userId10)
+                    ->orWhere('user_id20', '=', $userId10);
+        }
+*/
+        //& this function is to make choice in the user_accounts by user_id
         return $query->first(['id', 'user_id1', 'user_id2', 'user_id3', 'user_id4', 'user_id5'
         , 'user_id6', 'user_id7', 'user_id8', 'user_id9', 'user_id10', 'user_id11', 'user_id12'
         , 'user_id13', 'user_id14', 'user_id15', 'user_id16', 'user_id17', 'user_id18', 'user_id19'
@@ -832,13 +856,13 @@ class AccountRepository
         return self::prepareUsersData($record);
     }
     //& this function is to go over associated accounts and give userIds the access 
-    public function associateAccounts($userId1, $userId2, $userId3, $userId4, $userId8, $userId9)
+    public function associateAccounts($userId1, $userId2, $userId3, $userId4, $userId8, $userId9, $userId10)
     {
-        $record = self::findUserAccounts($userId1, $userId2, $userId3, $userId4, $userId8, $userId9);
+        $record = self::findUserAccounts($userId1, $userId2, $userId3, $userId4, $userId8, $userId9, $userId10);
 
         //& this function is to go over the records and give userIds the access for display
         if ($record) {
-            foreach ([$userId1, $userId2, $userId3, $userId4, $userId8, $userId9] as $userId) {
+            foreach ([$userId1, $userId2, $userId3, $userId4, $userId8, $userId9, $userId10] as $userId) {
                 if (! $record->hasUserId($userId)) {
                     $record->setUserId($userId);
                 }
@@ -851,6 +875,7 @@ class AccountRepository
             $record->user_id4 = $userId4;
             $record->user_id8 = $userId8;
             $record->user_id9 = $userId9;
+            $record->user_id10 = $userId10;
         }
 
         $record->save();

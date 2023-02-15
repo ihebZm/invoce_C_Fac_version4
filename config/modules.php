@@ -144,10 +144,10 @@ return [
     */
 
     'composer' => [
-        'vendor' => 'invoiceninja',
+        'vendor' => 'invoicecfac',
         'author' => [
-            'name' => 'Hillel Coren',
-            'email' => 'contact@invoiceninja.com',
+            'name' => 'Iheb Zmerli',
+            'email' => 'iheb@cfac.com.tn',
         ],
     ],
     /*
