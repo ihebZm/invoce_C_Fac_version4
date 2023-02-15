@@ -275,7 +275,7 @@ $LANG = array(
                           Pro povolení všech skvělých profi vlastností si prosím přečtěte instrukce pro provedení platby na zaslané faktuře
                           pro roční využívání Profi plánu.<p/>
                           Nemůžete fakturu najít? Potřebujete pomoc? Rádi Vám pomůžeme na
-                          -- emailu contact@invoiceninja.com',
+                          -- emailu iheb@cfac.com.tn',
     'unsaved_changes' => 'Máte neuložené změny',
     'custom_fields' => 'Volitelná pole',
     'company_fields' => 'Pole pro firmu',

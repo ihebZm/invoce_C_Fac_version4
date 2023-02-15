@@ -276,7 +276,7 @@ asociată contului tău. Pentru a debloca cele mai tari
 opțiuni Pro, vă rugăm să urmăriți instrucțiunile de pe factură
 pentru un an de nivel Pro de facturare.5
 Nu găsești factura? Ai nevoie de asistență suplimentară? Suntem aici sa ajutăm
--- trimite-ne un email la contact@invoiceninja.com',
+-- trimite-ne un email la iheb@cfac.com.tn',
     'unsaved_changes' => 'Ai modificari nesalvate',
     'custom_fields' => 'Câmpuri personalizate',
     'company_fields' => 'Câmpuri Persoana Juridică',

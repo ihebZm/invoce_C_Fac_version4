@@ -273,7 +273,7 @@ $LANG = array(
     'pro_plan_success' => '感謝您使用 Invoice Ninja 的專業版!<p/>&nbsp;<br/>
                           <b>下一步</b><p/>一份待付的發票已寄送到您的帳號所使用的電子郵件地址
                           欲啟用專業版所有的厲害功能，請依循發票上的指示付款，以使用為期一年的專業級發票開立作業。<p/>
-                         無法找到發票？需要進一步的協助? 我們樂於提供協助-- 請寫電子郵件給我們寄至 contact@invoiceninja.com',
+                         無法找到發票？需要進一步的協助? 我們樂於提供協助-- 請寫電子郵件給我們寄至 iheb@cfac.com.tn',
     'unsaved_changes' => '您有尚未儲存的修改',
     'custom_fields' => '自訂欄位',
     'company_fields' => '公司欄位',

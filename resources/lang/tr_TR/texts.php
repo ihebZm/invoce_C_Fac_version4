@@ -275,7 +275,7 @@ $LANG = array(
 adresine gönderildi. Müthiş tüm özelliklerin kilidini açmak için lütfen bir yıl boyunca
  Pro-level faturalandırmayla ödenecek faturadaki talimatları izleyin.<p/>
                           Faturayı bulamıyor musunuz? Daha fazla yardıma mı ihtiyacınız var? Yardım etmekten mutluluk duyarız
-                          --contact@invoiceninja.com adresine e-posta gönderebilirsiniz.',
+                          --iheb@cfac.com.tn adresine e-posta gönderebilirsiniz.',
     'unsaved_changes' => 'Kaydedilmemiş değişiklikleriniz var',
     'custom_fields' => 'Özel Alanlar',
     'company_fields' => 'Firma Alanları',

@@ -155,3 +155,6 @@ https://www.youtube.com/watch?v=v8R0FRkFOmg
 
 documentation URL:
 https://github.com/anhskohbo/no-captcha
+
+troubleshooting the error : ERROR: cURL error 60: SSL certificate problem: unable to get local issuer certificate for local pc:(work fine)
+https://www.youtube.com/watch?v=f5jQqWvw44U

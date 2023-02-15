@@ -37,7 +37,7 @@
                 <pre>sudo chown www-data:www-data {{ base_path('.env') }}</pre>
             </div>
         @endif
-        If you need help you can either post to our <a href="https://www.invoiceninja.com/forums/forum/support/" target="_blank">support forum</a> or email us at <a href="mailto:contact@invoiceninja.com" target="_blank">contact@invoiceninja.com</a>.
+        If you need help you can either post to our <a href="http://cfacgroup.com/fr/article/e-cfac_16/13" target="_blank">support forum</a> or email us at <a href="mailto:iheb@cfac.com.tn" target="_blank">iheb@cfac.com.tn</a>.
 
         @if (! env('PRECONFIGURED_INSTALL'))
         <p>

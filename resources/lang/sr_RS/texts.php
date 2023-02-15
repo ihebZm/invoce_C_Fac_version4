@@ -276,7 +276,7 @@ $LANG = array(
                           Pro mogućnosti, molimo pratite upute za plaćanje godišnje pretplate
                           za  Invoice Ninja Pro plan.<p/>
                           Ne možete naći račun? Trebate dodatnu pomoć? Sa zadovoljstvom ćemo pomoći
-                          -- pošaljite nam e-poštu na contact@invoiceninja.com',
+                          -- pošaljite nam e-poštu na iheb@cfac.com.tn',
     'unsaved_changes' => 'Imate nesačuvanih promena',
     'custom_fields' => 'Prilagođena polja',
     'company_fields' => 'Polja poduzeća',

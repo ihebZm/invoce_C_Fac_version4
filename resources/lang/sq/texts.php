@@ -273,7 +273,7 @@ $LANG = array(
     'pro_plan_success' => 'Ju faleminderit që keni zgjedhur Invoice Ninja Pro plan!<p/>&nbsp;<br/>
                           <b>Next Steps</b><p/>Një faturë për pagesë ju është dërguar në email. Për të përdorur të gjitha opsionet e paketës Pro, ju lutem përcjellni udhëzimet në faturë për të realizuar pagesën.<p/>
                           Nuk mund ta gjeni faturën? Ju duhet asistencë shtesë? Jemi të lumtur t\'ju ndihmojmë
-                          -- na dërgoni email në contact@invoiceninja.com',
+                          -- na dërgoni email në iheb@cfac.com.tn',
     'unsaved_changes' => 'Keni ndryshime të pa ruajtura',
     'custom_fields' => 'Fushat e ndryshueshme',
     'company_fields' => 'Fushat e kompanisë',

@@ -45,7 +45,7 @@
               </div>
           </div>
           <br/>
-          <p>{!! trans('texts.reseller_text', ['email' => HTML::mailto('contact@invoiceninja.com')]) !!}</p>
+          <p>{!! trans('texts.reseller_text', ['email' => HTML::mailto('iheb@cfac.com.tn')]) !!}</p>
         </div>
         </div>
         </div>

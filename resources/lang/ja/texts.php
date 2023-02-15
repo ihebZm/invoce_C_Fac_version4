@@ -276,7 +276,7 @@ $LANG = array(
                           Pro features, please follow the instructions on the invoice to pay
                           for a year of Pro-level invoicing.<p/>
                           Can\'t find the invoice? Need further assistance? We\'re happy to help
-                          -- email us at contact@invoiceninja.com',
+                          -- email us at iheb@cfac.com.tn',
     'unsaved_changes' => '未保存の変更があります。',
     'custom_fields' => 'カスタムフィールド',
     'company_fields' => '企業フィールド',

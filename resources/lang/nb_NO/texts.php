@@ -276,7 +276,7 @@ $LANG = array(
                           Pro-funksjonene, kan du følge instruksjonene på fakturaen til å
                           betale for et år med Pro-nivå funksjoner.<p/>
                           Finner du ikke fakturaen? Trenger du mer hjelp? Vi hjelper deg gjerne om det skulle være noe
-                          -- kontakt oss på contact@invoiceninja.com',
+                          -- kontakt oss på iheb@cfac.com.tn',
     'unsaved_changes' => 'Du har ulagrede endringer',
     'custom_fields' => 'Egendefinerte felt',
     'company_fields' => 'Firmaets felt',

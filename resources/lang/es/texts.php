@@ -275,7 +275,7 @@ $LANG = array(
                           electrónico asociado con tu cuenta. Para desbloquear todas las increíbles funciones del plan Pro, por favor sigue las instrucciones en la factura para pagar
                           por un año del plan Pro.<p/>
                           No puedes encontrar la factura ? Necesitas más ayuda? Estamos felices de ayudarte
-                          -- mándanos un correo a contact@invoiceninja.com',
+                          -- mándanos un correo a iheb@cfac.com.tn',
     'unsaved_changes' => 'Tienes cambios no guardados',
     'custom_fields' => 'Campos personalizados',
     'company_fields' => 'Campos de la Empresa',
