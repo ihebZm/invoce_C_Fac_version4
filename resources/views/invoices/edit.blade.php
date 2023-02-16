@@ -1202,11 +1202,11 @@
 			invoice.imageWidth = {{ $account->getLogoWidth() }};
 			invoice.imageHeight = {{ $account->getLogoHeight() }};
 		@endif
-
+/* //& START HERE! this section ben commented to remove the preview from the invoice modele
 		if (! invoice.public_id || NINJA.formIsChanged) {
 			invoice.watermark = "{{ strtoupper(trans('texts.preview')) }}";
 		}
-
+*/	//& END HERE! this section ben commented to remove the preview from the invoice modele
         return invoice;
 	}
 

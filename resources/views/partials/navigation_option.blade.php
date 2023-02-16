@@ -15,7 +15,8 @@
     @elseif (Auth::user()->can('create', $option) || Auth::user()->can('create', substr($option, 0, -1)))
         <a type="button" class="btn btn-primary btn-sm pull-right"
             href="{{ url("/{$option}/create") }}">
-            <i class="fa fa-plus-circle" style="width:20px" title="{{ trans('texts.create_new') }}"></i>
+            <!-- //^ this line have been changed so the button of creation don t drop down the slide bare navigation options -->
+            <i class="fa fa-plus-circle" style="width:3px" title="{{ trans('texts.create_new') }}"></i>
         </a>
     @endif
 

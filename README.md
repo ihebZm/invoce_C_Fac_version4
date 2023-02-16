@@ -158,3 +158,10 @@ https://github.com/anhskohbo/no-captcha
 
 troubleshooting the error : ERROR: cURL error 60: SSL certificate problem: unable to get local issuer certificate for local pc:(work fine)
 https://www.youtube.com/watch?v=f5jQqWvw44U
+
+
+## Using mailgun to monitore the emails (to add this option):
+1- know when your mail are viewed.
+2- estimate the tracking email.
+3- trouble shoot your email logs.
+4- estimate next send to best engage with audience

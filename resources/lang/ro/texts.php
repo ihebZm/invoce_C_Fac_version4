@@ -2726,7 +2726,7 @@ Atentie: Folosește Legacy API Key, nu Token API',
     'none' => 'None',
     'proposal_message_button' => 'To view your proposal for :amount, click the button below.',
     'proposal' => 'Proposal',
-    'proposals' => 'Proposals',
+    'proposals' => 'Proposals & conventions',           //^ this is a change for the propsition rename of CFAC
     'list_proposals' => 'List Proposals',
     'new_proposal' => 'New Proposal',
     'edit_proposal' => 'Edit Proposal',

@@ -439,7 +439,7 @@ function InvoiceModel(data) {
         @else
             var tax1 = roundToTwo(total * (taxRate1/100));
         @endif
-
+//& changing roundToTwo(total * (taxRate2/100))   to roundToTwo((total + tax1) * (taxRate2/100)) to add tax and than affect tax rat_2
         var taxRate2 = parseFloat(self.tax_rate2());
         @if ($account->inclusive_taxes)
             var tax2 = roundToTwo(total - (total / (1 + (taxRate2 / 100))));
@@ -477,11 +477,13 @@ function InvoiceModel(data) {
                     taxes[key] = {name:item.tax_name1(), rate:item.tax_rate1(), amount:taxAmount};
                 }
             }
-
+            //& START HERE! this section it s to change the tax rate 2 to make it on the TTC not on the total HT
             @if ($account->inclusive_taxes)
-                var taxAmount = roundToTwo(lineTotal - (lineTotal / (1 + (item.tax_rate2() / 100))))
+                var taxAmount = roundToTwo((lineTotal+taxAmount) - ((lineTotal+taxAmount) / (1 + (item.tax_rate2() / 100))))
+                console.log('test1 :',taxAmount);
             @else
-                var taxAmount = roundToTwo(lineTotal * item.tax_rate2() / 100);
+                var taxAmount = roundToTwo((lineTotal+taxAmount) * item.tax_rate2() / 100);
+                console.log('test2 :',taxAmount);
             @endif
             if (taxAmount) {
                 var key = item.tax_name2() + item.tax_rate2();
@@ -491,6 +493,7 @@ function InvoiceModel(data) {
                     taxes[key] = {name:item.tax_name2(), rate:item.tax_rate2(), amount:taxAmount};
                 }
             }
+            //& START HERE! this section it s to change the tax rate 2 to make it on the TTC not on the total HT
         }
         return taxes;
     });
