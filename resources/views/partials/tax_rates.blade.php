@@ -1,6 +1,6 @@
 {!! Former::select('tax_select1')
   ->addOption('','')
-  ->label(isset($taxRateLabel) ? $taxRateLabel : trans('texts.tax_rate'))
+  ->label(isset($taxRateLabel) ? $taxRateLabel : trans('texts.tax_rate_depenses1'))
   ->onchange('taxSelectChange(event)')
   ->fromQuery($taxRates, null, 'public_id') !!}
 
@@ -12,7 +12,7 @@
 <div style="display:{{ $account->enable_second_tax_rate ? 'block' : 'none' }}">
   {!! Former::select('tax_select2')
       ->addOption('','')
-      ->label(isset($taxRateLabel) ? $taxRateLabel : trans('texts.tax_rate'))
+      ->label(isset($taxRateLabel) ? $taxRateLabel : trans('texts.tax_rate_depenses2'))
       ->onchange('taxSelectChange(event)')
       ->fromQuery($taxRates, null, 'public_id') !!}
 

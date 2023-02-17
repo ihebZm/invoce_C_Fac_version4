@@ -48,7 +48,7 @@
                             ->addGroupClass('expense-category-select') !!}
 
                     {!! Former::text('amount')
-                            ->label(trans('texts.amount'))
+                            ->label(trans('texts.amount_depensesHT'))
                             ->data_bind("value: amount, valueUpdate: 'afterkeydown'")
                             ->addGroupClass('amount')
                             ->append('<span data-bind="html: expenseCurrencyCode"></span>') !!}
@@ -58,7 +58,12 @@
                             ->label(trans('texts.currency_id'))
                             ->data_placeholder(Utils::getFromCache($account->getCurrencyId(), 'currencies')->getTranslatedName())
                             ->fromQuery($currencies, 'name', 'id') !!}
-
+                <!-- //^ this location of the code been changed to the demende of cfac group choise   -->
+                    <div style="display:none" data-bind="visible: apply_taxes">
+                        <br/>
+                        @include('partials.tax_rates')
+                    </div>
+                    
                     @if (! $isRecurring)
                         {!! Former::text('expense_date')
                                 ->data_date_format(Session::get(SESSION_DATE_PICKER_FORMAT, DEFAULT_DATE_PICKER_FORMAT))
@@ -89,12 +94,10 @@
                                     ->label(' ')
                                     ->value(1) !!}
                         @endif
+                        {{--//^ this section ben added to show other Taxs TVA and Retoure à la source dans la depence --}}
                     @endif
 
-                    <div style="display:none" data-bind="visible: apply_taxes">
-                        <br/>
-                        @include('partials.tax_rates')
-                    </div>
+
 
                     @if (!$expense || ($expense && !$expense->invoice_id))
                         {!! Former::checkbox('should_be_invoiced')
