@@ -165,3 +165,15 @@ https://www.youtube.com/watch?v=f5jQqWvw44U
 2- estimate the tracking email.
 3- trouble shoot your email logs.
 4- estimate next send to best engage with audience
+
+## to clear all cache use this commend:
+```sh
+php artisan optimize:clear
+```
+
+## to rebuild css and javascrip files use this commend:
+```sh
+php artisan clear-compiled 
+composer dump-autoload
+php artisan optimize
+```

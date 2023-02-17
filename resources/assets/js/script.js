@@ -698,7 +698,7 @@ function calculateAmounts(invoice) {
       }
     }
   }
-
+console.log('here i m');
   invoice.has_item_taxes = hasTaxes;
   invoice.has_item_discounts = hasDiscount;
   invoice.subtotal_amount = total;
