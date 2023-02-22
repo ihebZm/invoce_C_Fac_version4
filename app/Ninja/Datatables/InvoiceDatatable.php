@@ -72,12 +72,12 @@ class InvoiceDatatable extends EntityDatatable
                         $str3 = null;
                     }
                     if($model->tax_rate2 != 0){
-                        $str2 = $model->tax_name2.' :' .Utils::formatMoney($amount2, $model->currency_id, $model->country_id). ' <br> ';                       
+                        $str2 = $model->tax_name2. ' :' .Utils::formatMoney($amount2, $model->currency_id, $model->country_id). ' <br> ';                       
                     }else{
                         $str2 = null;
                     }
                     if($model->tax_rate1 != 0){
-                        $str = $model->tax_name1.' :' .Utils::formatMoney($amount1, $model->currency_id, $model->country_id). ' <br> ';                       
+                        $str = $model->tax_name1. ' :' .Utils::formatMoney($amount1, $model->currency_id, $model->country_id). ' <br> ';                       
                     }else{
                         $str = null;
                     }

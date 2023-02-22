@@ -84,6 +84,25 @@ class ExpenseDatatable extends EntityDatatable
                     $str2 = Utils::formatMoney($amount2, $model->expense_currency_id);
                     $str3 = Utils::formatMoney($amount3, $model->expense_currency_id);
 
+                    //? customize the total taxes
+                    if($model->tax_rate1 != 0){
+                        $str = $model->tax_name1.' :' .Utils::formatMoney($amount, $model->expense_currency_id). ' <br> ';                       
+                    }else{
+                        $str = null;
+                    }
+                    if($model->tax_rate2 != 0){
+                        $str2 = $model->tax_name2.' :' .Utils::formatMoney($amount2, $model->expense_currency_id). ' <br> ';                       
+                    }else{
+                        $str2 = null;
+                    }
+                    if($model->custom_value1 != 0){
+                        $str3 = 'DdT : ' .Utils::formatMoney($amount3, $model->expense_currency_id);                       
+                    }else{
+                        $str3 = null;
+                    }
+                    if(($str3==null) && ($str2==null) && ($str==null)){
+                        return trans("texts.NoTax"); 
+                    }
                     // show both the amount and the converted amount
                     if ($model->exchange_rate != 1) {
                         $converted = round($amount * $model->exchange_rate, 2);
@@ -97,7 +116,7 @@ class ExpenseDatatable extends EntityDatatable
                         
                     }
 
-                    return 'TVA :' . $str. ' <br> ' . 'RS :' . $str2 . ' <br> ' . 'DdT :' .$str3;
+                    return $str . $str2 . $str3;
                 },
             ],
             //& Show columns for amount TTC in expenses DataTable 

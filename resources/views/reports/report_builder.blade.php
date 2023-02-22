@@ -489,6 +489,7 @@
 
 		// parse 1,000.00 or 1.000,00
 		function convertStringToNumber(str) {
+			// ? this fuction must change to adjust the rapport show
 			str = str + '' || '';
 			if (str.indexOf(':') >= 0) {
 				return roundToTwo(moment.duration(str).asHours());
@@ -708,6 +709,7 @@
 						  var subtotal = 0;
 				          $rows.each(function() {
 				            var txt = $(this).find("td").eq(i).text();
+							//? this line must change
 				            subtotal += convertStringToNumber(txt) || 0;
 				          });
 				          $cell.find(".group-count").append(' | ' + label + ': ' + subtotal);
