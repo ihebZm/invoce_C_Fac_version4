@@ -46,6 +46,7 @@ class RecurringExpense extends EntityModel
         'tax_rate2',
         'tax_name2',
         'should_be_invoiced',
+        'custom_value1',
         //'start_date',
         //'end_date',
         'frequency_id',
@@ -129,7 +130,7 @@ class RecurringExpense extends EntityModel
 
     public function amountWithTax()
     {
-        return $this->amount + Utils::calculateTaxes($this->amount, $this->tax_rate1, $this->tax_rate2);
+        return $this->amount + Utils::calculateTaxes($this->amount, $this->tax_rate1, $this->tax_rate2) + $this->custom_value1;
     }
 }
 

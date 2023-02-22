@@ -264,7 +264,8 @@ class Expense extends EntityModel
 
     public function amountWithTax()
     {
-        return $this->amount + $this->taxAmount();
+        //^ this line been changed to add the Timbre fiscal on the amount page calandar report
+        return $this->amount + $this->taxAmount() + $this->custom_value1;
     }
 
     public function taxAmount()
@@ -323,7 +324,17 @@ class Expense extends EntityModel
             return 'primary';
         }
     }
+// & START HERE! add this to get the custom_value retenu a la source  
 
+    /**
+     * @return mixed
+     */
+    public function getCustomValue1()
+    {
+        return $this->custom_value1;
+    }
+
+// & END HERE! add this to get the custom_value retenu a la source 
     public function statusClass()
     {
         $balance = $this->invoice ? $this->invoice->balance : 0;

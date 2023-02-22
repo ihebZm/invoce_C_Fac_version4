@@ -55,6 +55,7 @@ class InvoiceRepository extends BaseRepository
             ->join('clients', 'clients.id', '=', 'invoices.client_id')
             ->join('invoice_statuses', 'invoice_statuses.id', '=', 'invoices.invoice_status_id')
             ->join('contacts', 'contacts.client_id', '=', 'clients.id')
+            ->join('invoice_items', 'invoice_items.invoice_id', '=', 'invoices.id')
             ->where('invoices.account_id', '=', $accountId)
             ->where('contacts.deleted_at', '=', null)
             ->where('invoices.is_recurring', '=', false)
@@ -91,6 +92,11 @@ class InvoiceRepository extends BaseRepository
                 'invoices.user_id',
                 'invoices.is_public',
                 'invoices.is_recurring',
+                'invoice_items.tax_name1',
+                'invoice_items.tax_rate1',
+                'invoice_items.tax_name2',
+                'invoice_items.tax_rate2',
+                'invoices.custom_value1',
                 'invoices.private_notes'
             );
 
@@ -588,10 +594,11 @@ class InvoiceRepository extends BaseRepository
                     $itemTax += round($lineTotal * $taxRate1 / 100, 2);
                 }
             }
+            //^ this ben changed to update to  other than to apply the tax of the Total amount
             if (isset($item['tax_rate2'])) {
                 $taxRate2 = Utils::parseFloat($item['tax_rate2']);
                 if ($taxRate2 != 0) {
-                    $itemTax += round($lineTotal * $taxRate2 / 100, 2);
+                    $itemTax += round(($lineTotal+$itemTax) * $taxRate2 / 100, 2);
                 }
             }
         }

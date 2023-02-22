@@ -710,7 +710,7 @@
 				            var txt = $(this).find("td").eq(i).text();
 				            subtotal += convertStringToNumber(txt) || 0;
 				          });
-				          $cell.find(".group-count").append(' | ' + label + ': ' + roundToTwo(subtotal, true));
+				          $cell.find(".group-count").append(' | ' + label + ': ' + subtotal);
 					  }
 			        },
 			    }

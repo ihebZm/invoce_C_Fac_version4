@@ -58,7 +58,7 @@
                             ->label(trans('texts.currency_id'))
                             ->data_placeholder(Utils::getFromCache($account->getCurrencyId(), 'currencies')->getTranslatedName())
                             ->fromQuery($currencies, 'name', 'id') !!}
-                <!-- //^ this location of the code been changed to the demende of cfac group choise   -->
+                <!-- //^ this location of the code been changed to the demands of Cfac group choice   -->
                     <div style="display:none" data-bind="visible: apply_taxes">
                         <br/>
                         @include('partials.tax_rates')

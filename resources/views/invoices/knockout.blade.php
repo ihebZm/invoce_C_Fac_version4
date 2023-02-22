@@ -444,7 +444,7 @@ function InvoiceModel(data) {
         @if ($account->inclusive_taxes)
             var tax2 = roundToTwo(total - (total / (1 + (taxRate2 / 100))));
         @else
-            var tax2 = roundToTwo(total * (taxRate2/100));
+            var tax2 = roundToTwo((total + tax1) * (taxRate2/100));
         @endif
 
         return self.formatMoney(tax1 + tax2);
@@ -559,7 +559,8 @@ function InvoiceModel(data) {
 
         @if (! $account->inclusive_taxes)
             var taxAmount1 = roundToTwo(total * parseFloat(self.tax_rate1()) / 100);
-            var taxAmount2 = roundToTwo(total * parseFloat(self.tax_rate2()) / 100);
+            //& this been changed to adjast Cfac changes to aplicate taxe on TVA
+            var taxAmount2 = roundToTwo((total+taxAmount1) * parseFloat(self.tax_rate2()) / 100);
 
             total = NINJA.parseFloat(total) + taxAmount1 + taxAmount2;
             total = roundToTwo(total);

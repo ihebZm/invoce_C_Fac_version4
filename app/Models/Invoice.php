@@ -1376,7 +1376,7 @@ class Invoice extends EntityModel implements BalanceAffecting
         $account = $this->account;
         $taxable = $this->getTaxable();
         $paidAmount = $this->getAmountPaid($calculatePaid);
-
+        //^ check if we need to change in this section for the R à S sur le (montant + tva) 
         if ($this->tax_name1) {
             $invoiceTaxAmount = $this->taxAmount($taxable, $this->tax_rate1);
             $invoicePaidAmount = floatval($this->amount) && $invoiceTaxAmount ? ($paidAmount / $this->amount * $invoiceTaxAmount) : 0;

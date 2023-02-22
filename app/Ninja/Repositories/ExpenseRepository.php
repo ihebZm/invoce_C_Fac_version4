@@ -93,6 +93,7 @@ class ExpenseRepository extends BaseRepository
                         'expenses.tax_rate2',
                         'expenses.private_notes',
                         'expenses.payment_date',
+                        'expenses.custom_value1',
                         'expense_categories.name as category',
                         'expense_categories.user_id as category_user_id',
                         'expense_categories.public_id as category_public_id',

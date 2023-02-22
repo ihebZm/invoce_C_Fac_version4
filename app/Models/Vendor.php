@@ -338,7 +338,8 @@ class Vendor extends EntityModel
     public function getTotalExpenses()
     {
         return DB::table('expenses')
-                ->select('expense_currency_id', DB::raw('sum(expenses.amount + (expenses.amount * expenses.tax_rate1 / 100) + (expenses.amount * expenses.tax_rate2 / 100)) as amount'))
+                //^ this ben changed to update to "(expenses.amount + (expenses.amount * expenses.tax_rate1 / 100))" other than "expenses.amount" to apply the tax of the totale amount
+                ->select('expense_currency_id', DB::raw('sum(expenses.amount + (expenses.amount * expenses.tax_rate1 / 100) + ((expenses.amount + (expenses.amount * expenses.tax_rate1 / 100)) * expenses.tax_rate2 / 100)) + expenses.custom_value1 as amount'))
                 ->whereVendorId($this->id)
                 ->whereIsDeleted(false)
                 ->groupBy('expense_currency_id')
