@@ -163,6 +163,7 @@ $LANG = array(
     'amount' => 'Montant',
     'amountHT' => 'Montant HT',
     'totalTax' => 'Taxe totale',
+    'NoTax' => 'pas des Taxes',
     'amountTTC' => 'Montant TTC',
     'ActionsTable' => 'actionstable',
     'amount_depensesHT' => 'Montant HT',

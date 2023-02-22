@@ -161,6 +161,7 @@ $LANG = array(
     'are_you_sure' => 'Er du sikker?',
     'payment_type_id' => 'Betalingsmetode',
     'amount' => 'Beløb',
+    'NoTax' => 'No Taxes',
     'work_email' => 'E-mail',
     'language_id' => 'Sprog',
     'timezone_id' => 'Tidszone',
