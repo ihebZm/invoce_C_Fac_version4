@@ -507,6 +507,18 @@
                 }
             }
 
+            //? this is an estimation for the amount TTC
+                amountTTC = {{ $expense->getAmount() }};
+                tax_rate1 = {{ $expense->getTaxRate1() }};
+                taxAmount1 = amountTTC * tax_rate1/100;
+                totalAmount1 = amountTTC + taxAmount1;
+
+                tax_rate2 = {{ $expense->getTaxRate2() }};
+                taxAmount2 = totalAmount1 * tax_rate2/100;
+                totalAmount2 = totalAmount1 + taxAmount2;
+
+            //? this is an estimation for the amount TTC
+
             self.getCurrency = function(currencyId) {
                 return currencyMap[currencyId || self.account_currency_id()];
             };

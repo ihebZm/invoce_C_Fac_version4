@@ -489,7 +489,9 @@
 
 		// parse 1,000.00 or 1.000,00
 		function convertStringToNumber(str) {
-			// ? this fuction must change to adjust the rapport show
+			// & been changed with success for Cfac group
+			str = str.replace('.','');
+			str = str.replace(',','.');
 			str = str + '' || '';
 			if (str.indexOf(':') >= 0) {
 				return roundToTwo(moment.duration(str).asHours());
@@ -498,6 +500,7 @@
 				var number = Number(str.replace(/[^0-9\-]+/g, ''));
 				return number / 100;
 			}
+			
 		}
 
 		function ReportTypeModel(type, transType) {
@@ -711,8 +714,12 @@
 				            var txt = $(this).find("td").eq(i).text();
 							//? this line must change
 				            subtotal += convertStringToNumber(txt) || 0;
+							subtotal2 = String(subtotal);
+							subtotal2 = subtotal2.replace('.',',');
 				          });
-				          $cell.find(".group-count").append(' | ' + label + ': ' + subtotal);
+						  
+						  //console.log(subtotal2)number_format(subtotal, 3, ',', '.');
+				          $cell.find(".group-count").append(' | ' + label + ': ' + subtotal2);
 					  }
 			        },
 			    }

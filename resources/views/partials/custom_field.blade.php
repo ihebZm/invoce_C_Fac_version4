@@ -9,7 +9,7 @@
         {!! Former::text($field)
                 ->label(e($label))
                 ->data_bind(empty($databind) ? '' : $databind)
-                ->append('<span style="text-align: right">estimation :</span><span data-bind="html: expenseCurrencyCode"></span>')  !!}
+                ->append('<span style="text-align: right">estimation :<span data-bind="html : totalAmount2"></span></span><span data-bind="html: expenseCurrencyCode"></span>')  !!}
     @endif
 @else
     @if (strpos($label, '|') !== false)

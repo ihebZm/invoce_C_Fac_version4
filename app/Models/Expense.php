@@ -333,7 +333,27 @@ class Expense extends EntityModel
     {
         return $this->custom_value1;
     }
-
+    /**
+     * @return mixed
+     */
+    public function getTaxRate1()
+    {
+        return $this->tax_rate1;
+    }
+    /**
+     * @return mixed
+     */
+    public function getTaxRate2()
+    {
+        return $this->tax_rate2;
+    }
+    /**
+     * @return mixed
+     */
+    public function getAmount()
+    {
+        return $this->amount;
+    }
 // & END HERE! add this to get the custom_value retenu a la source 
     public function statusClass()
     {

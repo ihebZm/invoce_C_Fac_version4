@@ -177,3 +177,6 @@ php artisan clear-compiled
 composer dump-autoload
 php artisan optimize
 ```
+
+# to re build the pdf maker : script in the pdf   bowerDir + '/pdfmake/build/pdfmake.js' decomment in the changes and then comment in production
+npm install --global gulp
