@@ -181,3 +181,7 @@ php artisan optimize
 # to re build the pdf maker : script in the pdf   bowerDir + '/pdfmake/build/pdfmake.js' decomment in the changes and then comment in production
 # this is the URL to see: https://arjunphp.com/run-gulp-tasks-laravel-elixir/
 npm install --global gulp
+
+
+# how to fix the SSH key in git hub and the server to download the project 
+https://www.youtube.com/watch?v=Irj-2tmV0JM

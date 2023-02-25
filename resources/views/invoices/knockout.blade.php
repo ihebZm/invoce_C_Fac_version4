@@ -480,10 +480,8 @@ function InvoiceModel(data) {
             //& START HERE! this section it s to change the tax rate 2 to make it on the TTC not on the total HT
             @if ($account->inclusive_taxes)
                 var taxAmount = roundToTwo((lineTotal+taxAmount) - ((lineTotal+taxAmount) / (1 + (item.tax_rate2() / 100))))
-                console.log('test1 :',taxAmount);
             @else
                 var taxAmount = roundToTwo((lineTotal+taxAmount) * item.tax_rate2() / 100);
-                console.log('test2 :',taxAmount);
             @endif
             if (taxAmount) {
                 var key = item.tax_name2() + item.tax_rate2();
