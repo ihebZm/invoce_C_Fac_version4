@@ -508,6 +508,7 @@
             }
 
             //? this is an estimation for the amount TTC
+            console.log(self.amount());
             if(self.amount()!=null){
                 amountTTC = self.amount();
                 tax_rate1 = self.tax_rate1();
@@ -517,8 +518,12 @@
                 tax_rate2 = self.tax_rate2();
                 taxAmount2 = totalAmount1 * tax_rate2/100;
                 totalAmount2 = totalAmount1 + taxAmount2;
+                totalAmount2Str = Number(totalAmount2).toFixed(3);
+				totalAmount2 = totalAmount2Str.replace('.',',');
             } else {
-                totalAmount2 = 0;
+                totalAmount2Str = Number(0).toFixed(3);
+				totalAmount2 = totalAmount2Str.replace('.',',');
+                
             }
             //? this is an estimation for the amount TTC
 
