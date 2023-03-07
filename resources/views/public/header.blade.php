@@ -87,6 +87,7 @@
                         </li>
                     @endif
                     <!-- //^ ajouter un courier pour le portail client pour deposer ces fichiers 
+                    
                     @if (request()->contact && request()->contact->client->show_courier_in_portal)
                         <li {!! Request::is('*client/courier') ? 'class="active"' : '' !!}>
                             {!! link_to('/client/courier', trans('texts.mail_platform') ) !!}
