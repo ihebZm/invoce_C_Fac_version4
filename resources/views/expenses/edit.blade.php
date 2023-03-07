@@ -508,13 +508,13 @@
             }
 
             //? this is an estimation for the amount TTC
-            if({{ $expense && $expense->getAmount() }}){
-                amountTTC = {{ $expense->getAmount() }};
-                tax_rate1 = {{ $expense->getTaxRate1() }};
+            if(self.amount()!=null){
+                amountTTC = self.amount();
+                tax_rate1 = self.tax_rate1();
                 taxAmount1 = amountTTC * tax_rate1/100;
                 totalAmount1 = amountTTC + taxAmount1;
 
-                tax_rate2 = {{ $expense->getTaxRate2() }};
+                tax_rate2 = self.tax_rate2();
                 taxAmount2 = totalAmount1 * tax_rate2/100;
                 totalAmount2 = totalAmount1 + taxAmount2;
             } else {
