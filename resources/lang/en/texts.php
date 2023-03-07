@@ -70,6 +70,7 @@ $LANG = array(
     'enable_invoice_tax' => 'Enable specifying an <b>invoice tax</b>',
     'enable_line_item_tax' => 'Enable specifying <b>line item taxes</b>',
     'dashboard' => 'Dashboard',
+    'mail_platform' => 'mail platform',
     'dashboard_totals_in_all_currencies_help' => 'Note: add a :link named ":name" to show the totals using a single base currency.',
     'clients' => 'Clients',
     'invoices' => 'Invoices',
