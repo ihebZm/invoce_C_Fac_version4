@@ -70,6 +70,12 @@ $LANG = array(
     'enable_invoice_tax' => 'Enable specifying an <b>invoice tax</b>',
     'enable_line_item_tax' => 'Enable specifying <b>line item taxes</b>',
     'dashboard' => 'Dashboard',
+    //? all the text edit for courrier documents degital
+    'mail_platform' => 'mail platform',
+    'show_courier_in_portal' => 'Show mail management in the customer portal',
+    'client_courier_document' => 'customer courier document portal',
+    'can_view_courier_in_portal' => 'Courier documents are visible in the portal',
+    //? end here ! all the text edit for courrier documents degital
     'dashboard_totals_in_all_currencies_help' => 'Note: add a :link named ":name" to show the totals using a single base currency.',
     'clients' => 'Clients',
     'invoices' => 'Invoices',

@@ -508,6 +508,7 @@
             }
 
             //? this is an estimation for the amount TTC
+            if({{ $expense && $expense->getAmount() }}){
                 amountTTC = {{ $expense->getAmount() }};
                 tax_rate1 = {{ $expense->getTaxRate1() }};
                 taxAmount1 = amountTTC * tax_rate1/100;
@@ -516,7 +517,9 @@
                 tax_rate2 = {{ $expense->getTaxRate2() }};
                 taxAmount2 = totalAmount1 * tax_rate2/100;
                 totalAmount2 = totalAmount1 + taxAmount2;
-
+            } else {
+                totalAmount2 = 0;
+            }
             //? this is an estimation for the amount TTC
 
             self.getCurrency = function(currencyId) {

@@ -70,6 +70,12 @@ $LANG = array(
     'enable_invoice_tax' => 'Activar especificar <b>impost</b>',
     'enable_line_item_tax' => 'Activar especificar <b>impost per línea</b>',
     'dashboard' => 'Tauler de control',
+    //? all the text edit for courrier documents degital
+    'mail_platform' => 'mail platform',
+    'show_courier_in_portal' => 'Show mail management in the customer portal',
+    'client_courier_document' => 'customer courier document portal',
+    'can_view_courier_in_portal' => 'Courier documents are visible in the portal',
+    //? end here ! all the text edit for courrier documents degital
     'dashboard_totals_in_all_currencies_help' => 'Nota: afegiu un :link anomenat ":name" per mostrar els totals utilitzant una moneda base única.',
     'clients' => 'Clients',
     'invoices' => 'Factures',

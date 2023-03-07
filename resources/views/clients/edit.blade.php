@@ -31,6 +31,7 @@
 		{!! Former::populate($client) !!}
 		{!! Former::populateField('task_rate', floatval($client->task_rate) ? Utils::roundSignificant($client->task_rate) : '') !!}
 		{!! Former::populateField('show_tasks_in_portal', intval($client->show_tasks_in_portal)) !!}
+		{!! Former::populateField('show_courier_in_portal', intval($client->show_courier_in_portal)) !!}
 		{!! Former::populateField('send_reminders', intval($client->send_reminders)) !!}
         {!! Former::hidden('public_id') !!}
 	@else
@@ -237,6 +238,10 @@
 								->label('client_portal')
 						        ->value(1) !!}
 						@endif
+						{!! Former::checkbox('show_courier_in_portal')
+						        ->text(trans('texts.show_courier_in_portal'))
+								->label('client_courier_document')
+						        ->value(1) !!}
 						@if ($account->hasReminders())
 							{!! Former::checkbox('send_reminders')
 								->text('send_client_reminders')

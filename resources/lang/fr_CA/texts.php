@@ -70,6 +70,12 @@ $LANG = array(
     'enable_invoice_tax' => 'Spécifier une <b>taxe pour la facture</b>',
     'enable_line_item_tax' => 'Spécifier une <b>taxe pour chaque ligne</b>',
     'dashboard' => 'Tableau de bord',
+    //? all the text edit for courrier documents degital
+    'mail_platform' => 'Plateforme de courrier',
+    'show_courier_in_portal' => 'Afficher la gestion des courier dans le portail client',
+    'client_courier_document' => 'client courier document portail',
+    'can_view_courier_in_portal' => 'Les documents de messagerie sont visibles dans le portail',
+    //? end here ! all the text edit for courrier documents degital
     'mail_platform' => 'Plateforme de courrier',
     'dashboard_totals_in_all_currencies_help' => 'Note: ajoutez un :link intitulé ":name" pour afficher les totaux qui utilisent une seule devise de base.',
     'clients' => 'Clients',

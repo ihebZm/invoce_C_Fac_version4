@@ -633,6 +633,7 @@ CREATE TABLE `clients` (
   `shipping_state` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `shipping_postal_code` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `shipping_country_id` int(10) unsigned DEFAULT NULL,
+  `show_courier_in_portal` tinyint(1) NOT NULL DEFAULT '0',
   `show_tasks_in_portal` tinyint(1) NOT NULL DEFAULT '0',
   `send_reminders` tinyint(1) NOT NULL DEFAULT '1',
   `custom_messages` mediumtext COLLATE utf8_unicode_ci,

@@ -143,6 +143,9 @@
             @if ($client->show_tasks_in_portal)
                 • {{ trans('texts.can_view_tasks') }}<br/>
             @endif
+            @if ($client->show_courier_in_portal)
+                • {{ trans('texts.can_view_courier_in_portal') }}<br/>
+            @endif
             @if ($client->account->hasReminders() && ! $client->send_reminders)
                 • {{ trans('texts.is_not_sent_reminders') }}</br>
             @endif
