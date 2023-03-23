@@ -265,7 +265,7 @@ class Expense extends EntityModel
     public function amountWithTax()
     {
         //^ this line been changed to add the Timbre fiscal on the amount page calandar report
-        return $this->amount + $this->taxAmount() + $this->custom_value1;
+        return floatval($this->amount) + floatval($this->taxAmount()) + floatval($this->custom_value1);
     }
 
     public function taxAmount()
