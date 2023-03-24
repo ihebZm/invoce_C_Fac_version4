@@ -185,3 +185,8 @@ npm install --global gulp
 
 # how to fix the SSH key in git hub and the server to download the project 
 https://www.youtube.com/watch?v=Irj-2tmV0JM
+
+
+# For better hosting the application of Jakarta PaaS
+# application invoice cfac:
+https://www.virtuozzo.com/application-platform-docs/php-application-server-config/
