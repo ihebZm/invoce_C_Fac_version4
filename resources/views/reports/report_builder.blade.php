@@ -717,9 +717,8 @@
 							subtotal2 = String(subtotal);
 							subtotal2 = subtotal2.replace('.',',');
 				          });
-						  var tonumber = convertStringToNumber(subtotal2).toFixed(3);
-						  
-				          $cell.find(".group-count").append(' | ' + label + ': ' + tonumber);
+						  var tonumber = convertStringToNumber(subtotal2).toFixed(3);						  
+				          $cell.find(".group-count").append(' | ' + label + ': ' + tonumber.replace('.',','));
 					  }
 			        },
 			    }
