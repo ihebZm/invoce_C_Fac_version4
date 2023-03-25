@@ -190,3 +190,7 @@ https://www.youtube.com/watch?v=Irj-2tmV0JM
 # For better hosting the application of Jakarta PaaS
 # application invoice cfac:
 https://www.virtuozzo.com/application-platform-docs/php-application-server-config/
+
+## prosses after adding an entreprise à invoice :
+-1 Auth::user()->confirmed must be 0   (in database 'confirmed' change it to 0)
+-2 

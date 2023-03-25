@@ -352,8 +352,8 @@
         </div>
 
       </div>
-
-      {!! Former::open(env('SPEECH_ENABLED') ? '/handle_command' : '/#')->id('search-form')->addClass('navbar-form navbar-right')->role('search') !!}
+      
+        {!! Former::open(env('SPEECH_ENABLED') ? '/handle_command' : '/#')->id('search-form')->addClass('navbar-form navbar-right')->role('search') !!}
         <div class="form-group has-feedback">
           <input type="text" name="command" id="search" style="width: 280px;padding-top:0px;padding-bottom:0px;margin-right:12px;"
             class="form-control" placeholder="{{ trans('texts.search') . ': ' . trans('texts.search_hotkey')}}"/>
