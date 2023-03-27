@@ -320,18 +320,20 @@
                         ])
                     @endif
                 @endforeach
-                @foreach (session(SESSION_USER_ACCOUNTS) as $item)
-                    @if ($item->user_id != Auth::user()->id)
-                        @include('user_account', [
-                            'user_account_id' => $item->id,
-                            'user_id' => $item->user_id,
-                            'account_name' => $item->account_name,
-                            'user_name' => $item->user_name,
-                            'logo_url' => isset($item->logo_url) ? $item->logo_url : "",
-                            'selected' => false,
-                        ])
-                    @endif
-                @endforeach
+                @if(Utils::isCompanyPermit())
+                  @foreach (session(SESSION_USER_ACCOUNTS) as $item)
+                      @if ($item->user_id != Auth::user()->id)
+                          @include('user_account', [
+                              'user_account_id' => $item->id,
+                              'user_id' => $item->user_id,
+                              'account_name' => $item->account_name,
+                              'user_name' => $item->user_name,
+                              'logo_url' => isset($item->logo_url) ? $item->logo_url : "",
+                              'selected' => false,
+                          ])
+                      @endif
+                  @endforeach
+                @endif
             @else
                 @include('user_account', [
                     'account_name' => Auth::user()->account->name ?: trans('texts.untitled'),
@@ -341,7 +343,7 @@
                 ])
             @endif
             <li class="divider"></li>
-            @if (Utils::isAdmin() && Auth::user()->confirmed && Utils::getResllerType() != RESELLER_ACCOUNT_COUNT)
+            @if (Utils::isAdmin() && Auth::user()->confirmed && Utils::getResllerType() != RESELLER_ACCOUNT_COUNT && Utils::isCompanyPermit())
             <? //& this function is changed to show the add company more than 5 company the origin setup and less than 20 company ?>
               @if (!session(SESSION_USER_ACCOUNTS) || count(session(SESSION_USER_ACCOUNTS)) < 20)
                   <li>{!! link_to('#', trans('texts.add_company'), ['onclick' => 'showSignUp()']) !!}</li>
