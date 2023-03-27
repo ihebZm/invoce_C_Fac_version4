@@ -215,6 +215,11 @@ class Utils
         return Auth::check() && Auth::user()->is_admin;
     }
 
+    public static function isCompanyPermit()
+    {
+        return Auth::check() && Auth::user()->is_company_permit;
+    }  
+
     public static function hasPermission($permission, $requireAll = false)
     {
         return Auth::check() && Auth::user()->hasPermission($permission, $requireAll);

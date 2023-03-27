@@ -2787,6 +2787,7 @@ CREATE TABLE `users` (
   `referral_code` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `oauth_user_id` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `oauth_provider_id` int(10) unsigned DEFAULT NULL,
+  `is_company_permit` tinyint(1) NOT NULL DEFAULT '0',
   `is_admin` tinyint(1) NOT NULL DEFAULT '1',
   `bot_user_id` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `google_2fa_secret` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
