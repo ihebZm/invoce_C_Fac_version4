@@ -98,7 +98,7 @@ class InvoiceRepository extends BaseRepository
                 'invoice_items.tax_rate2',
                 'invoices.custom_value1',
                 'invoices.private_notes'
-            );
+            )->distinct();
 
         $this->applyFilters($query, $entityType, ENTITY_INVOICE);
 
