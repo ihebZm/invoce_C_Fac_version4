@@ -629,25 +629,25 @@ class AccountRepository
         }
         //& this function is to make user_id1 make changes in the table user_accounts
         $query = UserAccount::where('user_id1', '=', $userId1)
-                                ->orWhere('user_id2', '=', $userId1)
-                                ->orWhere('user_id3', '=', $userId1)
-                                ->orWhere('user_id4', '=', $userId1)
-                                ->orWhere('user_id5', '=', $userId1)
-                                ->orWhere('user_id6', '=', $userId1)
-                                ->orWhere('user_id7', '=', $userId1)
-                                ->orWhere('user_id8', '=', $userId1)
-                                ->orWhere('user_id9', '=', $userId1)
-                                ->orWhere('user_id10', '=', $userId1)
-                                ->orWhere('user_id11', '=', $userId1)
-                                ->orWhere('user_id12', '=', $userId1)
-                                ->orWhere('user_id13', '=', $userId1)
-                                ->orWhere('user_id14', '=', $userId1)
-                                ->orWhere('user_id15', '=', $userId1)
-                                ->orWhere('user_id16', '=', $userId1)
-                                ->orWhere('user_id17', '=', $userId1)
-                                ->orWhere('user_id18', '=', $userId1)
-                                ->orWhere('user_id19', '=', $userId1)
-                                ->orWhere('user_id20', '=', $userId1);
+                    ->orWhere('user_id2', '=', $userId1)
+                    ->orWhere('user_id3', '=', $userId1)
+                    ->orWhere('user_id4', '=', $userId1)
+                    ->orWhere('user_id5', '=', $userId1)
+                    ->orWhere('user_id6', '=', $userId1)
+                    ->orWhere('user_id7', '=', $userId1)
+                    ->orWhere('user_id8', '=', $userId1)
+                    ->orWhere('user_id9', '=', $userId1)
+                    ->orWhere('user_id10', '=', $userId1)
+                    ->orWhere('user_id11', '=', $userId1)
+                    ->orWhere('user_id12', '=', $userId1)
+                    ->orWhere('user_id13', '=', $userId1)
+                    ->orWhere('user_id14', '=', $userId1)
+                    ->orWhere('user_id15', '=', $userId1)
+                    ->orWhere('user_id16', '=', $userId1)
+                    ->orWhere('user_id17', '=', $userId1)
+                    ->orWhere('user_id18', '=', $userId1)
+                    ->orWhere('user_id19', '=', $userId1)
+                    ->orWhere('user_id20', '=', $userId1);
 
         //& this function is to make user_id2 make changes in the table user_accounts                                
         if ($userId2) {
@@ -768,7 +768,7 @@ class AccountRepository
                     ->orWhere('user_id19', '=', $userId9)
                     ->orWhere('user_id20', '=', $userId9);
         }
-/*
+
         //& this function is to make user_id10 make changes in the table user_accounts                                
         if ($userId10) {
             $query->orWhere('user_id1', '=', $userId10)
@@ -792,7 +792,7 @@ class AccountRepository
                     ->orWhere('user_id19', '=', $userId10)
                     ->orWhere('user_id20', '=', $userId10);
         }
-*/
+
         //& this function is to make choice in the user_accounts by user_id
         return $query->first(['id', 'user_id1', 'user_id2', 'user_id3', 'user_id4', 'user_id5'
         , 'user_id6', 'user_id7', 'user_id8', 'user_id9', 'user_id10', 'user_id11', 'user_id12'
