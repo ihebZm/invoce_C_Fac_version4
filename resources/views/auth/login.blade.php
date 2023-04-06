@@ -48,7 +48,7 @@
 
         <div>
             {!! Former::text('email')->placeholder(trans('texts.email_address'))->raw() !!}
-            {!! Former::password('password')->placeholder(trans('texts.password'))->raw() !!}
+            {!! Former::password('password')->placeholder(trans('texts.password'))->raw() !!}  
         <!-- //^ this form is nocaptcha to stop spam on the login page -->
         
             <div style="text-align: center;">
