@@ -187,6 +187,14 @@ npm install --global gulp
 https://www.youtube.com/watch?v=Irj-2tmV0JM
 
 
-# For better hosting the application of Jakarta PaaS
-# application invoice cfac:
-https://www.virtuozzo.com/application-platform-docs/php-application-server-config/
+# how to fix the CRON job if it does not work fine on your server
+```
+f you server doesn’t support crons commands can be run by setting a value for COMMAND_SECRET in the .env file and then loading /run_command?command=<command>&secret=<secret>. The following commands are supported: send-invoices, send-reminders and update-key.
+```
+link video: https://github.com/invoiceninja/invoiceninja/issues/2332
+```
+http://invoicepro.cfacgroup.com/run_command?command=send-invoices&secret=10101010
+
+# on the cron server
+0 7 * * * wget "http://invoicepro.cfacgroup.com/run_command?command=send-invoices&secret=10101010"
+```
