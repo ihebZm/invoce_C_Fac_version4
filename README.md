@@ -198,3 +198,9 @@ http://invoicepro.cfacgroup.com/run_command?command=send-invoices&secret=1010101
 # on the cron server
 0 7 * * * wget "http://invoicepro.cfacgroup.com/run_command?command=send-invoices&secret=10101010"
 ```
+
+# how to set up honeypot 
+https://www.youtube.com/watch?v=Qcc-HczRcLE
+
+git link : https://github.com/spatie/laravel-honeypot
+

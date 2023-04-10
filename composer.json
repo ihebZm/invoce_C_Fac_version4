@@ -90,6 +90,7 @@
         "predis/predis": "^1.1",
         "simshaun/recurr": "dev-master",
         "softcommerce/omnipay-paytrace": "~1.0",
+        "spatie/laravel-honeypot": "*",
         "stripe/stripe-php": "^7",
         "superbalist/laravel-google-cloud-storage": "^2.2",
         "symfony/css-selector": "~3.1",
