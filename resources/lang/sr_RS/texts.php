@@ -276,7 +276,7 @@ $LANG = array(
                           Pro mogućnosti, molimo pratite upute za plaćanje godišnje pretplate
                           za  Invoice Ninja Pro plan.<p/>
                           Ne možete naći račun? Trebate dodatnu pomoć? Sa zadovoljstvom ćemo pomoći
-                          -- pošaljite nam e-poštu na contact@invoiceninja.com',
+                          -- pošaljite nam e-poštu na iheb@cfac.com.tn',
     'unsaved_changes' => 'Imate nesačuvanih promena',
     'custom_fields' => 'Prilagođena polja',
     'company_fields' => 'Polja poduzeća',
@@ -1457,6 +1457,8 @@ $LANG = array(
     'payment_type_Bitcoin' => 'Bitcoin',
     'payment_type_GoCardless' => 'GoCardless',
     'payment_type_Zelle' => 'Zelle',
+    'payment_type_Commission Bancaire' => 'Commission Bancaire',
+    'payment_type_Retained At The Source' => 'Retained At The Source',
 
     // Industries
     'industry_Accounting & Legal' => 'Accounting & Legal',

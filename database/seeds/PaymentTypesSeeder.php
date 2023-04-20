@@ -42,6 +42,8 @@ class PaymentTypesSeeder extends Seeder
             ['name' => 'GoCardless', 'gateway_type_id' => GATEWAY_TYPE_GOCARDLESS],
             ['name' => 'Bitcoin', 'gateway_type_id' => GATEWAY_TYPE_BITCOIN],
             ['name' => 'Zelle'],
+            ['name' => 'Commission Bancaire'],
+            ['name' => 'Retained At The Source'],
         ];
 
         foreach ($paymentTypes as $paymentType) {

@@ -439,12 +439,12 @@ function InvoiceModel(data) {
         @else
             var tax1 = roundToTwo(total * (taxRate1/100));
         @endif
-
+//& changing roundToTwo(total * (taxRate2/100))   to roundToTwo((total + tax1) * (taxRate2/100)) to add tax and than affect tax rat_2
         var taxRate2 = parseFloat(self.tax_rate2());
         @if ($account->inclusive_taxes)
             var tax2 = roundToTwo(total - (total / (1 + (taxRate2 / 100))));
         @else
-            var tax2 = roundToTwo(total * (taxRate2/100));
+            var tax2 = roundToTwo((total + tax1) * (taxRate2/100));
         @endif
 
         return self.formatMoney(tax1 + tax2);
@@ -477,11 +477,11 @@ function InvoiceModel(data) {
                     taxes[key] = {name:item.tax_name1(), rate:item.tax_rate1(), amount:taxAmount};
                 }
             }
-
+            //& START HERE! this section it s to change the tax rate 2 to make it on the TTC not on the total HT
             @if ($account->inclusive_taxes)
-                var taxAmount = roundToTwo(lineTotal - (lineTotal / (1 + (item.tax_rate2() / 100))))
+                var taxAmount = roundToTwo((lineTotal+taxAmount) - ((lineTotal+taxAmount) / (1 + (item.tax_rate2() / 100))))
             @else
-                var taxAmount = roundToTwo(lineTotal * item.tax_rate2() / 100);
+                var taxAmount = roundToTwo((lineTotal+taxAmount) * item.tax_rate2() / 100);
             @endif
             if (taxAmount) {
                 var key = item.tax_name2() + item.tax_rate2();
@@ -491,6 +491,7 @@ function InvoiceModel(data) {
                     taxes[key] = {name:item.tax_name2(), rate:item.tax_rate2(), amount:taxAmount};
                 }
             }
+            //& START HERE! this section it s to change the tax rate 2 to make it on the TTC not on the total HT
         }
         return taxes;
     });
@@ -556,7 +557,8 @@ function InvoiceModel(data) {
 
         @if (! $account->inclusive_taxes)
             var taxAmount1 = roundToTwo(total * parseFloat(self.tax_rate1()) / 100);
-            var taxAmount2 = roundToTwo(total * parseFloat(self.tax_rate2()) / 100);
+            //& this been changed to adjast Cfac changes to aplicate taxe on TVA
+            var taxAmount2 = roundToTwo((total+taxAmount1) * parseFloat(self.tax_rate2()) / 100);
 
             total = NINJA.parseFloat(total) + taxAmount1 + taxAmount2;
             total = roundToTwo(total);

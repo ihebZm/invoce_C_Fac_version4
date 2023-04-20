@@ -17,7 +17,7 @@ function generatePDF(invoice, javascript, force, cb) {
   if (!invoice || !javascript) {
     return;
   }
-  //console.log('== generatePDF - force: %s', force);
+  console.log('== generatePDF - force: %s', force);
   if (force) {
     refreshTimer = null;
   } else {
@@ -666,10 +666,13 @@ function calculateAmounts(invoice) {
 
     if (! taxRate1) {
         var taxAmount1 = 0;
+        console.log('hi1');
     } else if (invoice.account.inclusive_taxes != '1') {
         var taxAmount1 = roundToTwo(lineTotal * taxRate1 / 100);
+        console.log('hi2');
     } else {
         var taxAmount1 = roundToTwo(lineTotal - (lineTotal / (1 + (taxRate1 / 100))))
+        console.log('hi3');
     }
     if (taxAmount1 != 0 || taxName1) {
       hasTaxes = true;
@@ -680,13 +683,13 @@ function calculateAmounts(invoice) {
         taxes[key] = {name: taxName1, rate:taxRate1, amount:taxAmount1};
       }
     }
-
+    //& this fonction been changed to adjust cfac custmisation for pdf
     if (! taxRate2) {
         var taxAmount2 = 0;
     } else if (invoice.account.inclusive_taxes != '1') {
-        var taxAmount2 = roundToTwo(lineTotal * taxRate2 / 100);
-    } else {
-        var taxAmount2 = roundToTwo(lineTotal - (lineTotal / (1 + (taxRate2 / 100))))
+        var taxAmount2 = roundToTwo((lineTotal + taxAmount1) * taxRate2 / 100);
+    }else {
+        var taxAmount2 = roundToTwo((lineTotal + taxAmount1) - ((lineTotal + taxAmount1) / (1 + (taxRate2 / 100))))
     }
     if (taxAmount2 != 0 || taxName2) {
       hasTaxes = true;
@@ -698,7 +701,7 @@ function calculateAmounts(invoice) {
       }
     }
   }
-
+console.log('here i m');
   invoice.has_item_taxes = hasTaxes;
   invoice.has_item_discounts = hasDiscount;
   invoice.subtotal_amount = total;
@@ -729,10 +732,10 @@ function calculateAmounts(invoice) {
   if (parseFloat(invoice.tax_rate2 || 0) != 0) {
     taxRate2 = parseFloat(invoice.tax_rate2);
   }
-
+// ?  this line is for the reverse inclusive function for CFAC
   if (invoice.account.inclusive_taxes != '1') {
       taxAmount1 = roundToTwo(total * taxRate1 / 100);
-      taxAmount2 = roundToTwo(total * taxRate2 / 100);
+      taxAmount2 = roundToTwo((total+taxAmount1) * taxRate2 / 100);
       total = total + taxAmount1 + taxAmount2;
 
       for (var key in taxes) {
@@ -742,7 +745,7 @@ function calculateAmounts(invoice) {
       }
   } else {
      taxAmount1 = roundToTwo(total - (total / (1 + (taxRate1 / 100))))
-     taxAmount2 = roundToTwo(total - (total / (1 + (taxRate2 / 100))))
+     taxAmount2 = roundToTwo(taxAmount1 - (taxAmount1 / (1 + (taxRate2 / 100))))
   }
 
   // custom fields w/o with taxes

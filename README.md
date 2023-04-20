@@ -1,8 +1,8 @@
 <p align="center">
-    <img src="https://raw.githubusercontent.com/hillelcoren/invoice-ninja/master/public/images/round_logo.png" alt="Sublime's custom image"/>
+    <img src="https://media.licdn.com/dms/image/C4D0BAQHP4YO6cY3KMg/company-logo_200_200/0/1519889116930?e=2147483647&v=beta&t=2FLNTD3odaRUxyviQGbFilfHEucyUWbXe8wE2V8IT-w"/>
 </p>
 
-# Invoice Ninja
+# Invoice CFac Groupe
 
 [![Build Status](https://travis-ci.org/invoiceninja/invoiceninja.svg?branch=master)](https://travis-ci.org/invoiceninja/invoiceninja)
 [![Docs](https://readthedocs.org/projects/invoice-ninja/badge/?version=latest)](https://invoice-ninja.readthedocs.io/en/latest/?badge=latest)
@@ -20,7 +20,6 @@ All Pro and Enterprise features from the hosted app are included in the open-cod
 The self-host zip includes all third party libraries whereas downloading the code from GitHub requires using Composer to install the dependencies.
 
 * [Features](https://www.invoiceninja.com/invoicing-features/)
-* [Videos](https://www.youtube.com/channel/UCXAHcBvhW05PDtWYIq7WDFA/videos)
 * [User Guide](https://docs.invoiceninja.com/)
 * [Support Forum](https://www.invoiceninja.com/forums/forum/support/)
 * [StackOverflow](https://stackoverflow.com/tags/invoice-ninja/)
@@ -49,7 +48,7 @@ The self-host zip includes all third party libraries whereas downloading the cod
 * [API Documentation](https://invoice-ninja.readthedocs.io/en/latest/api.html)
 * [PHP SDK](https://github.com/invoiceninja/sdk-php)
 * [Laminas Framework](https://github.com/alexz707/InvoiceNinjaModule)
-* [Custom Module](https://invoice-ninja.readthedocs.io/en/latest/custom_modules.html) | [Watch Video](https://www.youtube.com/watch?v=8jJ-PYuq85k)
+* [Custom Module](https://invoice-ninja.readthedocs.io/en/latest/custom_modules.html)
 
 ## Third Party Modules
 * [Event Scheduler](https://github.com/cytech/Scheduler-InvoiceNinja)
@@ -93,3 +92,105 @@ For information on how contribute to Invoice Ninja, please see our [contributing
 ## License
 Invoice Ninja is released under the Elastic License 2.0
 See [LICENSE](LICENSE) for details.
+
+## to SetUp The Application For A Quick Hosting
+
+Need to install php 7.3 and mysql
+## 1 donwload the php version from this URL:
+
+https://windows.php.net/downloads/releases/
+
+## 2 donwload the mysql version from this URL:
+
+https://www.apachefriends.org/fr/download.html
+
+
+```sh
+git clone https://github.com/invoiceninja/invoiceninja/releases/download/v4.5.50/invoiceninja.zip
+cp .env.example .env
+composer update
+php artisan key:generate
+```
+
+Please Note: 
+Your APP_KEY in the .env file is used to encrypt data, if you lose this you will not be able to run the application.
+
+Run if you want to load sample data, remember to configure .env
+```sh
+php artisan migrate:fresh --seed && php artisan db:seed && php artisan ninja:create-test-data
+```
+
+To run the web server
+```sh
+php artisan serve 
+C:\wamp64\bin\php\php7.0.33\php.exe artisan serve --host=127.0.0.1 --port=8000
+```
+
+Please Note: 
+if you running both application on visual studio code you must compile them with different port and addresses
+and change the path for php version in xampp:solution here (https://stackoverflow.com/questions/64702504/running-php-artisan-serve-command-with-different-php-versions)
+
+```sh
+C:\xampp\php73\php.exe artisan serve --host=127.0.0.1 --port=8000 
+```
+
+Navigate to (replace localhost with the appropriate domain)
+```
+http://localhost:8000/setup - To setup your configuration if you did not load sample data.
+http://localhost:8000/ - For Administrator Logon
+user: small@example.com
+pass: password
+http://localhost:8000/client/login - For Client Portal
+user: user@example.com
+pass: password
+```
+
+
+## set up no captcha from this URL on the git hub or the yotub channel:
+
+we added the no captcha to the application to make it anti spam vs bots to access.
+
+setup URL:
+https://www.youtube.com/watch?v=v8R0FRkFOmg
+
+documentation URL:
+https://github.com/anhskohbo/no-captcha
+
+troubleshooting the error : ERROR: cURL error 60: SSL certificate problem: unable to get local issuer certificate for local pc:(work fine)
+https://www.youtube.com/watch?v=f5jQqWvw44U
+
+
+## Using mailgun to monitore the emails (to add this option):
+1- know when your mail are viewed.
+2- estimate the tracking email.
+3- trouble shoot your email logs.
+4- estimate next send to best engage with audience
+
+## to clear all cache use this commend:
+```sh
+php artisan optimize:clear
+```
+
+## to rebuild css and javascrip files use this commend:
+```sh
+php artisan clear-compiled 
+composer dump-autoload
+php artisan optimize
+```
+
+# to re build the pdf maker : script in the pdf   bowerDir + '/pdfmake/build/pdfmake.js' decomment in the changes and then comment in production
+# this is the URL to see: https://arjunphp.com/run-gulp-tasks-laravel-elixir/
+npm install --global gulp
+
+
+# how to fix the SSH key in git hub and the server to download the project 
+https://www.youtube.com/watch?v=Irj-2tmV0JM
+
+
+# For better hosting the application of Jakarta PaaS
+# application invoice cfac:
+https://www.virtuozzo.com/application-platform-docs/php-application-server-config/
+
+## This Function is to the cron job to send reccuring email
+## and if you don't want the output
+0 7 * * * curl --silent "http://invoicepro.cfacgroup.com/run_command?command=send-invoices&secret=10101010" > /dev/null

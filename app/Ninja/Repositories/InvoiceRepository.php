@@ -50,11 +50,15 @@ class InvoiceRepository extends BaseRepository
 
     public function getInvoices($accountId, $clientPublicId = false, $entityType = ENTITY_INVOICE, $filter = false)
     {
+        //->leftJoin(DB::raw('(SELECT invoice_id, tax_name1, tax_rate1, tax_name2, tax_rate2 FROM invoice_items) as invoice_items'), 'invoices.id', '=', 'invoice_items.invoice_id')
+            
+        //->leftJoin('invoice_items', 'invoices.id', '=', 'invoice_items.invoice_id')
         $query = DB::table('invoices')
             ->join('accounts', 'accounts.id', '=', 'invoices.account_id')
             ->join('clients', 'clients.id', '=', 'invoices.client_id')
             ->join('invoice_statuses', 'invoice_statuses.id', '=', 'invoices.invoice_status_id')
             ->join('contacts', 'contacts.client_id', '=', 'clients.id')
+            ->leftJoin('invoice_items', 'invoices.id', '=', 'invoice_items.invoice_id')
             ->where('invoices.account_id', '=', $accountId)
             ->where('contacts.deleted_at', '=', null)
             ->where('invoices.is_recurring', '=', false)
@@ -91,8 +95,13 @@ class InvoiceRepository extends BaseRepository
                 'invoices.user_id',
                 'invoices.is_public',
                 'invoices.is_recurring',
+                'invoice_items.tax_name1',
+                'invoice_items.tax_rate1',
+                'invoice_items.tax_name2',
+                'invoice_items.tax_rate2',
+                'invoices.custom_value1',
                 'invoices.private_notes'
-            );
+            )->distinct()->orderBy('invoice_number', 'desc');
 
         $this->applyFilters($query, $entityType, ENTITY_INVOICE);
 
@@ -588,10 +597,11 @@ class InvoiceRepository extends BaseRepository
                     $itemTax += round($lineTotal * $taxRate1 / 100, 2);
                 }
             }
+            //^ this ben changed to update to  other than to apply the tax of the Total amount
             if (isset($item['tax_rate2'])) {
                 $taxRate2 = Utils::parseFloat($item['tax_rate2']);
                 if ($taxRate2 != 0) {
-                    $itemTax += round($lineTotal * $taxRate2 / 100, 2);
+                    $itemTax += round(($lineTotal+$itemTax) * $taxRate2 / 100, 2);
                 }
             }
         }

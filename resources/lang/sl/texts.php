@@ -272,7 +272,7 @@ $LANG = array(
     'pro_plan_product' => 'Pro paket',
     'pro_plan_success' => 'Zahvaljujemo se vam za izbiro Invoice Ninja Pro paketa!<p/>&nbsp;<br/>
 <b>Naslednji Koraki</b><p/>Račun je bilo poslan na e-poštni naslov, povezan z vašim računom. Če želite odkleniti vse mega Pro funkcije, sledite navodilom na računu.<p/>
-Ne morete najti računa? Potrebujete dodatno pomoč? Z veseljem bomo pomagali. Pošljite nam e-pošto na contact@invoiceninja.com',
+Ne morete najti računa? Potrebujete dodatno pomoč? Z veseljem bomo pomagali. Pošljite nam e-pošto na iheb@cfac.com.tn',
     'unsaved_changes' => 'Imate neshranjene spremembe',
     'custom_fields' => 'Polja po meri',
     'company_fields' => 'Polja podjetja',
@@ -1453,6 +1453,8 @@ Ko imate zneske, se vrnite na to stran plačilnega sredstva in kliknite na "Comp
     'payment_type_Bitcoin' => 'Bitcoin',
     'payment_type_GoCardless' => 'GoCardless',
     'payment_type_Zelle' => 'Zelle',
+    'payment_type_Commission Bancaire' => 'Commission Bancaire',
+    'payment_type_Retained At The Source' => 'Retained At The Source',
 
     // Industries
     'industry_Accounting & Legal' => 'Računovodstvo in Pravosodje',

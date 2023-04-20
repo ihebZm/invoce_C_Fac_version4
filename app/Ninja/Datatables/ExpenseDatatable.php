@@ -56,9 +56,10 @@ class ExpenseDatatable extends EntityDatatable
                 },
             ],
             [
-                'amount',
+                'amountHT',
                 function ($model) {
-                    $amount = $model->amount + Utils::calculateTaxes($model->amount, $model->tax_rate1, $model->tax_rate2);
+                    //^ changes the amount of datatable of expenses
+                    $amount = $model->amount;
                     $str = Utils::formatMoney($amount, $model->expense_currency_id);
 
                     // show both the amount and the converted amount
@@ -68,6 +69,75 @@ class ExpenseDatatable extends EntityDatatable
                     }
 
                     return $str;
+                },
+            ],
+            //& Show columns for TVA % and RàS % et le timbre Fiscal in expenses DataTable
+            [
+                'totalTax',
+                function ($model) {
+                    //^ calcule of taxs here
+                    $amount = Utils::calculateTaxeTVA($model->amount, $model->tax_rate1);
+                    $amount2 = Utils::calculateTaxeRaS($model->amount, $model->tax_rate1, $model->tax_rate2);                    
+                    $amount3 = $model->custom_value1;
+
+                    $str = Utils::formatMoney($amount, $model->expense_currency_id);
+                    $str2 = Utils::formatMoney($amount2, $model->expense_currency_id);
+                    $str3 = Utils::formatMoney($amount3, $model->expense_currency_id);
+
+                    //? customize the total taxes
+                    if($model->tax_rate1 != 0){
+                        $str = $model->tax_name1.' :' .Utils::formatMoney($amount, $model->expense_currency_id). ' <br> ';                       
+                    }else{
+                        $str = null;
+                    }
+                    if($model->tax_rate2 != 0){
+                        $str2 = $model->tax_name2.' :' .Utils::formatMoney($amount2, $model->expense_currency_id). ' <br> ';                       
+                    }else{
+                        $str2 = null;
+                    }
+                    if($model->custom_value1 != 0){
+                        $str3 = 'DdT : ' .Utils::formatMoney($amount3, $model->expense_currency_id);                       
+                    }else{
+                        $str3 = null;
+                    }
+                    if(($str3==null) && ($str2==null) && ($str==null)){
+                        return trans("texts.NoTax"); 
+                    }
+                    // show both the amount and the converted amount
+                    if ($model->exchange_rate != 1) {
+                        $converted = round($amount * $model->exchange_rate, 2);
+                        $str .= ' | ' . Utils::formatMoney($converted, $model->invoice_currency_id);
+
+                        $converted2 = round($amount2 * $model->exchange_rate, 2);
+                        $str2 .= ' | ' . Utils::formatMoney($converted2, $model->invoice_currency_id);
+
+                        $converted3 = round($amount3 * $model->exchange_rate, 2);
+                        $str3 .= ' | ' . Utils::formatMoney($converted3, $model->invoice_currency_id);
+                        
+                    }
+
+                    return $str . $str2 . $str3;
+                },
+            ],
+            //& Show columns for amount TTC in expenses DataTable 
+            [
+                'amountTTC',
+                function ($model) {
+                    //^ changes the amount of datatable of expenses
+                    $amount = $model->amount + Utils::calculateTaxes($model->amount, $model->tax_rate1, $model->tax_rate2);
+
+                    if ($model->custom_value1 != null ) {
+                        $amount = Utils::calculateTaxesDdT($amount,$model->custom_value1);
+                    }
+                    $str1 = Utils::formatMoney($amount, $model->expense_currency_id);
+                                       
+                    // show both the amount and the converted amount
+                    if ($model->exchange_rate != 1) {
+                        $converted = $amount * $model->exchange_rate;
+                        $str1 .= ' | ' . Utils::formatMoney($converted, $model->invoice_currency_id);
+                    }
+                    
+                    return $str1;
                 },
             ],
             [

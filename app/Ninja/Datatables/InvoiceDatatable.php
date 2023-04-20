@@ -48,7 +48,52 @@ class InvoiceDatatable extends EntityDatatable
                 },
             ],
             [
-                'amount',
+                'amountHT',
+                function ($model) {
+                    //& we gonna get the amount HT by geting the amount and substract droit de timbre
+                    $amountNoTembre = $model->amount - $model->custom_value1;
+                    //& we gonna get the amount HT by geting the amount and substract taxes
+                    $amount = $amountNoTembre - Utils::calculateAmountHT($amountNoTembre, $model->tax_rate1, $model->tax_rate2);
+                    $str = Utils::formatMoney($amount, $model->currency_id, $model->country_id);
+                    return $str;
+                },
+            ],
+            //& Show columns for TVA % and RàS % et le timbre Fiscal in expenses DataTable
+            [
+                'totalTax',
+                function ($model) {
+                    //^ calcule of taxs here
+                    $Ddt3 = $model->custom_value1;
+                    $amount2 = Utils::ReversecalculateTaxe($model->amount-$Ddt3, $model->tax_rate2);
+                    $amount1 = Utils::ReversecalculateTaxe($model->amount-$Ddt3-$amount2, $model->tax_rate1);                    
+                    if($model->custom_value1 != 0){
+                        $str3 = 'DdT : ' .Utils::formatMoney($Ddt3, $model->currency_id, $model->country_id). ' <br> ';                       
+                    }else{
+                        $str3 = null;
+                    }
+                    if($model->tax_rate2 != 0){
+                        $str2 = $model->tax_name2. ' :' .Utils::formatMoney($amount2, $model->currency_id, $model->country_id). ' <br> ';                       
+                    }else{
+                        $str2 = null;
+                    }
+                    if($model->tax_rate1 != 0){
+                        $str = $model->tax_name1. ' :' .Utils::formatMoney($amount1, $model->currency_id, $model->country_id). ' <br> ';                       
+                    }else{
+                        $str = null;
+                    }
+                    if(($str3==null) && ($str2==null) && ($str==null)){
+                        return trans("texts.NoTax"); 
+                    }
+                    //$str = Utils::formatMoney($amount1, $model->currency_id, $model->country_id);
+                    //$str2 = Utils::formatMoney($amount2, $model->currency_id, $model->country_id);
+
+                    // show both the amount and the converted amount
+                    return $str . $str2 . $str3;
+                },
+            ],
+            //& Show columns for amount TTC in expenses DataTable 
+            [
+                'amountTTC',
                 function ($model) {
                     return Utils::formatMoney($model->amount, $model->currency_id, $model->country_id);
                 },

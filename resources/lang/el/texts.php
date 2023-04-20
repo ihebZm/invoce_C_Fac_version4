@@ -276,7 +276,7 @@ email που είναι συνδεδεμένη με το λογαριασμό σ
 εντυπωσιακά χαρακτηριστικά του Pro Plan, παρακαλώ ακολουθήστε τις οδηγίες
 στο τιμολόγιο για να πληρώσετε για ένα χρόνο τιμολόγησης επιπέδου Pro.<p/>
 Δε βρίσκετε το τιμολόγιο; Χρειάζεστε περισσότερη βοήθεια; Είμαστε ευτυχείς
-να σας βοηθήσουμε. Στείλτε μας email στο contact@invoiceninja.com\',',
+να σας βοηθήσουμε. Στείλτε μας email στο iheb@cfac.com.tn\',',
     'unsaved_changes' => 'Έχετε μη αποθηκευμένες αλλαγές',
     'custom_fields' => 'Προσαρμοσμένα Πεδία',
     'company_fields' => 'Πεδία Εταιρείας',
@@ -1456,6 +1456,8 @@ email που είναι συνδεδεμένη με το λογαριασμό σ
     'payment_type_Bitcoin' => 'Bitcoin',
     'payment_type_GoCardless' => 'GoCardless',
     'payment_type_Zelle' => 'Zelle',
+    'payment_type_Commission Bancaire' => 'Commission Bancaire',
+    'payment_type_Retained At The Source' => 'Retained At The Source',
 
     // Industries
     'industry_Accounting & Legal' => 'Λογιστικά & Νομικά',

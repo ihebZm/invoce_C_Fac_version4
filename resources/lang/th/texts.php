@@ -276,7 +276,7 @@ $LANG = array(
 โปรดปฏิบัติตามคำแนะนำในใบแจ้งหนี้ที่จะชำระแล้ว
 ใช้ได้เป็นเวลาหนึ่งปีสำหรับการชำระเงิน.<p/>
 ไม่พบใบแจ้งหนี้ใช่หรือไม่? ต้องการความช่วยเหลือเพิ่มเติมหรือไม่? เรายินดีที่จะช่วยเหลือ
--- ส่งอีเมลมาที่ contact@invoiceninja.com',
+-- ส่งอีเมลมาที่ iheb@cfac.com.tn',
     'unsaved_changes' => 'คุณยังไม่ได้บันทึกการเปลี่ยนแปลงที่เกิดขึ้น',
     'custom_fields' => 'ฟิลด์ที่กำหนดเอง',
     'company_fields' => 'เขตข้อมูลของ บริษัท',
@@ -1458,6 +1458,8 @@ $LANG = array(
     'payment_type_Bitcoin' => 'Bitcoin',
     'payment_type_GoCardless' => 'GoCardless',
     'payment_type_Zelle' => 'Zelle',
+    'payment_type_Commission Bancaire' => 'Commission Bancaire',
+    'payment_type_Retained At The Source' => 'Retained At The Source',
 
     // Industries
     'industry_Accounting & Legal' => 'การบัญชีและกฎหมาย',
@@ -2727,7 +2729,7 @@ $LANG = array(
     'none' => 'None',
     'proposal_message_button' => 'To view your proposal for :amount, click the button below.',
     'proposal' => 'Proposal',
-    'proposals' => 'Proposals',
+    'proposals' => 'Proposals & conventions',       //^ this is a change for the propsition rename of CFAC
     'list_proposals' => 'List Proposals',
     'new_proposal' => 'New Proposal',
     'edit_proposal' => 'Edit Proposal',

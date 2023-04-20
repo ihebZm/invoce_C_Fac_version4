@@ -18,7 +18,7 @@ class AddCustomProductFields extends Migration
         });
 
         Schema::table('account_gateway_settings', function ($table) {
-            $table->decimal('fee_amount', 13, 2)->nullable();
+            $table->decimal('fee_amount', 13, 3)->nullable();
             $table->decimal('fee_percent', 13, 3)->nullable();
             $table->string('fee_tax_name1')->nullable();
             $table->string('fee_tax_name2')->nullable();

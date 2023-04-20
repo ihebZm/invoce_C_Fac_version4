@@ -62,6 +62,21 @@ class AddSlackNotifications extends Migration
                 $table->dropForeign('user_accounts_user_id3_foreign');
                 $table->dropForeign('user_accounts_user_id4_foreign');
                 $table->dropForeign('user_accounts_user_id5_foreign');
+                $table->dropForeign('user_accounts_user_id6_foreign');
+                $table->dropForeign('user_accounts_user_id7_foreign');
+                $table->dropForeign('user_accounts_user_id8_foreign');
+                $table->dropForeign('user_accounts_user_id9_foreign');
+                $table->dropForeign('user_accounts_user_id10_foreign');
+                $table->dropForeign('user_accounts_user_id11_foreign');
+                $table->dropForeign('user_accounts_user_id12_foreign');
+                $table->dropForeign('user_accounts_user_id13_foreign');
+                $table->dropForeign('user_accounts_user_id14_foreign');
+                $table->dropForeign('user_accounts_user_id15_foreign');
+                $table->dropForeign('user_accounts_user_id16_foreign');
+                $table->dropForeign('user_accounts_user_id17_foreign');
+                $table->dropForeign('user_accounts_user_id18_foreign');
+                $table->dropForeign('user_accounts_user_id19_foreign');
+                $table->dropForeign('user_accounts_user_id20_foreign');
             });
 
             Schema::table('user_accounts', function ($table) {
@@ -70,6 +85,21 @@ class AddSlackNotifications extends Migration
                 $table->index('user_id3');
                 $table->index('user_id4');
                 $table->index('user_id5');
+                $table->index('user_id6');
+                $table->index('user_id7');
+                $table->index('user_id8');
+                $table->index('user_id9');
+                $table->index('user_id10');
+                $table->index('user_id11');
+                $table->index('user_id12');
+                $table->index('user_id13');
+                $table->index('user_id14');
+                $table->index('user_id15');
+                $table->index('user_id16');
+                $table->index('user_id17');
+                $table->index('user_id18');
+                $table->index('user_id19');
+                $table->index('user_id20');
             });
         } catch (Exception $exception) {
             // do nothing, change only needed for invoiceninja servers

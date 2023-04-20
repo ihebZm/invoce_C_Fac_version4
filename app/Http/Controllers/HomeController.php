@@ -163,7 +163,8 @@ class HomeController extends BaseController
                 $subject .= 'Self-Host] | ';
             }
             $subject .= date('M jS, g:ia');
-            $message->to(env('CONTACT_EMAIL', 'contact@invoiceninja.com'))
+            /* //* this have been changed so the contact of the application redirect to the developer of the application */
+            $message->to(env('CONTACT_EMAIL', 'iheb@cfac.com.tn'))
                     ->from(CONTACT_EMAIL, Auth::user()->present()->fullName)
                     ->replyTo(Auth::user()->email, Auth::user()->present()->fullName)
                     ->subject($subject);

@@ -220,7 +220,10 @@
 	</div>
     </div>
     </div>
+ 
+<!--
 
+// ^ Start Here deleted google map section from Iheb Zm to optimize the application
     @if ($client->showMap())
 
         <iframe
@@ -231,6 +234,9 @@
         </iframe>
 
     @endif
+ // * End Here the section of the deleted google map section  
+
+-->
 
 	<ul class="nav nav-tabs nav-justified">
 		{!! Form::tab_link('#activity', trans('texts.activity'), true) !!}

@@ -275,7 +275,7 @@ $LANG = array(
           Var vänlig och följ instruktionerna på fakturan för att betala för ett års
           Pro fakturering och få tillgång till alla fantastiska Pro-funktioner.<p/>
           Hittar du inte fakturan? Behöver du support? Vi hjälper dig!
-          -- maila oss på contact@invoiceninja.com',
+          -- maila oss på iheb@cfac.com.tn',
     'unsaved_changes' => 'Du har osparade ändringar',
     'custom_fields' => 'Anpassade fält',
     'company_fields' => 'Företagsfält',
@@ -1455,6 +1455,8 @@ När ni har pengarna, kom tillbaka till denna betalningsmetods sida och klicka p
     'payment_type_Bitcoin' => 'Bitcoin',
     'payment_type_GoCardless' => 'GoCardless',
     'payment_type_Zelle' => 'Zelle',
+    'payment_type_Commission Bancaire' => 'Commission Bancaire',
+    'payment_type_Retained At The Source' => 'Retained At The Source',
 
     // Industries
     'industry_Accounting & Legal' => 'Redovisning & Legala',

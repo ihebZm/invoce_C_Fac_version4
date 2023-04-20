@@ -333,13 +333,14 @@
 				<td colspan="2">{{ trans('texts.discount') }}</td>
 				<td style="text-align: right"><span data-bind="text: totals.discounted"/></td>
 			</tr>
-
+<!-- //^ this section is called at the line 396 with the variable 'custom_taxes1' for better visualization
 			@if ($account->customLabel('invoice1') && $invoice->custom_taxes1)
 				<tr>
 					<td colspan="2">{{ $account->customLabel('invoice1') ?: trans('texts.surcharge') }}</td>
 					<td><input name="custom_value1" class="form-control" data-bind="value: custom_value1, valueUpdate: 'afterkeydown'"/></td>
 				</tr>
 			@endif
+-->
             @if ($account->customLabel('invoice2') && $invoice->custom_taxes2)
 				<tr>
 					<td colspan="2">{{ $account->customLabel('invoice2') ?: trans('texts.surcharge') }}</td>
@@ -392,7 +393,12 @@
 					<td><input name="custom_value2" class="form-control" data-bind="value: custom_value2, valueUpdate: 'afterkeydown'"/></td>
 				</tr>
 			@endif
-
+			@if ($account->customLabel('invoice1') && $invoice->custom_taxes1)
+				<tr>
+					<td colspan="2">{{ $account->customLabel('invoice1') ?: trans('texts.surcharge') }}</td>
+					<td><input name="custom_value1" class="form-control" data-bind="value: custom_value1, valueUpdate: 'afterkeydown'"/></td>
+				</tr>
+			@endif
 			@if (!$account->hide_paid_to_date)
 				<tr>
 					<td colspan="2">{{ trans('texts.paid_to_date') }}</td>
@@ -1202,11 +1208,11 @@
 			invoice.imageWidth = {{ $account->getLogoWidth() }};
 			invoice.imageHeight = {{ $account->getLogoHeight() }};
 		@endif
-
+/* //& START HERE! this section ben commented to remove the preview from the invoice modele
 		if (! invoice.public_id || NINJA.formIsChanged) {
 			invoice.watermark = "{{ strtoupper(trans('texts.preview')) }}";
 		}
-
+*/	//& END HERE! this section ben commented to remove the preview from the invoice modele
         return invoice;
 	}
 

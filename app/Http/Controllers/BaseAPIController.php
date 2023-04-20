@@ -26,7 +26,7 @@ use Utils;
  *         description="A source-available invoicing and time-tracking app built with Laravel",
  *         termsOfService="",
  *         @SWG\Contact(
- *             email="contact@invoiceninja.com"
+ *             email="iheb@cfac.com.tn"
  *         ),
  *         @SWG\License(
  *             name="Attribution Assurance License",

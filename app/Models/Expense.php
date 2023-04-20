@@ -43,10 +43,10 @@ class Expense extends EntityModel
         'bank_id',
         'transaction_id',
         'expense_category_id',
-        'tax_rate1',
         'tax_name1',
-        'tax_rate2',
+        'tax_rate1',
         'tax_name2',
+        'tax_rate2',
         'payment_date',
         'payment_type_id',
         'transaction_reference',
@@ -264,7 +264,8 @@ class Expense extends EntityModel
 
     public function amountWithTax()
     {
-        return $this->amount + $this->taxAmount();
+        //^ this line been changed to add the Timbre fiscal on the amount page calandar report
+        return floatval($this->amount) + floatval($this->taxAmount()) + floatval($this->custom_value1);
     }
 
     public function taxAmount()
@@ -323,7 +324,37 @@ class Expense extends EntityModel
             return 'primary';
         }
     }
+// & START HERE! add this to get the custom_value retenu a la source  
 
+    /**
+     * @return mixed
+     */
+    public function getCustomValue1()
+    {
+        return $this->custom_value1;
+    }
+    /**
+     * @return mixed
+     */
+    public function getTaxRate1()
+    {
+        return $this->tax_rate1;
+    }
+    /**
+     * @return mixed
+     */
+    public function getTaxRate2()
+    {
+        return $this->tax_rate2;
+    }
+    /**
+     * @return mixed
+     */
+    public function getAmount()
+    {
+        return $this->amount;
+    }
+// & END HERE! add this to get the custom_value retenu a la source 
     public function statusClass()
     {
         $balance = $this->invoice ? $this->invoice->balance : 0;

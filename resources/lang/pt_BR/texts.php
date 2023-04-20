@@ -273,7 +273,7 @@ $LANG = array(
     'pro_plan_success' => 'Obrigado por escolher o Plano Pro do Invoice Ninja! <p/>&nbsp;<br/>
 <b>Próximos Passos</b><p/>Uma fatura pagável foi enviada para o email endereço associado com sua conta. Para desbloquear todas as incríveis funcionalidades Pro, por favor siga as instruções na fatura para pagar por um ano de faturamento Pro.<p/>
 Não consegue achar a fatura? Precisa de mais ajuda? Ficaremos feliz em ajudar
--- envie-nos um email em contact@invoiceninja.com',
+-- envie-nos um email em iheb@cfac.com.tn',
     'unsaved_changes' => 'Você possui alterações não salvas',
     'custom_fields' => 'Campos Personalizados',
     'company_fields' => 'Campos da Empresa',
@@ -1450,6 +1450,8 @@ Quando tiver as quantias, volte a esta página de formas de pagamento e clique "
     'payment_type_Bitcoin' => 'Bitcoin',
     'payment_type_GoCardless' => 'GoCardless',
     'payment_type_Zelle' => 'Zelle',
+    'payment_type_Commission Bancaire' => 'Commission Bancaire',
+    'payment_type_Retained At The Source' => 'Retained At The Source',
 
     // Industries
     'industry_Accounting & Legal' => 'Contabilidade & Jurídico',

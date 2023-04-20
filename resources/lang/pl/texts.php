@@ -274,7 +274,7 @@ Przykłady dynamicznych zmiennych:
                           Pro features, please follow the instructions on the invoice to pay
                           for a year of Pro-level invoicing.<p/>
                           Can\'t find the invoice? Need further assistance? We\'re happy to help
-                          -- email us at contact@invoiceninja.com',
+                          -- email us at iheb@cfac.com.tn',
     'unsaved_changes' => 'Masz niezapisane zmiany',
     'custom_fields' => 'Dostosowane pola',
     'company_fields' => 'Pola firmy',
@@ -1453,6 +1453,8 @@ Gdy przelewy zostaną zaksięgowane na Twoim koncie, wróć do tej strony i klik
     'payment_type_Bitcoin' => 'Bitcoin',
     'payment_type_GoCardless' => 'GoCardless',
     'payment_type_Zelle' => 'Zelle',
+    'payment_type_Commission Bancaire' => 'Commission Bancaire',
+    'payment_type_Retained At The Source' => 'Retained At The Source',
 
     // Industries
     'industry_Accounting & Legal' => 'Księgowość i prawo',

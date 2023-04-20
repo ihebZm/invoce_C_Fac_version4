@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{App::getLocale()}}">
   <head>
-    <title>Invoice Ninja | Setup</title>
+    <title>CFAC Ninja | Setup</title>
     <meta charset="utf-8">
     <meta name="csrf-token" content="<?= csrf_token() ?>">
     <script src="{{ asset('built.js') }}?no_cache={{ NINJA_VERSION }}" type="text/javascript"></script>
@@ -25,7 +25,7 @@
     <div class="col-md-8 col-md-offset-2">
 
     <div class="jumbotron">
-        <h2>Invoice Ninja Setup</h2>
+        <h2>CFAC Invoice Setup</h2>
         @if (version_compare(phpversion(), '7.0.0', '<'))
             <div class="alert alert-warning">Warning: The application requires PHP >= 7.0.0</div>
         @endif
@@ -37,7 +37,7 @@
                 <pre>sudo chown www-data:www-data {{ base_path('.env') }}</pre>
             </div>
         @endif
-        If you need help you can either post to our <a href="https://www.invoiceninja.com/forums/forum/support/" target="_blank">support forum</a> or email us at <a href="mailto:contact@invoiceninja.com" target="_blank">contact@invoiceninja.com</a>.
+        If you need help you can either post to our <a href="http://cfacgroup.com/fr/article/e-cfac_16/13" target="_blank">support forum</a> or email us at <a href="mailto:iheb@cfac.com.tn" target="_blank">iheb@cfac.com.tn</a>.
 
         @if (! env('PRECONFIGURED_INSTALL'))
         <p>

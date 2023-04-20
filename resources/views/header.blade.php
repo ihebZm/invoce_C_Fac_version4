@@ -269,7 +269,7 @@
           <div class="navbar-brand">
                 <i class="fa fa-bars hide-phone" style="width:32px;padding-top:2px;float:left"></i>
                 {{-- Per our license, please do not remove or modify this link. --}}
-                <img src="{{ asset('images/invoiceninja-logo.png') }}" width="193" height="25" style="float:left"/>
+                <img src="{{ asset('images/cfac-logo.png') }}" width="180" height="40" style="float:left; margin-top: -10px"/>
           </div>
       </a>
     </div>
@@ -320,18 +320,20 @@
                         ])
                     @endif
                 @endforeach
-                @foreach (session(SESSION_USER_ACCOUNTS) as $item)
-                    @if ($item->user_id != Auth::user()->id)
-                        @include('user_account', [
-                            'user_account_id' => $item->id,
-                            'user_id' => $item->user_id,
-                            'account_name' => $item->account_name,
-                            'user_name' => $item->user_name,
-                            'logo_url' => isset($item->logo_url) ? $item->logo_url : "",
-                            'selected' => false,
-                        ])
-                    @endif
-                @endforeach
+                @if(Utils::isCompanyPermit())
+                  @foreach (session(SESSION_USER_ACCOUNTS) as $item)
+                      @if ($item->user_id != Auth::user()->id)
+                          @include('user_account', [
+                              'user_account_id' => $item->id,
+                              'user_id' => $item->user_id,
+                              'account_name' => $item->account_name,
+                              'user_name' => $item->user_name,
+                              'logo_url' => isset($item->logo_url) ? $item->logo_url : "",
+                              'selected' => false,
+                          ])
+                      @endif
+                  @endforeach
+                @endif
             @else
                 @include('user_account', [
                     'account_name' => Auth::user()->account->name ?: trans('texts.untitled'),
@@ -341,8 +343,9 @@
                 ])
             @endif
             <li class="divider"></li>
-            @if (Utils::isAdmin() && Auth::user()->confirmed && Utils::getResllerType() != RESELLER_ACCOUNT_COUNT)
-              @if (!session(SESSION_USER_ACCOUNTS) || count(session(SESSION_USER_ACCOUNTS)) < 5)
+            @if (Utils::isAdmin() && Auth::user()->confirmed && Utils::getResllerType() != RESELLER_ACCOUNT_COUNT && Utils::isCompanyPermit())
+            <? //& this function is changed to show the add company more than 5 company the origin setup and less than 20 company ?>
+              @if (!session(SESSION_USER_ACCOUNTS) || count(session(SESSION_USER_ACCOUNTS)) < 20)
                   <li>{!! link_to('#', trans('texts.add_company'), ['onclick' => 'showSignUp()']) !!}</li>
               @endif
             @endif
@@ -450,6 +453,7 @@
                     <a href="javascript:showKeyboardShortcuts()" title="{{ trans('texts.help') }}">
                         <i class="fa fa-question-circle"></i>
                     </a>
+                  {{-- //^ START HERE! this section been comment to change after to the address of CFAC 
                     <a href="{{ url(SOCIAL_LINK_FACEBOOK) }}" target="_blank" title="Facebook">
                         <i class="fa fa-facebook-square"></i>
                     </a>
@@ -459,6 +463,7 @@
                     <a href="{{ url(SOCIAL_LINK_GITHUB) }}" target="_blank" title="GitHub">
                         <i class="fa fa-github-square"></i>
                     </a>
+                  //^ END HERE! this section been comment to change after to the address of CFAC --}}
                 </div>
             </li>
         </ul>

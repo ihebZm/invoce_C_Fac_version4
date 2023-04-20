@@ -32,13 +32,13 @@ class ProductDatatable extends EntityDatatable
             [
                 'cost',
                 function ($model) {
-                    return Utils::roundSignificant($model->cost);
+                    return Utils::roundSignificantToShow($model->cost);
                 },
             ],
             [
                 'tax_rate',
                 function ($model) {
-                    return $model->tax_rate ? ($model->tax_name . ' ' . $model->tax_rate . '%') : '';
+                    return $model->tax_rate ? ($model->tax_name . ' ' . Utils::roundSignificantToShow($model->tax_rate) . '%') : '';
                 },
                 $account->invoice_item_taxes,
             ],

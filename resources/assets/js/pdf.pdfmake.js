@@ -962,7 +962,8 @@ NINJA.invoiceLines = function(invoice, isSecondTable) {
                 taxAmount1 = roundToTwo(lineTotal * tax1 / 100);
             }
             if (tax2) {
-                taxAmount2 = roundToTwo(lineTotal * tax2 / 100);
+                //& START HERE! this line is modified so the tax2 work on the TTC not on the HT original line (lineTotal * tax2 / 100)
+                taxAmount2 = roundToTwo((lineTotal+taxAmount1) * tax2 / 100);
             }
             lineTotal += taxAmount1 + taxAmount2;
         }

@@ -48,7 +48,7 @@
                             ->addGroupClass('expense-category-select') !!}
 
                     {!! Former::text('amount')
-                            ->label(trans('texts.amount'))
+                            ->label(trans('texts.amount_depensesHT'))
                             ->data_bind("value: amount, valueUpdate: 'afterkeydown'")
                             ->addGroupClass('amount')
                             ->append('<span data-bind="html: expenseCurrencyCode"></span>') !!}
@@ -58,7 +58,12 @@
                             ->label(trans('texts.currency_id'))
                             ->data_placeholder(Utils::getFromCache($account->getCurrencyId(), 'currencies')->getTranslatedName())
                             ->fromQuery($currencies, 'name', 'id') !!}
-
+                <!-- //^ this location of the code been changed to the demands of Cfac group choice   -->
+                    <div style="display:none" data-bind="visible: apply_taxes">
+                        <br/>
+                        @include('partials.tax_rates')
+                    </div>
+                    
                     @if (! $isRecurring)
                         {!! Former::text('expense_date')
                                 ->data_date_format(Session::get(SESSION_DATE_PICKER_FORMAT, DEFAULT_DATE_PICKER_FORMAT))
@@ -89,12 +94,10 @@
                                     ->label(' ')
                                     ->value(1) !!}
                         @endif
+                        {{--//^ this section ben added to show other Taxs TVA and Retoure à la source dans la depence --}}
                     @endif
 
-                    <div style="display:none" data-bind="visible: apply_taxes">
-                        <br/>
-                        @include('partials.tax_rates')
-                    </div>
+
 
                     @if (!$expense || ($expense && !$expense->invoice_id))
                         {!! Former::checkbox('should_be_invoiced')
@@ -503,6 +506,27 @@
                     self.exchange_rate(1);
                 }
             }
+
+            //? this is an estimation for the amount TTC
+            if(self.amount()!=null){
+                amountTTC = self.amount();
+                tax_rate1 = self.tax_rate1();
+                custom_val1 = self.custom_value1();
+                taxAmount1 = amountTTC * tax_rate1/100;
+                totalAmount1 = Number(amountTTC) + taxAmount1;
+                tax_rate2 = self.tax_rate2();
+                taxAmount2 = totalAmount1 * tax_rate2/100;
+                totalAmount2 = Number(totalAmount1) + taxAmount2;
+                if(custom_val1){
+                    totalAmount2 = NINJA.parseFloat(totalAmount2) + NINJA.parseFloat(custom_val1);
+                }
+                totalAmount2Str = Number(totalAmount2).toFixed(3);
+				totalAmount2 = totalAmount2Str.replace('.',',');
+            } else {
+                totalAmount2Str = Number(0).toFixed(3);
+				totalAmount2 = totalAmount2Str.replace('.',',');   
+            }
+            //? this is an estimation for the amount TTC
 
             self.getCurrency = function(currencyId) {
                 return currencyMap[currencyId || self.account_currency_id()];

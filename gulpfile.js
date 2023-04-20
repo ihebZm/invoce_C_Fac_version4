@@ -31,6 +31,7 @@ elixir(function(mix) {
     /**
      * CSS configuration
      */
+/*
     mix.styles([
         bowerDir + '/bootstrap/dist/css/bootstrap.css',
         bowerDir + '/font-awesome/css/font-awesome.css',
@@ -89,22 +90,23 @@ elixir(function(mix) {
     mix.styles([
         bowerDir + '/fullcalendar/dist/fullcalendar.css'
     ], 'public/css/fullcalendar.css');
-
+*/
 
     /**
      * JS configuration
      */
-    mix.scripts(['resources/assets/js/Chart.js'], 'public/js/Chart.min.js')
-        .scripts(['resources/assets/js/d3.js'], 'public/js/d3.min.js');
-
+//    mix.scripts(['resources/assets/js/Chart.js'], 'public/js/Chart.min.js')
+//        .scripts(['resources/assets/js/d3.js'], 'public/js/d3.min.js');
+/*
     mix.scripts([
         'pdf_viewer.js',
         'compatibility.js',
-        //bowerDir + '/pdfmake/build/pdfmake.js',
+        // bowerDir + '/pdfmake/build/pdfmake.js',
         'pdfmake.js',
         'vfs.js'
     ], 'public/pdf.built.js');
-
+*/
+/*
     mix.scripts([
         bowerDir + '/bootstrap-daterangepicker/daterangepicker.js'
     ], 'public/js/daterangepicker.min.js');
@@ -146,7 +148,7 @@ elixir(function(mix) {
     mix.scripts([
         bowerDir + '/jSignature/libs/jSignature.min.js'
     ], 'public/js/jSignature.min.js');
-
+*/
     mix.scripts([
         bowerDir + '/jquery/dist/jquery.js',
         bowerDir + '/jquery-ui/jquery-ui.js',

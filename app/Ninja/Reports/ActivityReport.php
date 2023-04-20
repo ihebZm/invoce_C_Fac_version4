@@ -4,7 +4,7 @@ namespace App\Ninja\Reports;
 
 use App\Models\Activity;
 use Auth;
-
+// ! this classe is how to customize the rapports for cfac we will do it later
 class ActivityReport extends AbstractReport
 {
     public function getColumns()

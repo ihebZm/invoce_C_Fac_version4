@@ -341,7 +341,7 @@
 			taxRate1 = NINJA.parseFloat(taxRatesMap[taxRate1].rate);
 			total += subtotal * taxRate1 / 100;
 		}
-
+//^ changing this section so the "retour à la source do the sbstruction on the value of the TTC not the HT
 		var taxRate2 = NINJA.parseFloat($('#tax_rate2').val());
 		if (taxRate2) {
 			taxRate2 = NINJA.parseFloat(taxRatesMap[taxRate2].rate);

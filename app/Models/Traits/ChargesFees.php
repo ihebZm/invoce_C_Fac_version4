@@ -37,9 +37,9 @@ trait ChargesFees
             if ($settings->fee_tax_rate1) {
                 $fee += $preTaxFee * $settings->fee_tax_rate1 / 100;
             }
-
+            //^ this ben changed to update to "($preTaxFee+fee)" other than "preTaxFee" to apply the tax of the Total amount
             if ($settings->fee_tax_rate2) {
-                $fee += $preTaxFee * $settings->fee_tax_rate2 / 100;
+                $fee += ($preTaxFee+$fee) * $settings->fee_tax_rate2 / 100;
             }
         }
 

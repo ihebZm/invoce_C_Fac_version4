@@ -1,8 +1,9 @@
 <?php
 
 if (! defined('APP_NAME')) {
-    define('APP_NAME', env('APP_NAME', 'Invoice Ninja'));
-    define('APP_DOMAIN', env('APP_DOMAIN', 'invoiceninja.com'));
+    define('APP_NAME', env('APP_NAME', 'CFAC Invoice'));
+    //**Changed by iheb_Zm to match ninja invoice ul of C_FAC
+    define('APP_DOMAIN', env('APP_DOMAIN', 'cfac.com.tn'));
     define('CONTACT_EMAIL', env('MAIL_FROM_ADDRESS'));
     define('CONTACT_NAME', env('MAIL_FROM_NAME'));
     define('SITE_URL', env('APP_URL'));
@@ -353,33 +354,48 @@ if (! defined('APP_NAME')) {
 
     define('REQUESTED_PRO_PLAN', 'REQUESTED_PRO_PLAN');
     define('NINJA_ACCOUNT_KEY', env('NINJA_ACCOUNT_KEY', 'zg4ylmzDkdkPOT8yoKQw9LTWaoZJx79h'));
-    define('NINJA_ACCOUNT_EMAIL', env('NINJA_ACCOUNT_EMAIL', 'contact@invoiceninja.com'));
+    define('NINJA_ACCOUNT_EMAIL', env('NINJA_ACCOUNT_EMAIL', 'iheb@cfac.com.tn'));
     define('NINJA_LICENSE_ACCOUNT_KEY', 'AsFmBAeLXF0IKf7tmi0eiyZfmWW9hxMT');
     define('NINJA_GATEWAY_ID', GATEWAY_STRIPE);
     define('NINJA_GATEWAY_CONFIG', 'NINJA_GATEWAY_CONFIG');
-    define('NINJA_WEB_URL', env('NINJA_WEB_URL', 'https://www.invoiceninja.com'));
-    define('NINJA_APP_URL', env('NINJA_APP_URL', 'https://app.invoiceninja.com'));
+    define('NINJA_WEB_URL', env('NINJA_WEB_URL', 'http://www.cfac.com.tn'));
+    define('NINJA_APP_URL', env('NINJA_APP_URL', 'http://www.cfac.com.tn'));
     define('NINJA_DOCS_URL', env('NINJA_DOCS_URL', 'https://invoice-ninja.readthedocs.io/en/latest'));
     define('NINJA_DATE', '2000-01-01');
     define('NINJA_VERSION', '4.5.50' . env('NINJA_VERSION_SUFFIX'));
     define('NINJA_TERMS_VERSION', '1.0.1');
 
-    define('SOCIAL_LINK_FACEBOOK', env('SOCIAL_LINK_FACEBOOK', 'https://www.facebook.com/invoiceninja'));
-    define('SOCIAL_LINK_TWITTER', env('SOCIAL_LINK_TWITTER', 'https://twitter.com/invoiceninja'));
-    define('SOCIAL_LINK_GITHUB', env('SOCIAL_LINK_GITHUB', 'https://github.com/invoiceninja/invoiceninja/'));
+// * START HERE! of this section is reserved for social redirection to CFAC company
 
-    define('NINJA_FORUM_URL', env('NINJA_FORUM_URL', 'https://www.invoiceninja.com/forums/forum/support/'));
-    define('NINJA_CONTACT_URL', env('NINJA_CONTACT_URL', 'https://www.invoiceninja.com/contact/'));
-    define('NINJA_FROM_EMAIL', env('NINJA_FROM_EMAIL', 'maildelivery@invoiceninja.com'));
+    define('SOCIAL_LINK_FACEBOOK', env('SOCIAL_LINK_FACEBOOK', 'https://#'));
+    define('SOCIAL_LINK_TWITTER', env('SOCIAL_LINK_TWITTER', 'https://#'));
+    define('SOCIAL_LINK_GITHUB', env('SOCIAL_LINK_GITHUB', 'https://#'));
+
+// * END HERE! of this section is reserved for social redirection to CFAC company
+
+// * START HERE! of this section is reserved for social redirection to CFAC company
+    define('NINJA_FORUM_URL', env('NINJA_FORUM_URL', 'http://www.cfac.com.tn/fr/article/presentation_7/2'));
+    define('NINJA_CONTACT_URL', env('NINJA_CONTACT_URL', 'http://www.cfac.com.tn/fr/contact/'));
+    define('NINJA_FROM_EMAIL', env('NINJA_FROM_EMAIL', 'iheb@cfac.com.tn'));
     define('NINJA_IOS_APP_URL', 'https://itunes.apple.com/us/app/invoice-ninja/id1435514417?ls=1&mt=8');
+
+/* //* START HERE! this URL been hide to ensure the the application URL after customization 
     define('NINJA_ANDROID_APP_URL', 'https://play.google.com/store/apps/details?id=com.invoiceninja.flutter');
-    define('RELEASES_URL', env('RELEASES_URL', 'https://github.com/invoiceninja/invoiceninja/releases'));
+   //* END HERE! this URL been hide to ensure the the application URL after customization 
+*/
+/* //* START HERE! this URL been hide to ensure the the application URL after customization */
+    define('NINJA_ANDROID_APP_URL', 'https://#');
+/*   //* END HERE! this URL been hide to ensure the the application URL after customization 
+*/
+
+    define('RELEASES_URL', env('RELEASES_URL', 'http://www.cfac.com.tn/fr/contact/'));
     define('ZAPIER_URL', env('ZAPIER_URL', 'https://zapier.com/zapbook/invoice-ninja'));
     define('OUTDATE_BROWSER_URL', env('OUTDATE_BROWSER_URL', 'http://browsehappy.com/'));
     define('PDFMAKE_DOCS', env('PDFMAKE_DOCS', 'http://pdfmake.org/playground.html'));
     define('PHANTOMJS_CLOUD', env('PHANTOMJS_CLOUD', 'http://api.phantomjscloud.com/api/browser/v2/'));
     define('PHP_DATE_FORMATS', env('PHP_DATE_FORMATS', 'http://php.net/manual/en/function.date.php'));
-    define('REFERRAL_PROGRAM_URL', env('REFERRAL_PROGRAM_URL', 'https://www.invoiceninja.com/referral-program/'));
+    define('REFERRAL_PROGRAM_URL', env('REFERRAL_PROGRAM_URL', 'http://www.cfac.com.tn/fr/'));
+// * START HERE! of this section is reserved for social redirection to CFAC company
     define('EMAIL_MARKUP_URL', env('EMAIL_MARKUP_URL', 'https://developers.google.com/gmail/markup'));
     define('OFX_HOME_URL', env('OFX_HOME_URL', 'http://www.ofxhome.com/index.php/home/directory/all'));
     define('GOOGLE_ANALYITCS_URL', env('GOOGLE_ANALYITCS_URL', 'https://www.google-analytics.com/collect'));

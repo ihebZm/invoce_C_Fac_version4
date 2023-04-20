@@ -16,7 +16,7 @@
     <td>{{ trans('texts.payment_date') }}</td>
     <td>{{ trans('texts.transaction_reference') }}</td>
 </tr>
-
+<!-- //^ we will change here for the export of the tables to a files -->
 @foreach ($expenses as $expense)
     <tr>
         <td>{{ $expense->vendor ? $expense->vendor->getDisplayName() : '' }}</td>

@@ -276,7 +276,7 @@ asociată contului tău. Pentru a debloca cele mai tari
 opțiuni Pro, vă rugăm să urmăriți instrucțiunile de pe factură
 pentru un an de nivel Pro de facturare.5
 Nu găsești factura? Ai nevoie de asistență suplimentară? Suntem aici sa ajutăm
--- trimite-ne un email la contact@invoiceninja.com',
+-- trimite-ne un email la iheb@cfac.com.tn',
     'unsaved_changes' => 'Ai modificari nesalvate',
     'custom_fields' => 'Câmpuri personalizate',
     'company_fields' => 'Câmpuri Persoana Juridică',
@@ -1457,6 +1457,8 @@ Atentie: Folosește Legacy API Key, nu Token API',
     'payment_type_Bitcoin' => 'Bitcoin',
     'payment_type_GoCardless' => 'GoCardless',
     'payment_type_Zelle' => 'Zelle',
+    'payment_type_Commission Bancaire' => 'Commission Bancaire',
+    'payment_type_Retained At The Source' => 'Retained At The Source',
 
     // Industries
     'industry_Accounting & Legal' => 'Contabilitate & Juridic',
@@ -2726,7 +2728,7 @@ Atentie: Folosește Legacy API Key, nu Token API',
     'none' => 'None',
     'proposal_message_button' => 'To view your proposal for :amount, click the button below.',
     'proposal' => 'Proposal',
-    'proposals' => 'Proposals',
+    'proposals' => 'Proposals & conventions',           //^ this is a change for the propsition rename of CFAC
     'list_proposals' => 'List Proposals',
     'new_proposal' => 'New Proposal',
     'edit_proposal' => 'Edit Proposal',

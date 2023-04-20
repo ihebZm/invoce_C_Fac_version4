@@ -26,7 +26,7 @@ Although the bugs have always been fixed in some cases they've caused the client
 balance, paid to date and/or activity records to become inaccurate. This script will
 check for errors and correct the data.
 
-If you have any questions please email us at contact@invoiceninja.com
+If you have any questions please email us at iheb@cfac.com.tn
 
 Usage:
 
@@ -298,6 +298,36 @@ class CheckData extends Command
                         ->leftJoin('accounts as a4', 'a4.id', '=', 'u4.account_id')
                         ->leftJoin('users as u5', 'u5.id', '=', 'user_accounts.user_id5')
                         ->leftJoin('accounts as a5', 'a5.id', '=', 'u5.account_id')
+                        ->leftJoin('users as u6', 'u6.id', '=', 'user_accounts.user_id6')
+                        ->leftJoin('accounts as a6', 'a6.id', '=', 'u6.account_id')
+                        ->leftJoin('users as u7', 'u7.id', '=', 'user_accounts.user_id7')
+                        ->leftJoin('accounts as a7', 'a7.id', '=', 'u7.account_id')
+                        ->leftJoin('users as u8', 'u8.id', '=', 'user_accounts.user_id8')
+                        ->leftJoin('accounts as a8', 'a8.id', '=', 'u8.account_id')
+                        ->leftJoin('users as u9', 'u9.id', '=', 'user_accounts.user_id9')
+                        ->leftJoin('accounts as a9', 'a9.id', '=', 'u9.account_id')
+                        ->leftJoin('users as u10', 'u10.id', '=', 'user_accounts.user_id10')
+                        ->leftJoin('accounts as a10', 'a10.id', '=', 'u10.account_id')
+                        ->leftJoin('users as u11', 'u11.id', '=', 'user_accounts.user_id11')
+                        ->leftJoin('accounts as a11', 'a11.id', '=', 'u11.account_id')
+                        ->leftJoin('users as u12', 'u12.id', '=', 'user_accounts.user_id12')
+                        ->leftJoin('accounts as a12', 'a12.id', '=', 'u12.account_id')
+                        ->leftJoin('users as u13', 'u13.id', '=', 'user_accounts.user_id13')
+                        ->leftJoin('accounts as a13', 'a13.id', '=', 'u13.account_id')
+                        ->leftJoin('users as u14', 'u14.id', '=', 'user_accounts.user_id14')
+                        ->leftJoin('accounts as a14', 'a14.id', '=', 'u14.account_id')
+                        ->leftJoin('users as u15', 'u15.id', '=', 'user_accounts.user_id15')
+                        ->leftJoin('accounts as a15', 'a15.id', '=', 'u15.account_id')
+                        ->leftJoin('users as u16', 'u16.id', '=', 'user_accounts.user_id16')
+                        ->leftJoin('accounts as a16', 'a16.id', '=', 'u16.account_id')
+                        ->leftJoin('users as u17', 'u17.id', '=', 'user_accounts.user_id17')
+                        ->leftJoin('accounts as a17', 'a17.id', '=', 'u17.account_id')
+                        ->leftJoin('users as u18', 'u18.id', '=', 'user_accounts.user_id18')
+                        ->leftJoin('accounts as a18', 'a18.id', '=', 'u18.account_id')
+                        ->leftJoin('users as u19', 'u19.id', '=', 'user_accounts.user_id19')
+                        ->leftJoin('accounts as a19', 'a19.id', '=', 'u19.account_id')
+                        ->leftJoin('users as u20', 'u20.id', '=', 'user_accounts.user_id20')
+                        ->leftJoin('accounts as a20', 'a20.id', '=', 'u20.account_id')
                         ->get([
                             'user_accounts.id',
                             'a1.company_id as a1_company_id',
@@ -305,6 +335,21 @@ class CheckData extends Command
                             'a3.company_id as a3_company_id',
                             'a4.company_id as a4_company_id',
                             'a5.company_id as a5_company_id',
+                            'a6.company_id as a6_company_id',
+                            'a7.company_id as a7_company_id',
+                            'a8.company_id as a8_company_id',
+                            'a9.company_id as a9_company_id',
+                            'a10.company_id as a10_company_id',
+                            'a11.company_id as a11_company_id',
+                            'a12.company_id as a12_company_id',
+                            'a13.company_id as a13_company_id',
+                            'a14.company_id as a14_company_id',
+                            'a15.company_id as a15_company_id',
+                            'a16.company_id as a16_company_id',
+                            'a17.company_id as a17_company_id',
+                            'a18.company_id as a18_company_id',
+                            'a19.company_id as a19_company_id',
+                            'a20.company_id as a20_company_id',
                         ]);
 
         $countInvalid = 0;
@@ -326,6 +371,51 @@ class CheckData extends Command
             }
             if ($companyId5 = $userAccount->a5_company_id) {
                 $ids[$companyId5] = true;
+            }
+            if ($companyId6 = $userAccount->a6_company_id) {
+                $ids[$companyId6] = true;
+            }
+            if ($companyId7 = $userAccount->a7_company_id) {
+                $ids[$companyId7] = true;
+            }
+            if ($companyId8 = $userAccount->a8_company_id) {
+                $ids[$companyId8] = true;
+            }
+            if ($companyId9 = $userAccount->a9_company_id) {
+                $ids[$companyId9] = true;
+            }
+            if ($companyId10 = $userAccount->a10_company_id) {
+                $ids[$companyId10] = true;
+            }
+            if ($companyId11 = $userAccount->a11_company_id) {
+                $ids[$companyId11] = true;
+            }
+            if ($companyId12 = $userAccount->a12_company_id) {
+                $ids[$companyId12] = true;
+            }
+            if ($companyId13 = $userAccount->a13_company_id) {
+                $ids[$companyId13] = true;
+            }
+            if ($companyId14 = $userAccount->a14_company_id) {
+                $ids[$companyId14] = true;
+            }
+            if ($companyId15 = $userAccount->a15_company_id) {
+                $ids[$companyId15] = true;
+            }
+            if ($companyId16 = $userAccount->a16_company_id) {
+                $ids[$companyId16] = true;
+            }
+            if ($companyId17 = $userAccount->a17_company_id) {
+                $ids[$companyId17] = true;
+            }
+            if ($companyId18 = $userAccount->a18_company_id) {
+                $ids[$companyId18] = true;
+            }
+            if ($companyId19 = $userAccount->a19_company_id) {
+                $ids[$companyId19] = true;
+            }
+            if ($companyId20 = $userAccount->a20_company_id) {
+                $ids[$companyId20] = true;
             }
 
             if (count($ids) > 1) {

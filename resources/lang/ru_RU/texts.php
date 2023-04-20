@@ -276,7 +276,7 @@ $LANG = array(
  функции Pro плана, следуйте инструкциям в счете, чтобы заплатить
  за год Pro-уровня.<p/>
 Не можете найти счет? Нужна дополнительная помощь? Мы будем рады помочь
--- напишите нам письмо на contact@invoiceninja.com',
+-- напишите нам письмо на iheb@cfac.com.tn',
     'unsaved_changes' => 'У вас есть несохраненные изменения',
     'custom_fields' => 'Настраиваемые поля',
     'company_fields' => 'Поля компании',
@@ -1457,6 +1457,8 @@ $LANG = array(
     'payment_type_Bitcoin' => 'Bitcoin',
     'payment_type_GoCardless' => 'GoCardless',
     'payment_type_Zelle' => 'Zelle',
+    'payment_type_Commission Bancaire' => 'Commission Bancaire',
+    'payment_type_Retained At The Source' => 'Retained At The Source',
 
     // Industries
     'industry_Accounting & Legal' => 'Accounting & Legal',

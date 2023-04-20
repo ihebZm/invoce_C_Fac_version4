@@ -12,7 +12,7 @@ class AddPartialAmountToInvoices extends Migration
     public function up()
     {
         Schema::table('invoices', function ($table) {
-            $table->decimal('partial', 13, 2)->nullable();
+            $table->decimal('partial', 13, 3)->nullable();
         });
 
         Schema::table('accounts', function ($table) {

@@ -277,7 +277,7 @@ $LANG = array(
  Про функции, ве молиме следете ги инструкциите на фактурата за да платите
  за една година Pro-level фактурирање. <p/>
  Не можете да ја пронајдете фактурата? Ви треба понатамошна асистенција? Ќе ви помогнеме со задоволство
- --пратете ни е-пошта на contact@invoiceninja.com',
+ --пратете ни е-пошта на iheb@cfac.com.tn',
     'unsaved_changes' => 'Имате незачувани промени',
     'custom_fields' => 'Прилагодливи полиња',
     'company_fields' => 'Полиња за компанијата',
@@ -1457,6 +1457,8 @@ $LANG = array(
     'payment_type_Bitcoin' => 'Bitcoin',
     'payment_type_GoCardless' => 'GoCardless',
     'payment_type_Zelle' => 'Zelle',
+    'payment_type_Commission Bancaire' => 'Commission Bancaire',
+    'payment_type_Retained At The Source' => 'Retained At The Source',
 
     // Industries
     'industry_Accounting & Legal' => 'Сметководство и право',

@@ -275,7 +275,7 @@ $LANG = array(
                           electrónico asociado con tu cuenta. Para desbloquear todas las increíbles funciones del plan Pro, por favor sigue las instrucciones en la factura para pagar
                           por un año del plan Pro.<p/>
                           No puedes encontrar la factura ? Necesitas más ayuda? Estamos felices de ayudarte
-                          -- mándanos un correo a contact@invoiceninja.com',
+                          -- mándanos un correo a iheb@cfac.com.tn',
     'unsaved_changes' => 'Tienes cambios no guardados',
     'custom_fields' => 'Campos personalizados',
     'company_fields' => 'Campos de la Empresa',
@@ -1454,6 +1454,8 @@ $LANG = array(
     'payment_type_Bitcoin' => 'Bitcoin',
     'payment_type_GoCardless' => 'GoCardless',
     'payment_type_Zelle' => 'Zelle',
+    'payment_type_Commission Bancaire' => 'Commission Bancaire',
+    'payment_type_Retained At The Source' => 'Retained At The Source',
 
     // Industries
     'industry_Accounting & Legal' => 'Accounting & Legal',

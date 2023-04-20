@@ -3,9 +3,10 @@
 return [
 
     'video_urls' => [
-        'all' => env('NINJA_VIDEOS_URL', 'https://www.youtube.com/channel/UCXAHcBvhW05PDtWYIq7WDFA/videos'),
-        'custom_design' => env('NINJA_VIDEOS_CUSTOM_DESIGN_URL', 'https://www.youtube.com/watch?v=pXQ6jgiHodc'),
-        'getting_started' => env('NINJA_VIDEOS_GETTING_STARTED_URL', 'https://www.youtube.com/watch?v=i7fqfi5HWeo'),
+        // ^ to stop the blocked firewall in our local environnement set the # to the url of docuumentation video
+        'all' => env('NINJA_VIDEOS_URL', 'https://#'),
+        'custom_design' => env('NINJA_VIDEOS_CUSTOM_DESIGN_URL', 'https://#'),
+        'getting_started' => env('NINJA_VIDEOS_GETTING_STARTED_URL', 'https://#'),
     ],
 
     // invoice locking feature

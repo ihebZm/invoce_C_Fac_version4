@@ -13,8 +13,8 @@ class SupportNewPricing extends Migration
     public function up()
     {
         Schema::table('companies', function (Blueprint $table) {
-            $table->decimal('plan_price', 7, 2)->nullable();
-            $table->decimal('pending_plan_price', 7, 2)->nullable();
+            $table->decimal('plan_price', 7, 3)->nullable();
+            $table->decimal('pending_plan_price', 7, 3)->nullable();
             $table->smallInteger('num_users')->default(1);
             $table->smallInteger('pending_num_users')->default(1);
         });

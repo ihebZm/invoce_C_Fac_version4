@@ -19,8 +19,8 @@
         <div class="container-fluid">
             <div class="row header">
                 <div class="col-md-6 col-xs-12 text-center">
-                    <a href="https://www.invoiceninja.com/" target="_blank">
-                        <img width="231" src="{{ asset('images/invoiceninja-logox53.png') }}"/>
+                    <a href="https://www.cfac.com.tn/" target="_blank">
+                        <img width="235" height="70" src="{{ asset('images/cfac-logo.png') }}"/>
                     </a>
                 </div>
                 <div class="col-md-6 text-right visible-lg">

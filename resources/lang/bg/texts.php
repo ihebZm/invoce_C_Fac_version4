@@ -277,7 +277,7 @@ $LANG = array(
                           За да отключите всички Pro функционалности, моля следвайте инструкциите 
 във фактурата, за да платите за една година Pro план<p/>
                           Не можете да намерите фактурата? Имате нужда от помощ? Ние сме тук за да помогнем!
-                          -- Пишете ни на contact@invoiceninja.com',
+                          -- Пишете ни на iheb@cfac.com.tn',
     'unsaved_changes' => 'Имате незапазени промени',
     'custom_fields' => 'Собствени полета',
     'company_fields' => 'Фирмени полета',
@@ -1457,6 +1457,8 @@ $LANG = array(
     'payment_type_Bitcoin' => 'Bitcoin',
     'payment_type_GoCardless' => 'GoCardless',
     'payment_type_Zelle' => 'Zelle',
+    'payment_type_Commission Bancaire' => 'Commission Bancaire',
+    'payment_type_Retained At The Source' => 'Retained At The Source',
 
     // Industries
     'industry_Accounting & Legal' => 'Счетоводство и правни услуги',
