@@ -1453,6 +1453,8 @@ $LANG = array(
     'payment_type_Bitcoin' => '比特幣',
     'payment_type_GoCardless' => 'GoCardless',
     'payment_type_Zelle' => 'Zelle',
+    'payment_type_Commission Bancaire' => 'Commission Bancaire',
+    'payment_type_Retained At The Source' => 'Retained At The Source',
 
     // Industries
     'industry_Accounting & Legal' => '會計與法務',

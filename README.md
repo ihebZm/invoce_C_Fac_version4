@@ -190,3 +190,7 @@ https://www.youtube.com/watch?v=Irj-2tmV0JM
 # For better hosting the application of Jakarta PaaS
 # application invoice cfac:
 https://www.virtuozzo.com/application-platform-docs/php-application-server-config/
+
+## This Function is to the cron job to send reccuring email
+## and if you don't want the output
+0 7 * * * curl --silent "http://invoicepro.cfacgroup.com/run_command?command=send-invoices&secret=10101010" > /dev/null

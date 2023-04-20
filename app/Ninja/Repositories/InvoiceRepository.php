@@ -50,12 +50,15 @@ class InvoiceRepository extends BaseRepository
 
     public function getInvoices($accountId, $clientPublicId = false, $entityType = ENTITY_INVOICE, $filter = false)
     {
+        //->leftJoin(DB::raw('(SELECT invoice_id, tax_name1, tax_rate1, tax_name2, tax_rate2 FROM invoice_items) as invoice_items'), 'invoices.id', '=', 'invoice_items.invoice_id')
+            
+        //->leftJoin('invoice_items', 'invoices.id', '=', 'invoice_items.invoice_id')
         $query = DB::table('invoices')
             ->join('accounts', 'accounts.id', '=', 'invoices.account_id')
             ->join('clients', 'clients.id', '=', 'invoices.client_id')
             ->join('invoice_statuses', 'invoice_statuses.id', '=', 'invoices.invoice_status_id')
             ->join('contacts', 'contacts.client_id', '=', 'clients.id')
-            ->join('invoice_items', 'invoice_items.invoice_id', '=', 'invoices.id')
+            ->leftJoin('invoice_items', 'invoices.id', '=', 'invoice_items.invoice_id')
             ->where('invoices.account_id', '=', $accountId)
             ->where('contacts.deleted_at', '=', null)
             ->where('invoices.is_recurring', '=', false)
@@ -98,7 +101,7 @@ class InvoiceRepository extends BaseRepository
                 'invoice_items.tax_rate2',
                 'invoices.custom_value1',
                 'invoices.private_notes'
-            )->distinct();
+            )->distinct()->orderBy('invoice_number', 'desc');
 
         $this->applyFilters($query, $entityType, ENTITY_INVOICE);
 
