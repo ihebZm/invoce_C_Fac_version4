@@ -96,11 +96,11 @@ class InvoiceItem extends EntityModel
         $preTaxAmount = $this->getPreTaxAmount();
 
         if ($this->tax_rate1) {
-            $tax += round($preTaxAmount * $this->tax_rate1 / 100, 2);
+            $tax += round($preTaxAmount * $this->tax_rate1 / 100, 3);
         }
 
         if ($this->tax_rate2) {
-            $tax += round($preTaxAmount * $this->tax_rate2 / 100, 2);
+            $tax += round($preTaxAmount * $this->tax_rate2 / 100, 3);
         }
 
         return $tax;

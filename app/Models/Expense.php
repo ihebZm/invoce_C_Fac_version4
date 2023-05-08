@@ -220,7 +220,7 @@ class Expense extends EntityModel
      */
     public function convertedAmount()
     {
-        return round($this->amount * $this->exchange_rate, 2);
+        return round($this->amount * $this->exchange_rate, 3);
     }
 
     /**

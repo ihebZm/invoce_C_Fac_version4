@@ -43,7 +43,7 @@ trait ChargesFees
             }
         }
 
-        return round($fee, 2);
+        return round($fee, 3);
     }
 
     public function getGatewayFee()

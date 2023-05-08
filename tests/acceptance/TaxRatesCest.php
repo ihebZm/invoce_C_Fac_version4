@@ -27,8 +27,8 @@ class TaxRatesCest
         $itemCost = $this->faker->numberBetween(1, 20);
 
         $total = $itemCost;
-        $total += round($itemCost * $itemTaxRate / 100, 2);
-        $total += round($itemCost * $invoiceTaxRate / 100, 2);
+        $total += round($itemCost * $itemTaxRate / 100, 3);
+        $total += round($itemCost * $invoiceTaxRate / 100, 3);
 
         $itemTaxRate = number_format($itemTaxRate, 3);
         $invoiceTaxRate = number_format($invoiceTaxRate, 3);
@@ -93,7 +93,7 @@ class TaxRatesCest
        $itemCost = $this->faker->numberBetween(1, 20);
 
        $total = $itemCost;
-       $total += round($itemCost * $invoiceTaxRate / 100, 2);
+       $total += round($itemCost * $invoiceTaxRate / 100, 3);
 
        $invoiceTaxRate = number_format($invoiceTaxRate, 3);
 

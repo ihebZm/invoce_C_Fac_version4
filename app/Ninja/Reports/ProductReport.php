@@ -71,11 +71,11 @@ class ProductReport extends AbstractReport
                         $item->product_key,
                         $item->notes,
                         $item->qty + 0,
-                        Utils::roundSignificant($item->cost, 2),
+                        Utils::roundSignificant($item->cost, 3),
                     ];
 
                     if ($account->invoice_item_taxes) {
-                        $row[] = Utils::roundSignificant($item->getTaxAmount(), 2);
+                        $row[] = Utils::roundSignificant($item->getTaxAmount(), 3);
                     }
 
                     if ($account->customLabel('product1')) {

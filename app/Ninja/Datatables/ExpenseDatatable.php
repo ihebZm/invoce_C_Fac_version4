@@ -64,7 +64,7 @@ class ExpenseDatatable extends EntityDatatable
 
                     // show both the amount and the converted amount
                     if ($model->exchange_rate != 1) {
-                        $converted = round($amount * $model->exchange_rate, 2);
+                        $converted = round($amount * $model->exchange_rate, 3);
                         $str .= ' | ' . Utils::formatMoney($converted, $model->invoice_currency_id);
                     }
 
@@ -105,13 +105,13 @@ class ExpenseDatatable extends EntityDatatable
                     }
                     // show both the amount and the converted amount
                     if ($model->exchange_rate != 1) {
-                        $converted = round($amount * $model->exchange_rate, 2);
+                        $converted = round($amount * $model->exchange_rate, 3);
                         $str .= ' | ' . Utils::formatMoney($converted, $model->invoice_currency_id);
 
-                        $converted2 = round($amount2 * $model->exchange_rate, 2);
+                        $converted2 = round($amount2 * $model->exchange_rate, 3);
                         $str2 .= ' | ' . Utils::formatMoney($converted2, $model->invoice_currency_id);
 
-                        $converted3 = round($amount3 * $model->exchange_rate, 2);
+                        $converted3 = round($amount3 * $model->exchange_rate, 3);
                         $str3 .= ' | ' . Utils::formatMoney($converted3, $model->invoice_currency_id);
                         
                     }

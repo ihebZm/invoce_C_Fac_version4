@@ -82,7 +82,7 @@ class TaskReport extends AbstractReport
             } else {
                 $dimension = $this->getDimension($task);
             }
-            $this->addChartData($dimension, $task->created_at, round($duration / 60 / 60, 2));
+            $this->addChartData($dimension, $task->created_at, round($duration / 60 / 60, 3));
         }
     }
 }

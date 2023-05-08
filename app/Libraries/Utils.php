@@ -1401,11 +1401,11 @@ class Utils
 
     public static function calculateTaxes($amount, $taxRate1, $taxRate2)
     {
-        $tax1 = round($amount * $taxRate1 / 100, 2);
+        $tax1 = round($amount * $taxRate1 / 100, 3);
         //^ this line been changed to adjast the tax2 to the amount with tva %
-        $tax2 = round(($amount+$tax1) * $taxRate2 / 100, 2);
+        $tax2 = round(($amount+$tax1) * $taxRate2 / 100, 3);
 
-        return round($tax1 + $tax2, 2);
+        return round($tax1 + $tax2, 3);
     }
     //& this equation is to substract the tva from the amount TTC
     public static function calculateAmountHT($amount, $taxRate1, $taxRate2)
@@ -1415,26 +1415,26 @@ class Utils
         $reverse_taxRate1 = 100 + $taxRate1;
 
         //^ this line been changed to adjust the tax to the amount with tva %
-        $tax2 = round($amount * $taxRate2 / $reverse_taxRate2, 2);
-        $tax1 = round(($amount - $tax2) * $taxRate1 / $reverse_taxRate1, 2);
-        return round($tax1 + $tax2, 2);
+        $tax2 = round($amount * $taxRate2 / $reverse_taxRate2, 3);
+        $tax1 = round(($amount - $tax2) * $taxRate1 / $reverse_taxRate1, 3);
+        return round($tax1 + $tax2, 3);
     }
     //& START HERE! add retenu a la sourve to the amount
     public static function calculateTaxeTVA($amount, $taxRate1)
     {
-        $tax1 = round($amount * $taxRate1 / 100, 2);
-        return round($tax1, 2);
+        $tax1 = round($amount * $taxRate1 / 100, 3);
+        return round($tax1, 3);
     }
     public static function calculateTaxeRaS($amount,$taxRate1, $taxRate2)
     {
-        $tax1 = round($amount * $taxRate1 / 100, 2);
-        $tax2 = round(($amount+$tax1) * $taxRate2 / 100, 2);
-        return round($tax2, 2);
+        $tax1 = round($amount * $taxRate1 / 100, 3);
+        $tax2 = round(($amount+$tax1) * $taxRate2 / 100, 3);
+        return round($tax2, 3);
     }
     //& START HERE! add retenu a la sourve to the amount
     public static function calculateTaxesDdT($amount, $custom_value1)
     {
-        return $amount = round($amount + $custom_value1, 2);
+        return $amount = round($amount + $custom_value1, 3);
     }
 
     // ? reverse calcule TVA from TTC to HT
@@ -1443,15 +1443,15 @@ class Utils
         //^ reverse taxRates 
         $reverse_taxRate2 = 100 + $taxRate2;
         //^ this line been changed to adjust the tax to the amount with tva %
-        $tax2 = round($amount * $taxRate2 / $reverse_taxRate2, 2);
-        return round($tax2, 2);
+        $tax2 = round($amount * $taxRate2 / $reverse_taxRate2, 3);
+        return round($tax2, 3);
     }
 
     //& END HERE! add retenu a la sourve to the amount
     public static function roundSignificant($value, $precision = 3) {
         if (round($value, 3) != $value) {
             $precision = 4;
-        } elseif (round($value, 2) != $value) {
+        } elseif (round($value, 3) != $value) {
             $precision = 3;
         } elseif (round($value, 1) != $value) {
             $precision = 2;
@@ -1463,7 +1463,7 @@ class Utils
     public static function roundSignificantToShow($value, $precision = 3) {
         if (round($value, 3) != $value) {
             $precision = 4;
-        } elseif (round($value, 2) != $value) {
+        } elseif (round($value, 3) != $value) {
             $precision = 3;
         }
 /* //? this been comment to give precision with 3 value after comma

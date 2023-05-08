@@ -905,7 +905,7 @@ NINJA.invoiceLines = function(invoice, isSecondTable) {
         var item = invoice.invoice_items[i];
         var cost = NINJA.parseFloat(item.cost) ? formatMoneyInvoice(NINJA.parseFloat(item.cost), invoice, null, getPrecision(NINJA.parseFloat(item.cost))) : ' ';
         var qty = NINJA.parseFloat(item.qty) ? formatMoneyInvoice(NINJA.parseFloat(item.qty), invoice, 'none', getPrecision(NINJA.parseFloat(item.qty))) + '' : ' ';
-        var discount = roundToTwo(NINJA.parseFloat(item.discount));
+        var discount = roundToThree(NINJA.parseFloat(item.discount));
         var notes = item.notes;
         var productKey = item.product_key;
         var tax1 = '';
@@ -959,11 +959,11 @@ NINJA.invoiceLines = function(invoice, isSecondTable) {
             var taxAmount1 = 0;
             var taxAmount2 = 0;
             if (tax1) {
-                taxAmount1 = roundToTwo(lineTotal * tax1 / 100);
+                taxAmount1 = roundToThree(lineTotal * tax1 / 100);
             }
             if (tax2) {
                 //& START HERE! this line is modified so the tax2 work on the TTC not on the HT original line (lineTotal * tax2 / 100)
-                taxAmount2 = roundToTwo((lineTotal+taxAmount1) * tax2 / 100);
+                taxAmount2 = roundToThree((lineTotal+taxAmount1) * tax2 / 100);
             }
             lineTotal += taxAmount1 + taxAmount2;
         }

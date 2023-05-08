@@ -197,7 +197,7 @@
                             @endif
                             beginAtZero: true,
                             callback: function(label, index, labels) {
-                                return roundToTwo(label) + " {{ trans('texts.hours') }}";
+                                return roundToThree(label) + " {{ trans('texts.hours') }}";
                             }
                         },
                     }]

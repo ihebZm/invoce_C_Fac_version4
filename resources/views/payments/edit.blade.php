@@ -313,7 +313,7 @@
 
         self.convertedAmount = ko.computed({
             read: function () {
-                return roundToTwo(self.amount() * self.exchange_rate()).toFixed(2);
+                return roundToThree(self.amount() * self.exchange_rate()).toFixed(2);
             },
             write: function(value) {
                 var amount = NINJA.parseFloat(value) / self.amount();

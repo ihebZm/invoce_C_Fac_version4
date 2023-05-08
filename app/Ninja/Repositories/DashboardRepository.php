@@ -97,7 +97,7 @@ class DashboardRepository
 
             if ($entityType == ENTITY_INVOICE) {
                 $totals->invoices = array_sum($data);
-                $totals->average = $count ? round($totals->invoices / $count, 2) : 0;
+                $totals->average = $count ? round($totals->invoices / $count, 3) : 0;
                 $totals->balance = $balance;
             } elseif ($entityType == ENTITY_PAYMENT) {
                 $totals->revenue = array_sum($data);

@@ -76,9 +76,9 @@ class DiscountCest
         $I->wait(3);
 
         $total = $itemAmount * $quantity;
-        $total -= round($total * round($itemDiscount, 2) / 100, 2);
-        $total -= round($total * round($discount, 2) / 100, 2);
-        $total += round($total * $itemTaxRate / 100, 2);
+        $total -= round($total * round($itemDiscount, 3) / 100, 3);
+        $total -= round($total * round($discount, 3) / 100, 3);
+        $total += round($total * $itemTaxRate / 100, 3);
 
         $I->see(number_format($total, 2));
     }

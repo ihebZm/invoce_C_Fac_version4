@@ -587,19 +587,19 @@ function calculateAmounts(invoice) {
   for (var i=0; i<invoice.invoice_items.length; i++) {
     var item = invoice.invoice_items[i];
     var lineTotal = roundSignificant(NINJA.parseFloat(item.cost) * NINJA.parseFloat(item.qty));
-    var discount = roundToTwo(NINJA.parseFloat(item.discount));
+    var discount = roundToThree(NINJA.parseFloat(item.discount));
     if (discount != 0) {
         if (parseInt(invoice.is_amount_discount)) {
             lineTotal -= discount;
         } else {
-            lineTotal -= roundToTwo(lineTotal * discount / 100);
+            lineTotal -= roundToThree(lineTotal * discount / 100);
         }
     }
 
-    lineTotal = roundToTwo(lineTotal);
+    lineTotal = roundToThree(lineTotal);
     if (lineTotal) {
       total += lineTotal;
-      total = roundToTwo(total);
+      total = roundToThree(total);
     }
     if (!item.notes && !item.product_key && !item.cost) {
         continue;
@@ -644,7 +644,7 @@ function calculateAmounts(invoice) {
 
     // calculate line item tax
     var lineTotal = roundSignificant(NINJA.parseFloat(item.cost) * NINJA.parseFloat(item.qty));
-    var discount = roundToTwo(NINJA.parseFloat(item.discount));
+    var discount = roundToThree(NINJA.parseFloat(item.discount));
     if (discount != 0) {
         hasDiscount = true;
         if (parseInt(invoice.is_amount_discount)) {
@@ -656,7 +656,7 @@ function calculateAmounts(invoice) {
     lineTotal = roundSignificant(lineTotal);
 
     if (invoice.discount != 0) {
-        var discount = roundToTwo(NINJA.parseFloat(invoice.discount));
+        var discount = roundToThree(NINJA.parseFloat(invoice.discount));
         if (parseInt(invoice.is_amount_discount)) {
             lineTotal -= roundSignificant((lineTotal/total) * discount);
         } else {
@@ -668,10 +668,10 @@ function calculateAmounts(invoice) {
         var taxAmount1 = 0;
         console.log('hi1');
     } else if (invoice.account.inclusive_taxes != '1') {
-        var taxAmount1 = roundToTwo(lineTotal * taxRate1 / 100);
+        var taxAmount1 = roundToThree(lineTotal * taxRate1 / 100);
         console.log('hi2');
     } else {
-        var taxAmount1 = roundToTwo(lineTotal - (lineTotal / (1 + (taxRate1 / 100))))
+        var taxAmount1 = roundToThree(lineTotal - (lineTotal / (1 + (taxRate1 / 100))))
         console.log('hi3');
     }
     if (taxAmount1 != 0 || taxName1) {
@@ -687,9 +687,9 @@ function calculateAmounts(invoice) {
     if (! taxRate2) {
         var taxAmount2 = 0;
     } else if (invoice.account.inclusive_taxes != '1') {
-        var taxAmount2 = roundToTwo((lineTotal + taxAmount1) * taxRate2 / 100);
+        var taxAmount2 = roundToThree((lineTotal + taxAmount1) * taxRate2 / 100);
     }else {
-        var taxAmount2 = roundToTwo((lineTotal + taxAmount1) - ((lineTotal + taxAmount1) / (1 + (taxRate2 / 100))))
+        var taxAmount2 = roundToThree((lineTotal + taxAmount1) - ((lineTotal + taxAmount1) / (1 + (taxRate2 / 100))))
     }
     if (taxAmount2 != 0 || taxName2) {
       hasTaxes = true;
@@ -709,19 +709,19 @@ console.log('here i m');
   var discount = 0;
   if (invoice.discount != 0) {
     if (parseInt(invoice.is_amount_discount)) {
-      discount = roundToTwo(invoice.discount);
+      discount = roundToThree(invoice.discount);
     } else {
-      discount = roundToTwo(total * roundToTwo(invoice.discount) / 100);
+      discount = roundToThree(total * roundToThree(invoice.discount) / 100);
     }
     total -= discount;
   }
 
   // custom fields with taxes
   if (NINJA.parseFloat(invoice.custom_value1) && invoice.custom_taxes1 == '1') {
-    total += roundToTwo(invoice.custom_value1);
+    total += roundToThree(invoice.custom_value1);
   }
   if (NINJA.parseFloat(invoice.custom_value2) && invoice.custom_taxes2 == '1') {
-    total += roundToTwo(invoice.custom_value2);
+    total += roundToThree(invoice.custom_value2);
   }
 
   taxRate1 = 0;
@@ -734,8 +734,8 @@ console.log('here i m');
   }
 // ?  this line is for the reverse inclusive function for CFAC
   if (invoice.account.inclusive_taxes != '1') {
-      taxAmount1 = roundToTwo(total * taxRate1 / 100);
-      taxAmount2 = roundToTwo((total+taxAmount1) * taxRate2 / 100);
+      taxAmount1 = roundToThree(total * taxRate1 / 100);
+      taxAmount2 = roundToThree((total+taxAmount1) * taxRate2 / 100);
       total = total + taxAmount1 + taxAmount2;
 
       for (var key in taxes) {
@@ -744,26 +744,26 @@ console.log('here i m');
         }
       }
   } else {
-     taxAmount1 = roundToTwo(total - (total / (1 + (taxRate1 / 100))))
-     taxAmount2 = roundToTwo(taxAmount1 - (taxAmount1 / (1 + (taxRate2 / 100))))
+     taxAmount1 = roundToThree(total - (total / (1 + (taxRate1 / 100))))
+     taxAmount2 = roundToThree(taxAmount1 - (taxAmount1 / (1 + (taxRate2 / 100))))
   }
 
   // custom fields w/o with taxes
   if (NINJA.parseFloat(invoice.custom_value1) && invoice.custom_taxes1 != '1') {
-    total += roundToTwo(invoice.custom_value1);
+    total += roundToThree(invoice.custom_value1);
   }
   if (NINJA.parseFloat(invoice.custom_value2) && invoice.custom_taxes2 != '1') {
-    total += roundToTwo(invoice.custom_value2);
+    total += roundToThree(invoice.custom_value2);
   }
 
-  invoice.total_amount = roundToTwo(roundToTwo(total) - (roundToTwo(invoice.amount) - roundToTwo(invoice.balance)));
+  invoice.total_amount = roundToThree(roundToThree(total) - (roundToThree(invoice.amount) - roundToThree(invoice.balance)));
   invoice.discount_amount = discount;
   invoice.tax_amount1 = taxAmount1;
   invoice.tax_amount2 = taxAmount2;
   invoice.item_taxes = taxes;
 
   if (NINJA.parseFloat(invoice.partial)) {
-    invoice.balance_amount = roundToTwo(invoice.partial);
+    invoice.balance_amount = roundToThree(invoice.partial);
   } else {
     invoice.balance_amount = invoice.total_amount;
   }
@@ -1026,9 +1026,9 @@ function roundSignificant(number, toString) {
   return toString ? val.toFixed(precision) : val;
 }
 
-function roundToTwo(number, toString) {
-  var val = roundToPrecision(number, 2) || 0;
-  return toString ? val.toFixed(2) : val;
+function roundToThree(number, toString) {
+  var val = roundToPrecision(number, 3) || 0;
+  return toString ? val.toFixed(3) : val;
 }
 
 function roundToFour(number, toString) {

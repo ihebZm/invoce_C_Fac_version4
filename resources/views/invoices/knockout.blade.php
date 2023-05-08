@@ -394,7 +394,7 @@ function InvoiceModel(data) {
         for(var p=0; p < self.invoice_items().length; ++p) {
             var item = self.invoice_items()[p];
             total += item.totals.rawTotal();
-            total = roundToTwo(total);
+            total = roundToThree(total);
         }
         return total;
     });
@@ -406,9 +406,9 @@ function InvoiceModel(data) {
 
     self.totals.rawDiscounted = ko.computed(function() {
         if (parseInt(self.is_amount_discount())) {
-            return roundToTwo(self.discount());
+            return roundToThree(self.discount());
         } else {
-            return roundToTwo(self.totals.rawSubtotal() * roundToTwo(self.discount()) / 100);
+            return roundToThree(self.totals.rawSubtotal() * roundToThree(self.discount()) / 100);
         }
     });
 
@@ -421,8 +421,8 @@ function InvoiceModel(data) {
         var discount = self.totals.rawDiscounted();
         total -= discount;
 
-        var customValue1 = roundToTwo(self.custom_value1());
-        var customValue2 = roundToTwo(self.custom_value2());
+        var customValue1 = roundToThree(self.custom_value1());
+        var customValue2 = roundToThree(self.custom_value2());
         var customTaxes1 = self.custom_taxes1() == 1;
         var customTaxes2 = self.custom_taxes2() == 1;
 
@@ -435,16 +435,16 @@ function InvoiceModel(data) {
 
         var taxRate1 = parseFloat(self.tax_rate1());
         @if ($account->inclusive_taxes)
-            var tax1 = roundToTwo(total - (total / (1 + (taxRate1 / 100))));
+            var tax1 = roundToThree(total - (total / (1 + (taxRate1 / 100))));
         @else
-            var tax1 = roundToTwo(total * (taxRate1/100));
+            var tax1 = roundToThree(total * (taxRate1/100));
         @endif
-//& changing roundToTwo(total * (taxRate2/100))   to roundToTwo((total + tax1) * (taxRate2/100)) to add tax and than affect tax rat_2
+//& changing roundToThree(total * (taxRate2/100))   to roundToThree((total + tax1) * (taxRate2/100)) to add tax and than affect tax rat_2
         var taxRate2 = parseFloat(self.tax_rate2());
         @if ($account->inclusive_taxes)
-            var tax2 = roundToTwo(total - (total / (1 + (taxRate2 / 100))));
+            var tax2 = roundToThree(total - (total / (1 + (taxRate2 / 100))));
         @else
-            var tax2 = roundToTwo((total + tax1) * (taxRate2/100));
+            var tax2 = roundToThree((total + tax1) * (taxRate2/100));
         @endif
 
         return self.formatMoney(tax1 + tax2);
@@ -458,16 +458,16 @@ function InvoiceModel(data) {
             var lineTotal = item.totals.rawTotal();
             if (self.discount()) {
                 if (parseInt(self.is_amount_discount())) {
-                    lineTotal -= roundToTwo((lineTotal/total) * roundToTwo(self.discount()));
+                    lineTotal -= roundToThree((lineTotal/total) * roundToThree(self.discount()));
                 } else {
-                    lineTotal -= roundToTwo(lineTotal * roundToTwo(self.discount()) / 100);
+                    lineTotal -= roundToThree(lineTotal * roundToThree(self.discount()) / 100);
                 }
             }
 
             @if ($account->inclusive_taxes)
-                var taxAmount = roundToTwo(lineTotal - (lineTotal / (1 + (item.tax_rate1() / 100))))
+                var taxAmount = roundToThree(lineTotal - (lineTotal / (1 + (item.tax_rate1() / 100))))
             @else
-                var taxAmount = roundToTwo(lineTotal * item.tax_rate1() / 100);
+                var taxAmount = roundToThree(lineTotal * item.tax_rate1() / 100);
             @endif
             if (taxAmount) {
                 var key = item.tax_name1() + item.tax_rate1();
@@ -479,9 +479,9 @@ function InvoiceModel(data) {
             }
             //& START HERE! this section it s to change the tax rate 2 to make it on the TTC not on the total HT
             @if ($account->inclusive_taxes)
-                var taxAmount = roundToTwo((lineTotal+taxAmount) - ((lineTotal+taxAmount) / (1 + (item.tax_rate2() / 100))))
+                var taxAmount = roundToThree((lineTotal+taxAmount) - ((lineTotal+taxAmount) / (1 + (item.tax_rate2() / 100))))
             @else
-                var taxAmount = roundToTwo((lineTotal+taxAmount) * item.tax_rate2() / 100);
+                var taxAmount = roundToThree((lineTotal+taxAmount) * item.tax_rate2() / 100);
             @endif
             if (taxAmount) {
                 var key = item.tax_name2() + item.tax_rate2();
@@ -530,7 +530,7 @@ function InvoiceModel(data) {
     });
 
     self.totals.rawPaidToDate = ko.computed(function() {
-        return roundToTwo(accounting.toFixed(self.amount(),2) - accounting.toFixed(self.balance(),2));
+        return roundToThree(accounting.toFixed(self.amount(),2) - accounting.toFixed(self.balance(),2));
     });
 
     self.totals.paidToDate = ko.computed(function() {
@@ -543,8 +543,8 @@ function InvoiceModel(data) {
         var discount = self.totals.rawDiscounted();
         total -= discount;
 
-        var customValue1 = roundToTwo(self.custom_value1());
-        var customValue2 = roundToTwo(self.custom_value2());
+        var customValue1 = roundToThree(self.custom_value1());
+        var customValue2 = roundToThree(self.custom_value2());
         var customTaxes1 = self.custom_taxes1() == 1;
         var customTaxes2 = self.custom_taxes2() == 1;
 
@@ -556,18 +556,18 @@ function InvoiceModel(data) {
         }
 
         @if (! $account->inclusive_taxes)
-            var taxAmount1 = roundToTwo(total * parseFloat(self.tax_rate1()) / 100);
+            var taxAmount1 = roundToThree(total * parseFloat(self.tax_rate1()) / 100);
             //& this been changed to adjast Cfac changes to aplicate taxe on TVA
-            var taxAmount2 = roundToTwo((total+taxAmount1) * parseFloat(self.tax_rate2()) / 100);
+            var taxAmount2 = roundToThree((total+taxAmount1) * parseFloat(self.tax_rate2()) / 100);
 
             total = NINJA.parseFloat(total) + taxAmount1 + taxAmount2;
-            total = roundToTwo(total);
+            total = roundToThree(total);
 
             var taxes = self.totals.itemTaxes();
             for (var key in taxes) {
                 if (taxes.hasOwnProperty(key)) {
                     total += taxes[key].amount;
-                    total = roundToTwo(total);
+                    total = roundToThree(total);
                 }
             }
         @endif
@@ -911,11 +911,11 @@ function ItemModel(data) {
     this.totals.rawTotal = ko.computed(function() {
         var value = roundSignificant(NINJA.parseFloat(self.cost()) * NINJA.parseFloat(self.qty()));
         if (self.discount()) {
-            var discount = roundToTwo(NINJA.parseFloat(self.discount()));
+            var discount = roundToThree(NINJA.parseFloat(self.discount()));
             if (parseInt(model.invoice().is_amount_discount())) {
                 value -= discount;
             } else {
-                value -= roundToTwo(value * discount / 100);
+                value -= roundToThree(value * discount / 100);
             }
         }
         return value ? roundSignificant(value) : 0;
@@ -945,7 +945,7 @@ function ItemModel(data) {
             return;
         }
         var cost = self.cost() / (100 + taxRate) * 100;
-        self.cost(roundToTwo(cost));
+        self.cost(roundToThree(cost));
     }
 
     self.onTax1Change = function (obj, event) {

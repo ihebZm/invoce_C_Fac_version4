@@ -13,7 +13,7 @@ class InvoiceItemPresenter extends EntityPresenter
         $data->description = $this->entity->notes;
         $data->item_price = floatval($this->entity->cost);
         $data->quantity = floatval($this->entity->qty);
-        $data->amount = round($data->item_price * $data->quantity, 2);
+        $data->amount = round($data->item_price * $data->quantity, 3);
 
         return $data;
     }

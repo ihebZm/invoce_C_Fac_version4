@@ -59,6 +59,7 @@ class InvoiceRepository extends BaseRepository
             ->join('invoice_statuses', 'invoice_statuses.id', '=', 'invoices.invoice_status_id')
             ->join('contacts', 'contacts.client_id', '=', 'clients.id')
             ->leftJoin('invoice_items', 'invoices.id', '=', 'invoice_items.invoice_id')
+            ->distinct('invoices.id')
             ->where('invoices.account_id', '=', $accountId)
             ->where('contacts.deleted_at', '=', null)
             ->where('invoices.is_recurring', '=', false)
@@ -101,7 +102,7 @@ class InvoiceRepository extends BaseRepository
                 'invoice_items.tax_rate2',
                 'invoices.custom_value1',
                 'invoices.private_notes'
-            )->distinct()->orderBy('invoice_number', 'desc');
+            )->orderBy('invoice_number', 'desc');
 
         $this->applyFilters($query, $entityType, ENTITY_INVOICE);
 
@@ -453,7 +454,7 @@ class InvoiceRepository extends BaseRepository
         }
 
         if (isset($data['discount'])) {
-            $invoice->discount = round(Utils::parseFloat($data['discount']), 2);
+            $invoice->discount = round(Utils::parseFloat($data['discount']), 3);
         }
         if (isset($data['is_amount_discount'])) {
             $invoice->is_amount_discount = $data['is_amount_discount'] ? true : false;
@@ -551,7 +552,7 @@ class InvoiceRepository extends BaseRepository
 
             $invoiceItemCost = Utils::roundSignificant(Utils::parseFloat($item['cost']));
             $invoiceItemQty = Utils::roundSignificant(Utils::parseFloat($item['qty']));
-            $discount = empty($item['discount']) ? 0 : round(Utils::parseFloat($item['discount']), 2);
+            $discount = empty($item['discount']) ? 0 : round(Utils::parseFloat($item['discount']), 3);
 
             $lineTotal = $invoiceItemCost * $invoiceItemQty;
 
@@ -563,14 +564,14 @@ class InvoiceRepository extends BaseRepository
                 }
             }
 
-            $total += round($lineTotal, 2);
+            $total += round($lineTotal, 3);
         }
 
         foreach ($data['invoice_items'] as $item) {
             $item = (array) $item;
             $invoiceItemCost = Utils::roundSignificant(Utils::parseFloat($item['cost']));
             $invoiceItemQty = Utils::roundSignificant(Utils::parseFloat($item['qty']));
-            $discount = empty($item['discount']) ? 0 : round(Utils::parseFloat($item['discount']), 2);
+            $discount = empty($item['discount']) ? 0 : round(Utils::parseFloat($item['discount']), 3);
             $lineTotal = $invoiceItemCost * $invoiceItemQty;
 
             if ($discount) {
@@ -594,14 +595,14 @@ class InvoiceRepository extends BaseRepository
             if (isset($item['tax_rate1'])) {
                 $taxRate1 = Utils::parseFloat($item['tax_rate1']);
                 if ($taxRate1 != 0) {
-                    $itemTax += round($lineTotal * $taxRate1 / 100, 2);
+                    $itemTax += round($lineTotal * $taxRate1 / 100, 3);
                 }
             }
             //^ this ben changed to update to  other than to apply the tax of the Total amount
             if (isset($item['tax_rate2'])) {
                 $taxRate2 = Utils::parseFloat($item['tax_rate2']);
                 if ($taxRate2 != 0) {
-                    $itemTax += round(($lineTotal+$itemTax) * $taxRate2 / 100, 2);
+                    $itemTax += round(($lineTotal+$itemTax) * $taxRate2 / 100, 3);
                 }
             }
         }
@@ -610,16 +611,16 @@ class InvoiceRepository extends BaseRepository
             if ($invoice->is_amount_discount) {
                 $total -= $invoice->discount;
             } else {
-                $discount = round($total * ($invoice->discount / 100), 2);
+                $discount = round($total * ($invoice->discount / 100), 3);
                 $total -= $discount;
             }
         }
 
         if (isset($data['custom_value1'])) {
-            $invoice->custom_value1 = round($data['custom_value1'], 2);
+            $invoice->custom_value1 = round($data['custom_value1'], 3);
         }
         if (isset($data['custom_value2'])) {
-            $invoice->custom_value2 = round($data['custom_value2'], 2);
+            $invoice->custom_value2 = round($data['custom_value2'], 3);
         }
 
         if (isset($data['custom_text_value1'])) {
@@ -638,9 +639,9 @@ class InvoiceRepository extends BaseRepository
         }
 
         if (! $account->inclusive_taxes) {
-            $taxAmount1 = round($total * ($invoice->tax_rate1 ? $invoice->tax_rate1 : 0) / 100, 2);
-            $taxAmount2 = round($total * ($invoice->tax_rate2 ? $invoice->tax_rate2 : 0) / 100, 2);
-            $total = round($total + $taxAmount1 + $taxAmount2, 2);
+            $taxAmount1 = round($total * ($invoice->tax_rate1 ? $invoice->tax_rate1 : 0) / 100, 3);
+            $taxAmount2 = round($total * ($invoice->tax_rate2 ? $invoice->tax_rate2 : 0) / 100, 3);
+            $total = round($total + $taxAmount1 + $taxAmount2, 3);
             $total += $itemTax;
         }
 
@@ -653,13 +654,13 @@ class InvoiceRepository extends BaseRepository
         }
 
         if ($publicId) {
-            $invoice->balance = round($total - ($invoice->amount - $invoice->balance), 2);
+            $invoice->balance = round($total - ($invoice->amount - $invoice->balance), 3);
         } else {
             $invoice->balance = $total;
         }
 
         if (isset($data['partial'])) {
-            $invoice->partial = max(0, min(round(Utils::parseFloat($data['partial']), 2), $invoice->balance));
+            $invoice->partial = max(0, min(round(Utils::parseFloat($data['partial']), 3), $invoice->balance));
         }
 
         if ($invoice->partial) {
@@ -1294,7 +1295,7 @@ class InvoiceRepository extends BaseRepository
         $fee = $amount;
 
         if ($invoice->getRequestedAmount() > 0) {
-            $fee += round($invoice->getRequestedAmount() * $percent / 100, 2);
+            $fee += round($invoice->getRequestedAmount() * $percent / 100, 3);
         }
 
         $item = [];

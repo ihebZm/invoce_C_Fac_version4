@@ -1318,7 +1318,7 @@ class Invoice extends EntityModel implements BalanceAffecting
             }
         }
 
-        return round($total, 2);
+        return round($total, 3);
     }
 
     /**
@@ -1347,7 +1347,7 @@ class Invoice extends EntityModel implements BalanceAffecting
                 $total -= $this->discount;
             } else {
                 $total *= (100 - $this->discount) / 100;
-                $total = round($total, 2);
+                $total = round($total, 3);
             }
         }
 
@@ -1422,9 +1422,9 @@ class Invoice extends EntityModel implements BalanceAffecting
         $account = $this->account;
 
         if ($account->inclusive_taxes) {
-            return round($taxable - ($taxable / (1 + ($rate / 100))), 2);
+            return round($taxable - ($taxable / (1 + ($rate / 100))), 3);
         } else {
-            return round($taxable * ($rate / 100), 2);
+            return round($taxable * ($rate / 100), 3);
         }
     }
 
@@ -1441,8 +1441,8 @@ class Invoice extends EntityModel implements BalanceAffecting
             return;
         }
 
-        $amount = round($amount, 2);
-        $paid = round($paid, 2);
+        $amount = round($amount, 3);
+        $paid = round($paid, 3);
         $key = $rate . ' ' . $name;
 
         if (! isset($taxes[$key])) {

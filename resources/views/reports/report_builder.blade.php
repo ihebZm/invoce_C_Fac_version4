@@ -494,7 +494,7 @@
 			str = str.replace(',','.');
 			str = str + '' || '';
 			if (str.indexOf(':') >= 0) {
-				return roundToTwo(moment.duration(str).asHours());
+				return roundToThree(moment.duration(str).asHours());
 			} else {
 				return NINJA.parseFloat(str);
 				var number = Number(str.replace(/[^0-9\-]+/g, ''));
