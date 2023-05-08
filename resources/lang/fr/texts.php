@@ -1460,7 +1460,7 @@ Lorsque les montant apparaîtront sur votre relevé, veuillez revenir sur cette 
     'payment_type_GoCardless' => 'GoCardless',
     'payment_type_Zelle' => 'Zelle',
     'payment_type_Commission Bancaire' => 'Commission Bancaire',
-    'payment_type_Retained At The Source' => 'Retenu A La Source',
+    'payment_type_Withholding Tax' => 'Retenue a la Source',
 
     // Industries
     'industry_Accounting & Legal' => 'Comptabilité & Légal',

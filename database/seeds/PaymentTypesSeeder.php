@@ -43,7 +43,7 @@ class PaymentTypesSeeder extends Seeder
             ['name' => 'Bitcoin', 'gateway_type_id' => GATEWAY_TYPE_BITCOIN],
             ['name' => 'Zelle'],
             ['name' => 'Commission Bancaire'],
-            ['name' => 'Retained At The Source'],
+            ['name' => 'Withholding Tax'],
         ];
 
         foreach ($paymentTypes as $paymentType) {

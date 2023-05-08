@@ -1463,7 +1463,7 @@ $LANG = array(
     'payment_type_GoCardless' => 'GoCardless',
     'payment_type_Zelle' => 'Zelle',
     'payment_type_Commission Bancaire' => 'Commission Bancaire',
-    'payment_type_Retained At The Source' => 'Retained At The Source',
+    'payment_type_Withholding Tax' => 'Withholding Tax',
 
     // Industries
     'industry_Accounting & Legal' => 'Accounting & Legal',
