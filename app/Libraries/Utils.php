@@ -1423,17 +1423,18 @@ class Utils
     public static function calculateTaxeTVA($amount, $taxRate1)
     {
         $tax1 = round($amount * $taxRate1 / 100, 3);
-        return round($tax1, 3);
+        return round($tax1, 4);
     }
     public static function calculateTaxeRaS($amount,$taxRate1, $taxRate2)
     {
         $tax1 = round($amount * $taxRate1 / 100, 3);
         $tax2 = round(($amount+$tax1) * $taxRate2 / 100, 3);
-        return round($tax2, 3);
+        return round($tax2, 4);
     }
     //& START HERE! add retenu a la sourve to the amount
     public static function calculateTaxesDdT($amount, $custom_value1)
     {
+        
         return $amount = round($amount + $custom_value1, 3);
     }
 
@@ -1452,11 +1453,11 @@ class Utils
         if (round($value, 3) != $value) {
             $precision = 4;
         } elseif (round($value, 3) != $value) {
-            $precision = 3;
-        } elseif (round($value, 1) != $value) {
-            $precision = 2;
+            $precision = 4;
+        } elseif (round($value, 2) != $value) {
+            $precision = 4;
         }
-
+        
         return number_format($value, $precision, '.', '');
     }
 
