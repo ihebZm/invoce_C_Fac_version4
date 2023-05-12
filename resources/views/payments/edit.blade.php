@@ -313,7 +313,7 @@
 
         self.convertedAmount = ko.computed({
             read: function () {
-                return roundToThree(self.amount() * self.exchange_rate()).toFixed(2);
+                return roundToThree(self.amount() * self.exchange_rate()).toFixed(3);
             },
             write: function(value) {
                 var amount = NINJA.parseFloat(value) / self.amount();
@@ -433,7 +433,7 @@
           invoice.client = client;
           setComboboxValue($('.client-select'), client.public_id, getClientDisplayName(client));
           var amount = parseFloat(invoice.balance);
-          $('#amount').val(amount.toFixed(2));
+          $('#amount').val(amount.toFixed(3));
           model.amount(amount);
       } else {
           $('#amount').val('');
