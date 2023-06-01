@@ -45,6 +45,20 @@ class PaymentTypesSeeder extends Seeder
             ['name' => 'Commission Bancaire'],
             ['name' => 'Withholding Tax'],
         ];
+        // ^ customisation cfac for bank selection
+
+        $bankSections = [
+            ['name' => 'Amen Bank', 'AB', 'USD'],
+            ['name' => 'Bank Transfer', 'AB', 'TND'],
+            ['name' => 'Bank Transfer', 'AB', 'EURO'],
+            ['name' => 'Union Internationale De Banques', 'UIB', 'CAD'],
+            ['name' => 'Union Internationale De Banques', 'UIB', 'TND'],
+            ['name' => 'Union Internationale De Banques', 'UIB', 'EUR'],
+            ['name' => 'Societe Tunisienne De Banque', 'STB', 'CAD'],
+            ['name' => 'Societe Tunisienne De Banque', 'STB', 'TND'],
+            ['name' => 'Societe Tunisienne De Banque', 'STB', 'EUR'],
+        ];
+        // ^ end customisation cfac for bank selection
 
         foreach ($paymentTypes as $paymentType) {
             $record = PaymentType::where('name', '=', $paymentType['name'])->first();

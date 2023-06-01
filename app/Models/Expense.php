@@ -54,6 +54,7 @@ class Expense extends EntityModel
         'should_be_invoiced',
         'custom_value1',
         'custom_value2',
+        'bank_selection_id',
     ];
 
     public static function getImportColumns()

@@ -1985,6 +1985,48 @@ INSERT INTO `payment_types` VALUES (1,'Apply Credit',NULL),(2,'Bank Transfer',2)
 UNLOCK TABLES;
 
 --
+-- Table structure for table `bank_selection`
+--
+
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `bank_selection` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `abrev_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `currency_compte` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `bank_selection`
+--
+
+LOCK TABLES `bank_selection` WRITE;
+/*!40000 ALTER TABLE `bank_selection` DISABLE KEYS */;
+INSERT INTO `bank_selection` VALUES (1,'Amen Bank','AB','USD'),(2,'Amen Bank','AB','TND'),(3,'Amen Bank','AB','EURO'),(4,'Union Internationale De Banques','UIB','CAD'),(5,'Union Internationale De Banques','UIB','TND'),(6,'Union Internationale De Banques','UIB','EUR'),(7,'Societe Tunisienne De Banque','STB','CAD'),(8,'Societe Tunisienne De Banque','STB','TND'),(9,'Societe Tunisienne De Banque','STB','EUR');
+/*!40000 ALTER TABLE `bank_selection` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- ALTER TABLE `payments`
+-- ADD `bank_selection_id` int(10) unsigned DEFAULT NULL;
+--
+-- ALTER TABLE `payments`
+-- ADD CONSTRAINT `payments_bank_selection_id_foreign`
+-- FOREIGN KEY (`bank_selection_id`) REFERENCES `bank_selection` (`id`);
+--
+--
+-- ALTER TABLE `expenses`
+-- ADD `bank_selection_id` int(10) unsigned DEFAULT NULL;
+--
+-- ALTER TABLE `expenses`
+-- ADD CONSTRAINT `expenses_bank_selection_id_foreign`
+-- FOREIGN KEY (`bank_selection_id`) REFERENCES `bank_selection` (`id`);
+-- 
+
+--
 -- Table structure for table `payments`
 --
 

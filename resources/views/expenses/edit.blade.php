@@ -149,6 +149,11 @@
                                         ->append('<i class="glyphicon glyphicon-calendar"></i>') !!}
 
                                 {!! Former::text('transaction_reference') !!}
+
+                                {!! Former::select('bank_selection_id')
+                                        ->addOption('', '')
+                                        ->label(trans('texts.bank_selection'))
+                                        ->data_bind('combobox: bank_selection_id')!!}
                             </div>
                         @endif
 
