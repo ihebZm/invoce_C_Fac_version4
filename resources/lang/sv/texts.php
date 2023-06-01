@@ -1427,7 +1427,7 @@ När ni har pengarna, kom tillbaka till denna betalningsmetods sida och klicka p
     'payment_type_Apply Credit' => 'Tillämpa kredit',
     'payment_type_Bank Transfer' => 'Banköverföring',
     'payment_type_Cash' => 'Kontant',
-    'payment_type_Debit' => 'Debit',
+    'payment_type_Debit' => 'Avoir',
     'payment_type_ACH' => 'ACH',
     'payment_type_Visa Card' => 'Visa kort',
     'payment_type_MasterCard' => 'MasterCard',
@@ -1457,6 +1457,7 @@ När ni har pengarna, kom tillbaka till denna betalningsmetods sida och klicka p
     'payment_type_Zelle' => 'Zelle',
     'payment_type_Commission Bancaire' => 'Commission Bancaire',
     'payment_type_Withholding Tax' => 'Withholding Tax',
+    'payment_type_Settlement Difference And Exchange Loss' => 'Settlement Difference And Exchange Loss',
 
     // Industries
     'industry_Accounting & Legal' => 'Redovisning & Legala',

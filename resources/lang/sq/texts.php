@@ -1426,7 +1426,7 @@ Pasi të keni pranuar shumat, kthehuni në faqen e metodave të pagesës dhe kli
     'payment_type_Apply Credit' => 'Apliko kreditin',
     'payment_type_Bank Transfer' => 'Transfer bankar',
     'payment_type_Cash' => 'Kesh',
-    'payment_type_Debit' => 'Debit',
+    'payment_type_Debit' => 'Avoir',
     'payment_type_ACH' => 'ACH',
     'payment_type_Visa Card' => 'Visa Card',
     'payment_type_MasterCard' => 'MasterCard',
@@ -1456,6 +1456,7 @@ Pasi të keni pranuar shumat, kthehuni në faqen e metodave të pagesës dhe kli
     'payment_type_Zelle' => 'Zelle',
     'payment_type_Commission Bancaire' => 'Commission Bancaire',
     'payment_type_Withholding Tax' => 'Withholding Tax',
+    'payment_type_Settlement Difference And Exchange Loss' => 'Settlement Difference And Exchange Loss',
 
     // Industries
     'industry_Accounting & Legal' => 'Kontabilitet & Ligjore',

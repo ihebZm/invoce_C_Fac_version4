@@ -1423,7 +1423,7 @@ $LANG = array(
     'payment_type_Apply Credit' => 'Apply Credit',
     'payment_type_Bank Transfer' => 'Transferència bancaria',
     'payment_type_Cash' => 'Cash',
-    'payment_type_Debit' => 'Debit',
+    'payment_type_Debit' => 'Avoir',
     'payment_type_ACH' => 'ACH',
     'payment_type_Visa Card' => 'Visa Card',
     'payment_type_MasterCard' => 'MasterCard',
@@ -1436,7 +1436,7 @@ $LANG = array(
     'payment_type_PayPal' => 'PayPal',
     'payment_type_Google Wallet' => 'Google Wallet',
     'payment_type_Check' => 'Check',
-    'payment_type_Carte Blanche' => 'Carte Blanche',
+    'payment_type_Carte Blanche' => 'Bill Of Exchange',
     'payment_type_UnionPay' => 'UnionPay',
     'payment_type_JCB' => 'JCB',
     'payment_type_Laser' => 'Laser',
@@ -1453,6 +1453,7 @@ $LANG = array(
     'payment_type_Zelle' => 'Zelle',
     'payment_type_Commission Bancaire' => 'Commission Bancaire',
     'payment_type_Withholding Tax' => 'Withholding Tax',
+    'payment_type_Settlement Difference And Exchange Loss' => 'Settlement Difference And Exchange Loss',
 
     // Industries
     'industry_Accounting & Legal' => 'Accounting & Legal',

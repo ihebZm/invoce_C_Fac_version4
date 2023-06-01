@@ -150,10 +150,10 @@
 
                                 {!! Former::text('transaction_reference') !!}
 
-                                {!! Former::select('bank_selection_id')
+                                <!--{!! Former::select('bank_selection_id')
                                         ->addOption('', '')
                                         ->label(trans('texts.bank_selection'))
-                                        ->data_bind('combobox: bank_selection_id')!!}
+                                        ->data_bind('combobox: bank_selection_id')!!} !-->
                             </div>
                         @endif
 

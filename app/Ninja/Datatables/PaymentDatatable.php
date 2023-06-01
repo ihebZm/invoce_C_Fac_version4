@@ -111,14 +111,14 @@ class PaymentDatatable extends EntityDatatable
                     }
                 },
             ],
-            // ^ customisation of banks selection for cfac group
+            /* ^ customisation of banks selection for cfac group
             [
                 'bank_selection',
                 function ($model) {
                     return $model->bank_selection ? trans('texts.bank_selection_' . $model->bank_selection) : '';
                 },
             ],
-            // ^ end customisation of banks selection for cfac group
+            */// ^ end customisation of banks selection for cfac group
             [
                 'status',
                 function ($model) {

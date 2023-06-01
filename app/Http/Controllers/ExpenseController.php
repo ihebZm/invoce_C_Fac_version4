@@ -144,7 +144,7 @@ class ExpenseController extends BaseController
             $expense->invoice_id = null;
             $expense->payment_date = null;
             $expense->payment_type_id = null;
-            $expense->bank_selection_id = null;
+            //$expense->bank_selection_id = null;
             $expense->transaction_reference = null;
             while ($expense->documents->count()) {
                 $expense->documents->pop();

@@ -7,7 +7,7 @@
     <td>{{ trans('texts.amount') }}</td>
     <td>{{ trans('texts.payment_date') }}</td>
     <td>{{ trans('texts.method') }}</td>
-    <td>{{ trans('texts.bank_selection') }}</td>
+    <!--<td>{{ trans('texts.bank_selection') }}</td>!-->
     <td>{{ trans('texts.transaction_reference') }}</td>
     <td>{{ trans('texts.private_notes') }}</td>
     <td>{{ trans('texts.converted_amount') }}</td>
@@ -24,7 +24,7 @@
             <td>{{ $account->formatMoney($payment->amount, $payment->client) }}</td>
             <td>{{ $payment->payment_date }}</td>
             <td>{{ $payment->present()->method }}</td>
-            <td>{{ $payment->present()->bank_selection }}</td>
+            <!--<td>{{ $payment->present()->bank_selection }}</td>!-->
             <td>{{ $payment->transaction_reference }}</td>
             <td>{{ $payment->private_notes }}</td>
             <td>{{ Utils::formatMoney($payment->amount * $payment->exchange_rate, $payment->exchange_currency_id) }}</td>

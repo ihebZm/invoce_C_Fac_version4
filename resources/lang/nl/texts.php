@@ -1419,7 +1419,7 @@ Kom terug naar deze betalingsmethode pagina zodra u de bedragen heeft ontvangen 
     'payment_type_Apply Credit' => 'Krediet toepassen',
     'payment_type_Bank Transfer' => 'Overschrijving',
     'payment_type_Cash' => 'Contant',
-    'payment_type_Debit' => 'Debet',
+    'payment_type_Debit' => 'Avoir',
     'payment_type_ACH' => 'ACH',
     'payment_type_Visa Card' => 'Visakaart',
     'payment_type_MasterCard' => 'MasterCard',
@@ -1449,6 +1449,7 @@ Kom terug naar deze betalingsmethode pagina zodra u de bedragen heeft ontvangen 
     'payment_type_Zelle' => 'Zelle',
     'payment_type_Commission Bancaire' => 'Commission Bancaire',
     'payment_type_Withholding Tax' => 'Withholding Tax',
+    'payment_type_Settlement Difference And Exchange Loss' => 'Settlement Difference And Exchange Loss',
 
     // Industries
     'industry_Accounting & Legal' => 'Boekhouding & juridisch',

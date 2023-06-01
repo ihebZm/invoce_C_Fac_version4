@@ -1455,6 +1455,7 @@ $LANG = array(
     'payment_type_Zelle' => 'Zelle',
     'payment_type_Commission Bancaire' => 'Commission Bancaire',
     'payment_type_Withholding Tax' => 'Withholding Tax',
+    'payment_type_Settlement Difference And Exchange Loss' => 'Settlement Difference And Exchange Loss',
 
     // Industries
     'industry_Accounting & Legal' => '會計與法務',

@@ -1448,6 +1448,7 @@ Una vez que tenga los montos, vuelva a esta página de métodos de pago y haga c
     'payment_type_Zelle' => 'Zelle',
     'payment_type_Commission Bancaire' => 'Commission Bancaire',
     'payment_type_Withholding Tax' => 'Withholding Tax',
+    'payment_type_Settlement Difference And Exchange Loss' => 'Settlement Difference And Exchange Loss',
 
     // Industries
     'industry_Accounting & Legal' => 'Contabilidad y legal',

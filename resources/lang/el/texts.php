@@ -1441,7 +1441,7 @@ email που είναι συνδεδεμένη με το λογαριασμό σ
     'payment_type_PayPal' => 'PayPal',
     'payment_type_Google Wallet' => 'Google Wallet',
     'payment_type_Check' => 'Επιταγή',
-    'payment_type_Carte Blanche' => 'Carte Blanche',
+    'payment_type_Carte Blanche' => 'Bill Of Exchange',
     'payment_type_UnionPay' => 'UnionPay',
     'payment_type_JCB' => 'JCB',
     'payment_type_Laser' => 'Laser',
@@ -1458,6 +1458,7 @@ email που είναι συνδεδεμένη με το λογαριασμό σ
     'payment_type_Zelle' => 'Zelle',
     'payment_type_Commission Bancaire' => 'Commission Bancaire',
     'payment_type_Withholding Tax' => 'Withholding Tax',
+    'payment_type_Settlement Difference And Exchange Loss' => 'Settlement Difference And Exchange Loss',
 
     // Industries
     'industry_Accounting & Legal' => 'Λογιστικά & Νομικά',

@@ -164,6 +164,7 @@ $LANG = array(
     'amount' => 'Montant',
     'amountHT' => 'Montant HT',
     'totalTax' => 'Taxe totale',
+    'totalTaxe' => 'Taxe totale',
     'NoTax' => 'pas des Taxes',
     'amountTTC' => 'Montant TTC',
     'ActionsTable' => 'actionstable',
@@ -1431,7 +1432,7 @@ Lorsque les montant apparaîtront sur votre relevé, veuillez revenir sur cette 
     'payment_type_Apply Credit' => 'Appliquer le crédit',
     'payment_type_Bank Transfer' => 'Transfert bancaire',
     'payment_type_Cash' => 'Comptant',
-    'payment_type_Debit' => 'Débit',
+    'payment_type_Debit' => 'Avoir',
     'payment_type_ACH' => 'ACH',
     'payment_type_Visa Card' => 'Carte Visa',
     'payment_type_MasterCard' => 'MasterCard',
@@ -1444,7 +1445,7 @@ Lorsque les montant apparaîtront sur votre relevé, veuillez revenir sur cette 
     'payment_type_PayPal' => 'PayPal',
     'payment_type_Google Wallet' => 'Google Wallet',
     'payment_type_Check' => 'Chèque',
-    'payment_type_Carte Blanche' => 'Carte Blanche',
+    'payment_type_Carte Blanche' => 'Traite',
     'payment_type_UnionPay' => 'UnionPay',
     'payment_type_JCB' => 'JCB',
     'payment_type_Laser' => 'Laser',
@@ -1461,6 +1462,7 @@ Lorsque les montant apparaîtront sur votre relevé, veuillez revenir sur cette 
     'payment_type_Zelle' => 'Zelle',
     'payment_type_Commission Bancaire' => 'Commission Bancaire',
     'payment_type_Withholding Tax' => 'Retenue a la Source',
+    'payment_type_Settlement Difference And Exchange Loss' => 'Différence De Règlement Et Perte De Change',
 
     // Industries
     'industry_Accounting & Legal' => 'Comptabilité & Légal',
@@ -2262,8 +2264,8 @@ Lorsque les montant apparaîtront sur votre relevé, veuillez revenir sur cette 
     'voice_commands' => 'Commandes vocales',
     'sample_commands' => 'Exemples de commandes',
     'voice_commands_feedback' => 'Nous travaillons activement à l\'amélioration de cette fonctionnalité. Si vous souhaitez l\'ajout d\'une commande sépcifique, veuillez nous contacter par courriel à :email.',
-    'payment_type_Venmo' => 'Venmo',
-    'payment_type_Money Order' => 'Mandat postal',
+    //'payment_type_Venmo' => 'Venmo', //^ edition on payment showing type d'affichage     
+    //'payment_type_Money Order' => 'Mandat postal', //^ edition on payment showing type d'affichage 
     'archived_products' => ':count produits archivés avec succès',
     'recommend_on' => 'Nous recommandons d\'<b>activer</b> ce réglage.',
     'recommend_off' => 'Nous recommandons de <b>désactiver</b> ce réglage.',

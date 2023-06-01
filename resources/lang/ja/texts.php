@@ -1428,7 +1428,7 @@ $LANG = array(
     'payment_type_Apply Credit' => 'Apply Credit',
     'payment_type_Bank Transfer' => 'Bank Transfer',
     'payment_type_Cash' => 'Cash',
-    'payment_type_Debit' => 'Debit',
+    'payment_type_Debit' => 'Avoir',
     'payment_type_ACH' => 'ACH',
     'payment_type_Visa Card' => 'Visa Card',
     'payment_type_MasterCard' => 'MasterCard',
@@ -1458,6 +1458,7 @@ $LANG = array(
     'payment_type_Zelle' => 'Zelle',
     'payment_type_Commission Bancaire' => 'Commission Bancaire',
     'payment_type_Withholding Tax' => 'Withholding Tax',
+    'payment_type_Settlement Difference And Exchange Loss' => 'Settlement Difference And Exchange Loss',
 
     // Industries
     'industry_Accounting & Legal' => 'Accounting & Legal',

@@ -1419,7 +1419,7 @@ Quando tiver os valores dos depósitos, volte a esta página e conclua a verific
     'payment_type_Apply Credit' => 'Aplicar Crédito',
     'payment_type_Bank Transfer' => 'Transferência Bancária',
     'payment_type_Cash' => 'Dinheiro',
-    'payment_type_Debit' => 'Débito',
+    'payment_type_Debit' => 'Avoir',
     'payment_type_ACH' => 'ACH',
     'payment_type_Visa Card' => 'Cartão Visa',
     'payment_type_MasterCard' => 'MasterCard',
@@ -1449,6 +1449,7 @@ Quando tiver os valores dos depósitos, volte a esta página e conclua a verific
     'payment_type_Zelle' => 'Zelle',
     'payment_type_Commission Bancaire' => 'Commission Bancaire',
     'payment_type_Withholding Tax' => 'Withholding Tax',
+    'payment_type_Settlement Difference And Exchange Loss' => 'Settlement Difference And Exchange Loss',
 
     // Industries
     'industry_Accounting & Legal' => 'Contabilidade & Legislação',
