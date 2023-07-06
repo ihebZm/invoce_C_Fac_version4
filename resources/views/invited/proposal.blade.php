@@ -29,7 +29,7 @@
         @endif
 
 		<div class="pull-right">
-			{!! Button::normal(trans('texts.download'))->asLinkTo(url("/proposal/{$proposalInvitation->invitation_key}/download"))->large() !!}
+			<!--{!! Button::normal(trans('texts.download'))->asLinkTo(url("/proposal/{$proposalInvitation->invitation_key}/download"))->large() !!}-->
 			@if (! $proposal->invoice->isApproved())
 				{!! Button::success(trans('texts.approve'))->withAttributes(['id' => 'approveButton', 'onclick' => 'onApproveClick()'])->large() !!}
 			@endif

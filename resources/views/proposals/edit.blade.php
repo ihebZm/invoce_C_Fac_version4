@@ -148,10 +148,19 @@
 
         invoice.account = {!! auth()->user()->account->load('country') !!};
         invoice.contact = invoice.client.contacts[0];
-
+        items = invoice.invoice_items;
+        countItemsInvoice = _.size(items);
+        totalCost = 0;
         var regExp = new RegExp(/\$[a-z][\w\.]*/g);
         var matches = html.match(regExp);
 
+        //make teamplate dinamic
+/*
+        tablesection = '';
+        for(var k=0; k<countItemsInvoice; k++){
+            tablesection = tablesection + " <tr style=\"box-sizing: border-box; padding-top: 4px; padding-right: 4px; padding-bottom: 4px; padding-left: 4px;\"><td class=\"card-content\" style=\"box-sizing: border-box: 1px; border: 1px solid blue; margin-top: 1px; margin-right: 10px; margin-bottom: 7px; margin-left: 7px; padding-top: 7px; padding-right: 7px; padding-bottom: 7px; padding-left: 7px; width: 600px; background-color: #B4BECB;\" width=\"600\"><p class=\"card-text\" style=\"box-sizing: border-box; margin-top: 2px; margin-right: 2px; margin-bottom: 2px; margin-left: 2px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px;\">$item"+k+".product_key : $item"+k+".notes</p></td><td class=\"card-content\" style=\"box-sizing: border-box 1px; border: 1px solid blue; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 1px; padding-left: 0px; width: 600px; background-color: #B4BECB;\" width=\"600\"><p class=\"card-text\" style=\"box-sizing: border-box; text-align: center;\">$item"+k+".cost / $item"+k+".custom_value1</p></td></tr>"; 
+        }
+*/
         if (matches) {
             for (var i=0; i<matches.length; i++) {
                 var match = matches[i];
@@ -172,6 +181,8 @@
                     field = 'account.work_phone';
                 } else if (match == '$client.phone') {
                     field = 'client.phone';
+                } else if (match == '$client.website') {
+                    field = 'client.website';
                 }
 
                 if (field == 'logo_url') {
@@ -192,6 +203,84 @@
                 } else if (['invoice_date', 'due_date', 'partial_due_date'].indexOf(field) >= 0) {
                     value = moment.utc(value).format('{{ $account->getMomentDateFormat() }}');
                 }
+
+/*
+                if(match == '$item.tablesection'){
+                    value = tablesection;
+                    html = html.replace(match, value); 
+                    loadTemplate();
+                    console.log("hi test1 chéck"+ tablesection);
+                }
+
+                if (match == '$item.countItemsInvoice') {
+                    var value = countItemsInvoice;
+                    console.log('testingin'+ typeof countItemsInvoice);
+                }
+*/
+                for(j=0 ; j<countItemsInvoice ; j++){
+                    /*
+                    if (match == '$item'+j+'.product_key') {
+                        var value = items[j].product_key;
+                    }
+                    */
+                    //! added this to return to the line for modification
+                    if (match == '$item'+j+'.notes') {
+                        var matchNotes = /\r|\n/.exec(items[j].notes);                      
+                        if (matchNotes) {
+                            items[j].notes = items[j].notes.replaceAll('  ','<br>');
+                        }
+                        var value = items[j].notes;
+                    }
+                    if (match == '$item'+j+'.cost') {
+                        var value = items[j].cost;
+                        if(!Number.isNaN(items[j].cost)){
+                            var totalCost = totalCost + (parseFloat(items[j].cost) * Number(items[j].qty));
+                        }
+                        value = formatMoneyInvoice(value, invoice);
+                    }
+                    if (match == '$item'+j+'.qty') {
+                        var value = items[j].qty;
+                        if (typeof Number(value) === 'number' && !Number.isNaN(Number(value)) && !Number.isInteger(Number(value))){
+                            value = Number.parseFloat(value).toFixed(1);
+                        } else if (typeof Number(value) === 'number' && !Number.isNaN(Number(value)) && Number.isInteger(Number(value))){
+                            value = ~~value;
+                        }
+                    }
+
+                    if (match == '$item'+j+'.tax_name1') {
+                        var value = items[j].tax_name1;
+                    }
+                    if (match == '$item'+j+'.tax_name2') {
+                        var value = items[j].tax_name2;
+                    }
+                    if (match == '$item'+j+'.tax_rate1') {
+                        var value = Number(items[j].tax_rate1);
+                    }
+                    if (match == '$item'+j+'.tax_rate2') {
+                        var value = Number(items[j].tax_rate2);
+                    }
+                    if (match == '$item'+j+'.custom_value1') {
+                        if(items[j].custom_value1){
+                            var value = ' / ' + items[j].custom_value1;
+                        }
+                    }
+                    if (match == '$item'+j+'.custom_value2') {
+                        if(items[j].custom_value2){
+                            var value = items[j].custom_value2;
+                        }else{
+                            var value = '-';
+                        }
+                    }
+
+                    if(j+1==countItemsInvoice){
+                        if (match == '$item.totalCost') {
+                            var value = totalCost;
+                            value = formatMoneyInvoice(value, invoice);
+                        }
+                    }
+                }
+                
+                //! must add the the customized html code table in the template by another valie like $table_quote
 
                 html = html.replace(match, value);
             }

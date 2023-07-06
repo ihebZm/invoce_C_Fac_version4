@@ -63,7 +63,7 @@ class ProposalController extends BaseController
             'method' => 'POST',
             'url' => 'proposals',
             'title' => trans('texts.new_proposal'),
-            'invoices' => Invoice::scope()->with('client.contacts', 'client.country')->unapprovedQuotes()->orderBy('id')->get(),
+            'invoices' => Invoice::scope()->with('client.contacts', 'client.country', 'invoice_items')->unapprovedQuotes()->orderBy('id')->get(),
             'invoicePublicId' => $request->invoice_id,
             'templatePublicId' => $request->proposal_template_id,
         ]);

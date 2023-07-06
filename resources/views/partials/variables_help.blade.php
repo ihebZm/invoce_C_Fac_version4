@@ -4,6 +4,9 @@
             <li>$quote.quoteNumber</li>
             <li>$quote.quoteDate</li>
             <li>$quote.validUntil</li>
+            <!--! this intems of invoice to change in proposal -->
+            
+            <!--! this intems of invoice to change in proposal -->
         @elseif ($entityType === ENTITY_INVOICE)
             <li>$invoice.invoiceNumber</li>
             <li>$invoice.invoiceDate</li>
@@ -63,6 +66,7 @@
         <li>$client.country.name</li>
         <li>$client.workPhone</li>
         <li>$client.balance</li>
+        <li>$client.website</li>
         @if ($account->customLabel('client1'))
             <li>$client.customValue1</li>
         @endif
@@ -81,5 +85,17 @@
         @if ($account->customLabel('contact2'))
             <li>$contact.customValue2</li>
         @endif
+    </ul>
+    <ul>
+        <li>$itemj.product_key</li>
+        <li>$itemj.notes</li>
+        <li>$itemj.cost</li>
+        <li>$itemj.qty</li>
+        <li>$itemj.tax_name1</li>
+        <li>$itemj.tax_name2</li>
+        <li>$itemj.tax_rate1</li>
+        <li>$itemj.tax_rate2</li>
+        <li>$itemj.custom_value1</li>
+        <li>$itemj.custom_value2</li>
     </ul>
 </div>

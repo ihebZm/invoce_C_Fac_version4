@@ -825,7 +825,7 @@
 	    </div>
 	  </div>
 	</div>
-
+	
 	@include('partials.email_templates')
 	@include('invoices.email')
 

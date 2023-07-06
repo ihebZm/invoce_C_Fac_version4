@@ -602,7 +602,7 @@ class InvoiceRepository extends BaseRepository
             if (isset($item['tax_rate2'])) {
                 $taxRate2 = Utils::parseFloat($item['tax_rate2']);
                 if ($taxRate2 != 0) {
-                    $itemTax += round(($lineTotal+$itemTax) * $taxRate2 / 100, 3);
+                    $itemTax += round(($lineTotal+($lineTotal * $taxRate1 / 100)) * $taxRate2 / 100, 3);
                 }
             }
         }
