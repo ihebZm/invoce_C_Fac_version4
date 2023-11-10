@@ -1458,6 +1458,7 @@ När ni har pengarna, kom tillbaka till denna betalningsmetods sida och klicka p
     'payment_type_Commission Bancaire' => 'Commission Bancaire',
     'payment_type_Withholding Tax' => 'Withholding Tax',
     'payment_type_Settlement Difference And Exchange Loss' => 'Settlement Difference And Exchange Loss',
+    'payment_type_Direct Debit Payment' => 'Direct Debit Payment',
 
     // Industries
     'industry_Accounting & Legal' => 'Redovisning & Legala',

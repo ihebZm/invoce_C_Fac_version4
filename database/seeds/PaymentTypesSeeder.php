@@ -28,6 +28,7 @@ class PaymentTypesSeeder extends Seeder
             ['name' => 'Commission Bancaire'],
             ['name' => 'Withholding Tax'],
             ['name' => 'Settlement Difference And Exchange Loss'],
+            ['name' => 'Direct Debit Payment'],
         ];
         // ^ customisation cfac for bank selection
 /*

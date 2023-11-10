@@ -751,6 +751,7 @@ $LANG = array(
     'tax_rate_depenses1' => 'Amount TVA',               //^ this line ben changed to make tva label
     'tax_rate_depenses2' => 'Amount Withholding',       //^ this line ben changed to make Retenu à la source label
     'payment_type_Settlement Difference And Exchange Loss' => 'Settlement Difference And Exchange Loss',
+    'payment_type_Direct Debit Payment' => 'Direct Debit Payment',
     'recurring_hour' => 'Recurring Hour',
     'pattern' => 'Pattern',
     'pattern_help_title' => 'Pattern Help',

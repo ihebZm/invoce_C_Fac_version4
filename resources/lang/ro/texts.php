@@ -1460,6 +1460,7 @@ Atentie: Folosește Legacy API Key, nu Token API',
     'payment_type_Commission Bancaire' => 'Commission Bancaire',
     'payment_type_Withholding Tax' => 'Withholding Tax',
     'payment_type_Settlement Difference And Exchange Loss' => 'Settlement Difference And Exchange Loss',
+    'payment_type_Direct Debit Payment' => 'Direct Debit Payment',
 
     // Industries
     'industry_Accounting & Legal' => 'Contabilitate & Juridic',

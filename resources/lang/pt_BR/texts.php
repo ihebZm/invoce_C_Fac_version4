@@ -1453,6 +1453,7 @@ Quando tiver as quantias, volte a esta página de formas de pagamento e clique "
     'payment_type_Commission Bancaire' => 'Commission Bancaire',
     'payment_type_Withholding Tax' => 'Withholding Tax',
     'payment_type_Settlement Difference And Exchange Loss' => 'Settlement Difference And Exchange Loss',
+    'payment_type_Direct Debit Payment' => 'Direct Debit Payment',
 
     // Industries
     'industry_Accounting & Legal' => 'Contabilidade & Jurídico',

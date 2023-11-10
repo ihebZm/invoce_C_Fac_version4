@@ -200,3 +200,18 @@ https://www.virtuozzo.com/application-platform-docs/php-application-server-confi
 https://www.blogger.com/blog/posts/5725059306816087074
 
 email: iheb@cfac.com.tn
+
+## To create a new branch, use the git checkout -b command. Replace branch-name with the name you want for your new branch:
+git checkout -b branch-name
+
+## For example, if you want to create a branch named "feature-branch," you'd use:
+git checkout -b feature-branch
+
+## Make your code changes in your working directory. After you've made your changes, stage them for commit using git add:
+git add .
+
+## Commit your staged changes to the branch you just created:
+git commit -m "Your commit message here"
+
+## To push your new branch to the remote repository, use the git push command:
+git push -u origin branch-name

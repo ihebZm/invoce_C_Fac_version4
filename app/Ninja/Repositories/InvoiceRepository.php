@@ -102,7 +102,9 @@ class InvoiceRepository extends BaseRepository
                 'invoice_items.tax_rate2',
                 'invoices.custom_value1',
                 'invoices.private_notes'
-            )->groupBy('invoice_number')->orderBy('invoice_number', 'desc');
+            )
+            ->groupBy('invoice_number');
+            //->orderBy('invoice_number', 'desc');
 
         $this->applyFilters($query, $entityType, ENTITY_INVOICE);
 

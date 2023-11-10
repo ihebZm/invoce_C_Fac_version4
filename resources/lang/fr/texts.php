@@ -1463,6 +1463,7 @@ Lorsque les montant apparaîtront sur votre relevé, veuillez revenir sur cette 
     'payment_type_Commission Bancaire' => 'Commission Bancaire',
     'payment_type_Withholding Tax' => 'Retenue a la Source',
     'payment_type_Settlement Difference And Exchange Loss' => 'Différence De Règlement Et Perte De Change',
+    'payment_type_Direct Debit Payment' => 'Prélèvement Bancaire',
 
     // Industries
     'industry_Accounting & Legal' => 'Comptabilité & Légal',
