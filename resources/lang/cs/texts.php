@@ -160,7 +160,16 @@ $LANG = array(
     'adjustment' => 'Úprava',
     'are_you_sure' => 'Jste si jisti?',
     'payment_type_id' => 'Typ platby',
-    'amount' => 'Částka',
+    //'amount' => 'Částka',
+    'amount' => 'Částka TTC',
+    // calcule de amout HT et les taxe separate 
+    'amountHT' => 'Částka HT',
+    'taxes_TVA' => 'Taxe(TVA)',
+    'taxes_RS' => 'Taxe(RS)',
+    'taxes_DT' => 'Taxe(DT)',
+    'totalTax' => 'Total Tax',
+    'totalTaxe' => 'Total Tax',
+    // end here the customization
     'work_email' => 'Email',
     'language_id' => 'Jazyk',
     'timezone_id' => 'Časová zóna',

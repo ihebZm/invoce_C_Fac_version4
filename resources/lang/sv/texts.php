@@ -160,7 +160,16 @@ $LANG = array(
     'adjustment' => 'Justering',
     'are_you_sure' => 'Är du säker?',
     'payment_type_id' => 'Betalningssätt',
-    'amount' => 'Summa',
+    //'amount' => 'Summa',
+    'amount' => 'Summa TTC',
+    // calcule de amout HT et les taxe separate 
+    'amountHT' => 'Amount HT',
+    'taxes_TVA' => 'Taxe(TVA)',
+    'taxes_RS' => 'Taxe(RS)',
+    'taxes_DT' => 'Taxe(DT)',
+    'totalTax' => 'Total Tax',
+    'totalTaxe' => 'Total Tax',
+    // end here the customization
     'work_email' => 'E-postadress',
     'language_id' => 'Språk',
     'timezone_id' => 'Tidszon',

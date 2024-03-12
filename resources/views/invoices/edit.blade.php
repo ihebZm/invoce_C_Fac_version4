@@ -1423,7 +1423,6 @@
             }, text);
             return;
         @endif
-
         submitAction('');
     }
 

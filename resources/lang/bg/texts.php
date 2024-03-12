@@ -161,7 +161,16 @@ $LANG = array(
     'adjustment' => 'Настройка',
     'are_you_sure' => 'Сигурен ли сте?',
     'payment_type_id' => 'Начин на плащане',
-    'amount' => 'Сума',
+    //'amount' => 'Сума',
+    'amount' => 'Сума TTC',
+    // calcule de amout HT et les taxe separate 
+    'amountHT' => 'Сума HT',
+    'taxes_TVA' => 'Taxe(TVA)',
+    'taxes_RS' => 'Taxe(RS)',
+    'taxes_DT' => 'Taxe(DT)',
+    'totalTax' => 'Total Tax',
+    'totalTaxe' => 'Total Tax',
+    // end here the customization
     'work_email' => 'Email',
     'language_id' => 'Език',
     'timezone_id' => 'Времева зона',

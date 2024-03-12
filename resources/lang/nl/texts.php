@@ -160,7 +160,16 @@ $LANG = array(
     'adjustment' => 'Aanpassing',
     'are_you_sure' => 'Weet je het zeker?',
     'payment_type_id' => 'Betalingstype',
-    'amount' => 'Bedrag',
+    //'amount' => 'Bedrag',
+    'amount' => 'Bedrag TTC',
+    // calcule de amout HT et les taxe separate 
+    'amountHT' => 'Amount HT',
+    'taxes_TVA' => 'Taxe(TVA)',
+    'taxes_RS' => 'Taxe(RS)',
+    'taxes_DT' => 'Taxe(DT)',
+    'totalTax' => 'Total Tax',
+    'totalTaxe' => 'Total Tax',
+    // end here the customization
     'work_email' => 'E-mailadres',
     'language_id' => 'Taal',
     'timezone_id' => 'Tijdzone',

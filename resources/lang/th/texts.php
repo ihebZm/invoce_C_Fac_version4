@@ -160,7 +160,16 @@ $LANG = array(
     'adjustment' => 'ปรับปรุงรายการ',
     'are_you_sure' => 'แน่ใจหรือไม่?',
     'payment_type_id' => 'ประเภทการจ่ายเงิน',
-    'amount' => 'ยอดเงิน',
+    //'amount' => 'ยอดเงิน',
+    'amount' => 'ยอดเงิน TTC',
+    // calcule de amout HT et les taxe separate 
+    'amountHT' => 'Amount HT',
+    'taxes_TVA' => 'Taxe(TVA)',
+    'taxes_RS' => 'Taxe(RS)',
+    'taxes_DT' => 'Taxe(DT)',
+    'totalTax' => 'Total Tax',
+    'totalTaxe' => 'Total Tax',
+    // end here the customization
     'work_email' => 'อีเมล',
     'language_id' => 'ภาษา',
     'timezone_id' => 'เขตเวลา',

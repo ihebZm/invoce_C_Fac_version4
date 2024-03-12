@@ -160,7 +160,16 @@ $LANG = array(
     'adjustment' => 'Προσδιορισμός',
     'are_you_sure' => 'Είστε σίγουροι;',
     'payment_type_id' => 'Τύπος Πληρωμής',
-    'amount' => 'Ποσό',
+    //'amount' => 'Ποσό',
+    'amount' => 'Ποσό TTC',
+    // calcule de amout HT et les taxe separate 
+    'amountHT' => 'Amount HT',
+    'taxes_TVA' => 'Taxe(TVA)',
+    'taxes_RS' => 'Taxe(RS)',
+    'taxes_DT' => 'Taxe(DT)',
+    'totalTax' => 'Total Tax',
+    'totalTaxe' => 'Total Tax',
+    // end here the customization
     'work_email' => 'Email',
     'language_id' => 'Γλώσσα',
     'timezone_id' => 'Ζώνη ώρας',

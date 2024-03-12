@@ -160,7 +160,16 @@ $LANG = array(
     'adjustment' => 'Ajuste',
     'are_you_sure' => 'Você tem certeza?',
     'payment_type_id' => 'Tipo de Pagamento',
-    'amount' => 'Quantia',
+    //'amount' => 'Quantia',
+    'amount' => 'Quantia TTC',
+    // calcule de amout HT et les taxe separate 
+    'amountHT' => 'Amount HT',
+    'taxes_TVA' => 'Taxe(TVA)',
+    'taxes_RS' => 'Taxe(RS)',
+    'taxes_DT' => 'Taxe(DT)',
+    'totalTax' => 'Total Tax',
+    'totalTaxe' => 'Total Tax',
+    // end here the customization
     'work_email' => 'Email',
     'language_id' => 'Idioma',
     'timezone_id' => 'Fuso Horário',

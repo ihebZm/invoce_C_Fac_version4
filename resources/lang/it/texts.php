@@ -160,7 +160,16 @@ $LANG = array(
     'adjustment' => 'Variazione',
     'are_you_sure' => 'Sei sicuro?',
     'payment_type_id' => 'Tipo di Pagamento',
-    'amount' => 'Importo',
+    //'amount' => 'Importo',
+    'amount' => 'Importo TTC',
+    // calcule de amout HT et les taxe separate 
+    'amountHT' => 'Amount HT',
+    'taxes_TVA' => 'Taxe(TVA)',
+    'taxes_RS' => 'Taxe(RS)',
+    'taxes_DT' => 'Taxe(DT)',
+    'totalTax' => 'Total Tax',
+    'totalTaxe' => 'Total Tax',
+    // end here the customization
     'work_email' => 'Email',
     'language_id' => 'Lingua',
     'timezone_id' => 'Fuso Orario',

@@ -1397,7 +1397,7 @@ class Invoice extends EntityModel implements BalanceAffecting
                 $this->calculateTax($taxes, $invoiceItem->tax_name1, $invoiceItem->tax_rate1, $itemTaxAmount, $itemPaidAmount);
             }
             if ($invoiceItem->tax_name2) {
-                $itemTaxAmount = $this->taxAmount($itemTaxable, $invoiceItem->tax_rate2);
+                $itemTaxAmount = $this->taxAmount($itemTaxable+$itemTaxAmount, $invoiceItem->tax_rate2);
                 $itemPaidAmount = floatval($this->amount) && $itemTaxAmount ? ($paidAmount / $this->amount * $itemTaxAmount) : 0;
                 $this->calculateTax($taxes, $invoiceItem->tax_name2, $invoiceItem->tax_rate2, $itemTaxAmount, $itemPaidAmount);
             }
@@ -1406,16 +1406,82 @@ class Invoice extends EntityModel implements BalanceAffecting
         return $taxes;
     }
 
+    //^ START HERE customization Cfac gor calcule taxe without making change in the real application
+    public function getTaxesForRapport($calculatePaid = false)
+    {
+        $taxes = [];
+        $account = $this->account;
+        $taxable = $this->getTaxable();
+        $paidAmount = $this->getAmountPaid($calculatePaid);
+        //^ check if we need to change in this section for the R à S sur le (montant + tva) 
+        if ($this->tax_name1) {
+            $invoiceTaxAmount = $this->taxAmount($taxable, $this->tax_rate1);
+            $invoicePaidAmount = floatval($this->amount) && $invoiceTaxAmount ? ($paidAmount / $this->amount * $invoiceTaxAmount) : 0;
+            $this->calculateTax($taxes, $this->tax_name1, $this->tax_rate1, $invoiceTaxAmount, $invoicePaidAmount);
+        }
+        if ($this->tax_name2) {
+            $invoiceTaxAmount = $this->taxAmount($taxable, $this->tax_rate2);
+            $invoicePaidAmount = floatval($this->amount) && $invoiceTaxAmount ? ($paidAmount / $this->amount * $invoiceTaxAmount) : 0;
+            $this->calculateTax($taxes, $this->tax_name2, $this->tax_rate2, $invoiceTaxAmount, $invoicePaidAmount);
+        }
+
+        foreach ($this->invoice_items as $invoiceItem) {
+            $itemTaxable = $this->getItemTaxable($invoiceItem, $taxable);
+
+            $itemTaxAmount1 = $this->taxAmount($itemTaxable, $invoiceItem->tax_rate1);
+            $itemPaidAmount = floatval($this->amount) && $itemTaxAmount1 ? ($paidAmount / $this->amount * $itemTaxAmount1) : 0;
+            $this->calculateTax($taxes, $invoiceItem->tax_name1, $invoiceItem->tax_rate1, $itemTaxAmount1, $itemPaidAmount);
+        
+            $itemTaxAmount2 = $this->taxAmount($itemTaxable+$itemTaxAmount1, $invoiceItem->tax_rate2);
+            $itemPaidAmount2 = floatval($this->amount) && $itemTaxAmount2 ? ($paidAmount / $this->amount * $itemTaxAmount2) : 0;
+            $this->calculateTax($taxes, $invoiceItem->tax_name2, $invoiceItem->tax_rate2, $itemTaxAmount2, $itemPaidAmount2);
+        }
+
+        return $taxes;
+    }
+
+    //^ END HERE customization Cfac gor calcule taxe without making change in the real application
+
     public function getTaxTotal()
     {
         $total = 0;
 
-        foreach ($this->getTaxes() as $tax) {
+        foreach ($this->getTaxesForRapport() as $tax) {
             $total += $tax['amount'];
         }
 
         return $total;
     }
+
+    //^ START HERE CFAC Group customization pour le calcule de séparation des taxe dans la facture
+    public function getTaxTVA()
+    {
+        $totalTVA = '';
+        foreach ($this->getTaxesForRapport() as $tax) { 
+            if($tax['amount'] > 0){
+                $totalTVA = floatval($tax['amount']);
+            }
+        }
+        return $totalTVA;
+    }
+    public function getTaxRS()
+    {
+        $totalRS = '';
+        foreach ($this->getTaxesForRapport() as $tax) {
+            if($tax['amount'] < 0){
+                $totalRS = floatval($tax['amount']);
+            }
+        }
+        return $totalRS;
+    }
+    public function getTaxDT()
+    {
+        if($this->custom_value1 || $this->custom_value2){
+            $totalDT = floatval($this->custom_value1 + $this->custom_value2);
+        }
+        return $totalDT;
+    }
+    //^ START HERE CFAC Group customization pour le calcule de séparation des taxe dans la facture
 
     public function taxAmount($taxable, $rate)
     {

@@ -16,6 +16,8 @@ class InvoiceReport extends AbstractReport
             'invoice_number' => [],
             'invoice_date' => [],
             'amount' => [],
+            //amount HT customization dans l'affichage des rapport
+            'amountHT' => [],
             'status' => [],
             'payment_date' => [],
             'paid' => [],
@@ -28,6 +30,19 @@ class InvoiceReport extends AbstractReport
             'billing_address' => ['columnSelector-false'],
             'shipping_address' => ['columnSelector-false'],
         ];
+
+
+        //^ START HERE customization CFAC pour le choix de montrer les Taxes_separate séparent
+        if (TaxRate::scope()->count()) {
+            $columns['taxes_TVA'] = ['columnSelector-false'];
+        }
+        if (TaxRate::scope()->count()) {
+            $columns['taxes_RS'] = ['columnSelector-false'];
+        }
+        if (TaxRate::scope()->count()) {
+            $columns['taxes_DT'] = ['columnSelector-false'];
+        }
+        //^ END HERE customization CFAC pour le choix de montrer les Taxes_separate séparent
 
         if (TaxRate::scope()->count()) {
             $columns['tax'] = ['columnSelector-false'];
@@ -118,6 +133,8 @@ class InvoiceReport extends AbstractReport
                         $this->isExport ? $invoice->invoice_number : $invoice->present()->link,
                         $this->isExport ? $invoice->invoice_date : $invoice->present()->invoice_date,
                         $isFirst ? $account->formatMoney($invoice->amount, $client) : '',
+                        //^ customization of CFAC to show the amount HT et le calcule des amount dans le rapport
+                        $isFirst ? $account->formatMoney(($invoice->amount - $invoice->custom_value1 - $invoice->custom_value2) - $invoice->getTaxTotal(), $client) : '',
                         $invoice->statusLabel(),
                         $payment ? ($this->isExport ? $payment->payment_date : $payment->present()->payment_date) : '',
                         $payment ? $account->formatMoney($payment->getCompletedAmount(), $client) : '',
@@ -131,10 +148,16 @@ class InvoiceReport extends AbstractReport
                         trim(str_replace('<br/>', ', ', $client->present()->address(ADDRESS_SHIPPING)), ', '),
                     ];
 
+                    //^ customization de CFAC pour l'affichage de columns des Taxes en separation
                     if ($hasTaxRates) {
-                        $row[] = $isFirst ? $account->formatMoney($invoice->getTaxTotal(), $client) : '';
+                        $row[] = $isFirst ? $account->formatMoney($invoice->getTaxTVA(), $client) : '';
+                        $row[] = $isFirst ? $account->formatMoney($invoice->getTaxRS(), $client) : '';
+                        $row[] = $isFirst ? $account->formatMoney($invoice->getTaxDT(), $client) : '';
                     }
-
+                    if ($hasTaxRates) {
+                        //^ cutomization des taxe totale de TVA + RàS + Timbre Fiscal
+                        $row[] = $isFirst ? $account->formatMoney($invoice->getTaxTotal() + $invoice->custom_value1 + $invoice->custom_value2, $client) : '';
+                    }                   
                     if ($account->customLabel('invoice_text1')) {
                         $row[] = $invoice->custom_text_value1;
                     }

@@ -160,7 +160,16 @@ $LANG = array(
     'adjustment' => '調整',
     'are_you_sure' => 'よろしいですか？',
     'payment_type_id' => '入金方法',
-    'amount' => '金額',
+    //'amount' => '金額',
+    'amount' => '金額 TTC',
+    // calcule de amout HT et les taxe separate 
+    'amountHT' => 'Amount HT',
+    'taxes_TVA' => 'Taxe(TVA)',
+    'taxes_RS' => 'Taxe(RS)',
+    'taxes_DT' => 'Taxe(DT)',
+    'totalTax' => 'Total Tax',
+    'totalTaxe' => 'Total Tax',
+    // end here the customization
     'work_email' => 'Eメール',
     'language_id' => '言語',
     'timezone_id' => 'タイムゾーン',

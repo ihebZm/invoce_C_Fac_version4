@@ -158,7 +158,16 @@ Przykłady dynamicznych zmiennych:
     'adjustment' => 'Dostosowanie',
     'are_you_sure' => 'Jesteś pewny?',
     'payment_type_id' => 'Typ płatności',
-    'amount' => 'Kwota',
+    //'amount' => 'Kwota',
+    'amount' => 'Kwota TTC',
+    // calcule de amout HT et les taxe separate 
+    'amountHT' => 'Amount HT',
+    'taxes_TVA' => 'Taxe(TVA)',
+    'taxes_RS' => 'Taxe(RS)',
+    'taxes_DT' => 'Taxe(DT)',
+    'totalTax' => 'Total Tax',
+    'totalTaxe' => 'Total Tax',
+    // end here the customization
     'work_email' => 'Email',
     'language_id' => 'Język',
     'timezone_id' => 'Strefa czasowa',

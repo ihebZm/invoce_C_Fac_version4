@@ -160,7 +160,16 @@ $LANG = array(
     'adjustment' => 'Ajustes',
     'are_you_sure' => '¿Está Seguro?',
     'payment_type_id' => 'Tipo de Pago',
-    'amount' => 'Cantidad',
+    //'amount' => 'Cantidad',
+    'amount' => 'Cantidad TTC',
+    // calcule de amout HT et les taxe separate 
+    'amountHT' => 'Amount HT',
+    'taxes_TVA' => 'Taxe(TVA)',
+    'taxes_RS' => 'Taxe(RS)',
+    'taxes_DT' => 'Taxe(DT)',
+    'totalTax' => 'Total Tax',
+    'totalTaxe' => 'Total Tax',
+    // end here the customization
     'work_email' => 'Correo electrónico de la empresa',
     'language_id' => 'Idioma',
     'timezone_id' => 'Zona horaria',

@@ -433,7 +433,10 @@
 
 	var sumColumns = [];
 	@foreach ($columns as $column => $class)
-		sumColumns.push("{{ in_array($column, ['amount', 'paid', 'balance', 'cost', 'duration', 'tax', 'qty']) ? trans("texts.{$column}") : false }}");
+		//test cfac to put it back
+		// sumColumns.push("{{ in_array($column, ['amount', 'paid', 'balance', 'cost', 'duration', 'tax', 'qty']) ? trans("texts.{$column}") : false }}");
+		//test cfac to delete
+		sumColumns.push("{{ in_array($column, ['amount', 'amountHT', 'paid', 'balance', 'cost', 'duration', 'tax', 'qty']) ? trans("texts.{$column}") : false }}");
 	@endforeach
 
     $(function() {
@@ -723,7 +726,6 @@
 			        },
 			    }
 			}).show();
-
 			@if (request()->report_type)
 				$.tablesorter.columnSelector.attachTo( $('.tablesorter-data'), '#popover-target');
 				$('#popover')

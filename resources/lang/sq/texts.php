@@ -160,7 +160,16 @@ $LANG = array(
     'adjustment' => 'Rregullo',
     'are_you_sure' => 'A jeni të sigurtë',
     'payment_type_id' => 'Lloji i pagesës',
-    'amount' => 'Shuma',
+    //'amount' => 'Shuma',
+    'amount' => 'Shuma TTC',
+    // calcule de amout HT et les taxe separate 
+    'amountHT' => 'Amount HT',
+    'taxes_TVA' => 'Taxe(TVA)',
+    'taxes_RS' => 'Taxe(RS)',
+    'taxes_DT' => 'Taxe(DT)',
+    'totalTax' => 'Total Tax',
+    'totalTaxe' => 'Total Tax',
+    // end here the customization
     'work_email' => 'Email',
     'language_id' => 'Gjuha',
     'timezone_id' => 'Zona kohore',

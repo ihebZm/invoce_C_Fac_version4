@@ -161,7 +161,13 @@ $LANG = array(
     'adjustment' => 'Réglements',
     'are_you_sure' => 'Voulez-vous vraiment effectuer cette action ?',
     'payment_type_id' => 'Type de paiement',
-    'amount' => 'Montant',
+    //'amount' => 'Montant',
+    'amount' => 'Montant TTC',
+    // calcule de amout HT et les taxe separate 
+    'amountHT' => 'Amount HT',
+    'taxes_TVA' => 'Taxe(TVA)',
+    'taxes_RS' => 'Taxe(RS)',
+    'taxes_DT' => 'Taxe(DT)',
     'amountHT' => 'Montant HT',
     'totalTax' => 'Taxe totale',
     'totalTaxe' => 'Taxe totale',
@@ -169,6 +175,7 @@ $LANG = array(
     'amountTTC' => 'Montant TTC',
     'ActionsTable' => 'actionstable',
     'amount_depensesHT' => 'Montant HT',
+    // end here the customization
     'work_email' => 'Courriel',
     'language_id' => 'Langue',
     'timezone_id' => 'Fuseau horaire',
